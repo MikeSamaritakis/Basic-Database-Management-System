@@ -23,11 +23,13 @@ public class DB_Connection {
      */
     public static Connection getConnection() throws SQLException, ClassNotFoundException {
         Class.forName("com.mysql.jdbc.Driver");
+        System.out.println("Connected to database.");
         return DriverManager.getConnection(url + ":" + port + "/" + databaseName, username, password);
     }
 
     public static Connection closeConnection() throws SQLException, ClassNotFoundException {
         closeConnection().close();
+        System.out.println("Disconnected from database.");
         return null;
     }
 
