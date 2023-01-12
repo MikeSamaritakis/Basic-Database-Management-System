@@ -26,20 +26,4 @@ public class DB_Connection {
         return DriverManager.getConnection(url + ":" + port + "/" + databaseName, username, password);
     }
 
-    public static Connection getInitialConnection() throws SQLException, ClassNotFoundException {
-        Class.forName("com.mysql.jdbc.Driver");
-        return DriverManager.getConnection(url + ":" + port, username, password);
-    }
-
-    public static void printResults(ResultSet rs) throws SQLException {
-        ResultSetMetaData metadata = rs.getMetaData();
-        int columnCount = metadata.getColumnCount();
-
-        String row = "";
-        for (int i = 1; i <= columnCount; i++) {
-            String name = metadata.getColumnName(i);
-            String value = rs.getString(i);
-            System.out.println(name + " " + value);
-        }
-    }
 }
