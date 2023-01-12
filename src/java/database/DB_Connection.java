@@ -1,0 +1,45 @@
+package database;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+
+public class DB_Connection {
+
+    private static final String url = "jdbc:mysql://localhost";
+    private static final String databaseName = "HY360_2022";
+    private static final int port = 3306;
+    private static final String username = "root";
+    private static final String password = "";
+
+    /**
+     * Attempts to establish a database connection
+     *
+     * @return a connection to the database
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     */
+    public static Connection getConnection() throws SQLException, ClassNotFoundException {
+        Class.forName("com.mysql.jdbc.Driver");
+        return DriverManager.getConnection(url + ":" + port + "/" + databaseName, username, password);
+    }
+
+    public static Connection getInitialConnection() throws SQLException, ClassNotFoundException {
+        Class.forName("com.mysql.jdbc.Driver");
+        return DriverManager.getConnection(url + ":" + port, username, password);
+    }
+
+    public static void printResults(ResultSet rs) throws SQLException {
+        ResultSetMetaData metadata = rs.getMetaData();
+        int columnCount = metadata.getColumnCount();
+
+        String row = "";
+        for (int i = 1; i <= columnCount; i++) {
+            String name = metadata.getColumnName(i);
+            String value = rs.getString(i);
+            System.out.println(name + " " + value);
+        }
+    }
+}
