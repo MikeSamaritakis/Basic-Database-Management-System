@@ -26,4 +26,9 @@ public class DB_Connection {
         return DriverManager.getConnection(url + ":" + port + "/" + databaseName, username, password);
     }
 
+    public static Connection closeConnection() throws SQLException, ClassNotFoundException {
+        closeConnection().close();
+        return null;
+    }
+
 }
