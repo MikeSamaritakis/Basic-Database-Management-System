@@ -19,26 +19,19 @@ public class EditTemporaryEmployee extends TemporaryEmployee {
                     + " students (username,email,password,firstname,lastname,birthdate,gender,country,city,address,student_type,"
                     + "student_id,student_id_from_date,student_id_to_date,university,department,lat,lon,telephone,personalpage)"
                     + " VALUES ("
-                    + "'" + tempemployee.get() + "',"
-                    + "'" + tempemployee.() + "',"
-                    + "'" + tempemployee.() + "',"
-                    + "'" + tempemployee.() + "',"
-                    + "'" + tempemployee.() + "',"
-                    + "'" + tempemployee.() + "',"
-                    + "'" + tempemployee.() + "',"
-                    + "'" + tempemployee.() + "',"
-                    + "'" + tempemployee.() + "',"
-                    + "'" + tempemployee.() + "',"
-                    + "'" + tempemployee.() + "',"
-                    + "'" + tempemployee.() + "',"
-                    + "'" + tempemployee.() + "',"
-                    + "'" + tempemployee.()+ "',"
-                    + "'" + tempemployee.() + "',"
-                    + "'" + tempemployee.() + "',"
-                    + "'" + tempemployee.() + "',"
-                    + "'" + tempemployee.() + "',"
-                    + "'" + tempemployee.() + "',"
-                    + "'" + tempemployee.()+ "'"
+                    + "'" + tempemployee.getFullName() + "',"
+                    + "'" + tempemployee.getIBAN() + "',"
+                    + "'" + tempemployee.getAddress() + "',"
+                    + "'" + tempemployee.getBankName() + "',"
+                    + "'" + tempemployee.getDepartment() + "',"
+                    + "'" + tempemployee.getstartingDate() + "',"
+                    + "'" + tempemployee.getEmployeeType() + "',"
+                    + "'" + tempemployee.getPaymentDate() + "',"
+                    + "'" + tempemployee.getTelephone() + "',"
+                    + "'" + tempemployee.getPayment() + "',"
+                    + "'" + tempemployee.getMarried()+ "'"
+                    + "'" + tempemployee.getStartingContractDate()+ "'"
+                    + "'" + tempemployee.getendingContractDate()+ "'"
                     + ")";
             //stmt.execute(table);
             System.out.println(insertQuery);
@@ -52,5 +45,5 @@ public class EditTemporaryEmployee extends TemporaryEmployee {
             Logger.getLogger(EditTemporaryEmployee.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    }
+
 }
