@@ -16,21 +16,21 @@ public class EditTemporaryEmployee extends TemporaryEmployee {
             Statement stmt = con.createStatement();
 
             String insertQuery = "INSERT INTO "
-                    + " students (username,email,password,firstname,lastname,birthdate,gender,country,city,address,student_type,"
-                    + "student_id,student_id_from_date,student_id_to_date,university,department,lat,lon,telephone,personalpage)"
+                    + " students (IBAN,FullName, Address, Telephone, BankName, Department, startingDate, EmployeeType, Married"
+                    + "Payment, PaymentDate, startingContractDate, endingContractDate)"
                     + " VALUES ("
-                    + "'" + tempemployee.getFullName() + "',"
                     + "'" + tempemployee.getIBAN() + "',"
+                    + "'" + tempemployee.getFullName() + "',"
                     + "'" + tempemployee.getAddress() + "',"
+                    + "'" + tempemployee.getTelephone() + "',"
                     + "'" + tempemployee.getBankName() + "',"
                     + "'" + tempemployee.getDepartment() + "',"
                     + "'" + tempemployee.getstartingDate() + "',"
                     + "'" + tempemployee.getEmployeeType() + "',"
-                    + "'" + tempemployee.getPaymentDate() + "',"
-                    + "'" + tempemployee.getTelephone() + "',"
+                    + "'" + tempemployee.getMarried() + "',"
                     + "'" + tempemployee.getPayment() + "',"
-                    + "'" + tempemployee.getMarried()+ "'"
-                    + "'" + tempemployee.getStartingContractDate()+ "'"
+                    + "'" + tempemployee.getPaymentDate()+ "'"
+                    + "'" + tempemployee.getstartingContractDate()+ "'"
                     + "'" + tempemployee.getendingContractDate()+ "'"
                     + ")";
             //stmt.execute(table);
@@ -46,6 +46,26 @@ public class EditTemporaryEmployee extends TemporaryEmployee {
         }
     }
 
+    public void deleteTemporaryEmployee(TemporaryEmployee tempemployee) throws ClassNotFoundException{
+        try {
+            Connection con = DB_Connection.getConnection();
 
+            Statement stmt = con.createStatement();
+
+            int ibantemp = getIBAN();
+
+            String insertQuery = "DROP FROM temporaryemployee WHERE iban=ibantemp";
+            //stmt.execute(table);
+            System.out.println(insertQuery);
+            stmt.executeUpdate(insertQuery);
+            System.out.println("# The temporary employee was successfully deleted in the database.");
+
+            /* Get the member id from the database and set it to the member */
+            stmt.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(EditTemporaryEmployee.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
 }

@@ -12,27 +12,27 @@ import java.util.logging.Logger;
 
 public class EditPermanentEmployee extends PermanentEmployee {
 
-    public void addnewTemporaryEmployee(TemporaryEmployee tempemployee) throws ClassNotFoundException{
+    public void addnewPermanentEmployee(PermanentEmployee permemployee) throws ClassNotFoundException{
         try {
             Connection con = DB_Connection.getConnection();
 
             Statement stmt = con.createStatement();
 
             String insertQuery = "INSERT INTO "
-                    + " students (username,email,password,firstname,lastname,birthdate,gender,country,city,address,student_type,"
-                    + "student_id,student_id_from_date,student_id_to_date,university,department,lat,lon,telephone,personalpage)"
+                    + " students (IBAN,FullName, Address, Telephone, BankName, Department, startingDate, EmployeeType, Married"
+                    + "Payment, PaymentDate)"
                     + " VALUES ("
-                    + "'" + tempemployee.getFullName() + "',"
-                    + "'" + tempemployee.getIBAN() + "',"
-                    + "'" + tempemployee.getAddress() + "',"
-                    + "'" + tempemployee.getBankName() + "',"
-                    + "'" + tempemployee.getDepartment() + "',"
-                    + "'" + tempemployee.getstartingDate() + "',"
-                    + "'" + tempemployee.getEmployeeType() + "',"
-                    + "'" + tempemployee.getPaymentDate() + "',"
-                    + "'" + tempemployee.getTelephone() + "',"
-                    + "'" + tempemployee.getPayment() + "',"
-                    + "'" + tempemployee.getMarried()+ "'"
+                    + "'" + permemployee.getIBAN() + "',"
+                    + "'" + permemployee.getFullName() + "',"
+                    + "'" + permemployee.getAddress() + "',"
+                    + "'" + permemployee.getTelephone() + "',"
+                    + "'" + permemployee.getBankName() + "',"
+                    + "'" + permemployee.getDepartment() + "',"
+                    + "'" + permemployee.getstartingDate() + "',"
+                    + "'" + permemployee.getEmployeeType() + "',"
+                    + "'" + permemployee.getMarried() + "',"
+                    + "'" + permemployee.getPayment() + "',"
+                    + "'" + permemployee.getPaymentDate()+ "'"
                     + ")";
             //stmt.execute(table);
             System.out.println(insertQuery);
@@ -47,4 +47,25 @@ public class EditPermanentEmployee extends PermanentEmployee {
         }
     }
 
+    public void deletePermanentEmployee(PermanentEmployee permemployee) throws ClassNotFoundException{
+        try {
+            Connection con = DB_Connection.getConnection();
+
+            Statement stmt = con.createStatement();
+
+            int ibanperm = getIBAN();
+
+            String insertQuery = "DROP FROM permanentemployee WHERE iban=ibanperm";
+            //stmt.execute(table);
+            System.out.println(insertQuery);
+            stmt.executeUpdate(insertQuery);
+            System.out.println("# The permanent employee was successfully deleted in the database.");
+
+            /* Get the member id from the database and set it to the member */
+            stmt.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(EditPermanentEmployee.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }

@@ -3,7 +3,7 @@ package mainClasses;
 public class TemporaryEmployee extends Employee{
     String startingContractDate, endingContractDate;
 
-    public String getStartingContractDate() {
+    public String getstartingContractDate() {
         return startingContractDate;
     }
 
