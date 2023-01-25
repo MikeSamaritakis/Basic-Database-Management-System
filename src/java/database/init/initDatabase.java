@@ -15,6 +15,8 @@ import java.util.logging.Level;
 import java.util.logging.*;
 import java.sql.*;
 import static database.DB_Connection.getConnection;
+import static database.DB_Connection.getInitialConnection;
+
 import database.tables.EditTemporaryEmployee;
 import database.tables.EditPermanentEmployee;
 
@@ -27,7 +29,7 @@ public class initDatabase {
     }
 
     public void initDatabase() throws SQLException, ClassNotFoundException {
-        Connection conn = getConnection();
+        Connection conn = getInitialConnection();
         Statement stmt = conn.createStatement();
         stmt.execute("CREATE DATABASE HY360_2022");
         stmt.close();
@@ -36,10 +38,10 @@ public class initDatabase {
 
     public void initTables() throws SQLException, ClassNotFoundException {
         EditPermanentEmployee epe = new EditPermanentEmployee();
-        epe.createPermanentEmployeetable();
-
         EditTemporaryEmployee ete = new EditTemporaryEmployee();
+
         ete.createTemporaryEmployeetable();
+        epe.createPermanentEmployeetable();
 
     }
 }

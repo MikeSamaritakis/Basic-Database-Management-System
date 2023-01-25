@@ -14,15 +14,13 @@
     <div class="buttonslogreg">
         <button type="submit" name="HireTemp" onclick='showTemp()'>Hire Temp</button>
         <button type="submit" name="HirePerm" onclick='showPerm()'>Hire Perm</button>
-        <button type="submit" name="Hide" onclick='hideAll()'>Hide</button>
-
     </div>
 
 
-    <form id="temp" style="display: none" method="get" action="Servlets.Servlet" >
+    <form id="temp" style="display: none">
         <br>
         <label> IBAN</label><br>
-        <input type="text" id="tiban" name="tiban" placeholder="Type in the IBAN"><br><br>
+        <input type="number" id="tiban" name="tiban" placeholder="Type in the IBAN"><br><br>
 
         <label> Name</label><br>
         <input type="text" id="tname" name="tname" placeholder="Type in the name"><br>
@@ -58,15 +56,13 @@
         <input type="date" id="tstartofcontract" name="tstartofcontract"><br><br>
 
         <label> End of contract</label><br>
-        <input type="date" id="tendofcontract" name="tendofcontract"><br><br>
-
-        <button type="submit" name="tSubmit" value="Call Servlet">Submit</button>
+        <input type="date" id="tendofcontract" name="tendofcontract"><br>
     </form>
 
-    <form id="perm" style="display: none"  method="get" action="Servlet">
-    <br>
+    <form id="perm" style="display: none">
+        <br>
         <label> IBAN</label><br>
-        <input type="text" id="piban" name="piban" placeholder="Type in the IBAN"><br><br>
+        <input type="number" id="piban" name="piban" placeholder="Type in the IBAN"><br><br>
 
         <label> Name</label><br>
         <input type="text" id="pname" name="pname" placeholder="Type in the name"><br>
@@ -96,12 +92,11 @@
         <input type="number" id="ppaymentamount" name="ppaymentamount" placeholder="Type in the amount of payment"><br><br>
 
         <label> Date of payment</label><br>
-        <input type="date" id="ppayment date" name="ppaymentdate"><br><br>
-
-        <button type="submit" name="pSubmit" value="Call Servlet">Submit</button>
+        <input type="date" id="ppayment date" name="ppaymentdate"><br>
     </form>
 
 
 </div>
 </body>
+
 </html>
