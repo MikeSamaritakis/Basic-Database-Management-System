@@ -27,7 +27,7 @@ public class EditPermanentEmployee extends PermanentEmployee {
                 + " EmployeeType char(9) default null, "
                 + " Married tinyint(1) default null, "
                 + " Payment int(60) default null, "
-                + " PaymentDate char(10) default null, "
+                + " PaymentDate DATE default null, "
                 + "PRIMARY KEY (IBAN))";
 
         stmt.execute(query);
