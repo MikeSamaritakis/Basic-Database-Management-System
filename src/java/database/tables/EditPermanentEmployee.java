@@ -12,6 +12,28 @@ import java.util.logging.Logger;
 
 public class EditPermanentEmployee extends PermanentEmployee {
 
+    public void createPermanentEmployeetable() throws SQLException, ClassNotFoundException {
+
+        Connection con = DB_Connection.getConnection();
+        Statement stmt = con.createStatement();
+        String query = "CREATE TABLE permanentemployee"
+                + "( IBAN int(12) not null, "
+                + " Fullname char(100) default null, "
+                + " Address char(100) default null, "
+                + " Telephone int(10) default null, "
+                + " BankName char(100) default null, "
+                + " Department char(100) default null, "
+                + " startingDate char(100) default null, "
+                + " EmployeeType char(9) default null, "
+                + " Married tinyint(1) default null, "
+                + " Payment int(60) default null, "
+                + " PaymentDate DATE default null, "
+                + "PRIMARY KEY (IBAN))";
+
+        stmt.execute(query);
+        stmt.close();
+    }
+
     public void addnewPermanentEmployee(PermanentEmployee permemployee) throws ClassNotFoundException{
         try {
             Connection con = DB_Connection.getConnection();
