@@ -41,8 +41,8 @@ public class EditPermanentEmployee extends PermanentEmployee {
             Statement stmt = con.createStatement();
 
             String insertQuery = "INSERT INTO "
-                    + " permanentemployee (IBAN,FullName, Address, Telephone, BankName, Department, startingDate, EmployeeType, Married, "
-                    + "Payment, PaymentDate)"
+                    + " permanentemployee (IBAN,FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,"
+                    + "Payment,PaymentDate)"
                     + " VALUES ("
                     + "'" + permemployee.getIBAN() + "',"
                     + "'" + permemployee.getFullName() + "',"
@@ -54,7 +54,7 @@ public class EditPermanentEmployee extends PermanentEmployee {
                     + "'" + permemployee.getEmployeeType() + "',"
                     + "'" + permemployee.getMarried() + "',"
                     + "'" + permemployee.getPayment() + "',"
-                    + "'" + permemployee.getPaymentDate()+ "'"
+                    + "'" + permemployee.getPaymentDate() + "'"
                     + ")";
             //stmt.execute(table);
             System.out.println(insertQuery);

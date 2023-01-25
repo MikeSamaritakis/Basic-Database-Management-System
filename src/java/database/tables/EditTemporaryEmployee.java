@@ -40,8 +40,8 @@ public class EditTemporaryEmployee extends TemporaryEmployee {
             Statement stmt = con.createStatement();
 
             String insertQuery = "INSERT INTO "
-                    + " temporaryemployee (IBAN, FullName, Address, Telephone, BankName, Department, startingDate, EmployeeType, Married, "
-                    + "Payment, PaymentDate, startingContractDate, endingContractDate)"
+                    + " temporaryemployee (IBAN,FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,"
+                    + "Payment,PaymentDate,startingContractDate,endingContractDate)"
                     + " VALUES ("
                     + "'" + tempemployee.getIBAN() + "',"
                     + "'" + tempemployee.getFullName() + "',"
@@ -53,9 +53,9 @@ public class EditTemporaryEmployee extends TemporaryEmployee {
                     + "'" + tempemployee.getEmployeeType() + "',"
                     + "'" + tempemployee.getMarried() + "',"
                     + "'" + tempemployee.getPayment() + "',"
-                    + "'" + tempemployee.getPaymentDate()+ "',"
-                    + "'" + tempemployee.getstartingContractDate()+ "',"
-                    + "'" + tempemployee.getendingContractDate()+ "'"
+                    + "'" + tempemployee.getPaymentDate() + "',"
+                    + "'" + tempemployee.getstartingContractDate() + "',"
+                    + "'" + tempemployee.getendingContractDate() + "'"
                     + ")";
             //stmt.execute(table);
             System.out.println(insertQuery);

@@ -15,7 +15,7 @@ public class Employee {
         return FullName;
     }
 
-    public void setFullname(String Fullname) {
+    public void setFullname(String FullName) {
         this.FullName = FullName;
     }
 

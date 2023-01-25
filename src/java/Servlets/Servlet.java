@@ -113,7 +113,7 @@ public class Servlet extends HttpServlet{
             te.setPaymentDate(PaymentDate);
 
             String StartOfContract = request.getParameter("tstartofcontract");
-            te.setstartingDate(StartOfContract);
+            te.setstartingContractDate(StartOfContract);
 
             String EndOfContract = request.getParameter("tendofcontract");
             te.setendingContractDate(EndOfContract);
