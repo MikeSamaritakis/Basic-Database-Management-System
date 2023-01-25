@@ -9,6 +9,30 @@ import java.util.logging.Logger;
 
 public class EditTemporaryEmployee extends TemporaryEmployee {
 
+    public void createTemporaryEmployeetable() throws SQLException, ClassNotFoundException {
+
+        Connection con = DB_Connection.getConnection();
+        Statement stmt = con.createStatement();
+        String query = "CREATE TABLE permanentemployee"
+                + "( IBAN int(12) not null, "
+                + " Fullname char(100) default null, "
+                + " Address char(100) default null, "
+                + " Telephone int(10) default null, "
+                + " BankName char(100) default null, "
+                + " Department char(100) default null, "
+                + " startingDate char(100) default null, "
+                + " EmployeeType char(9) default null, "
+                + " Married tinyint(1) default null, "
+                + " Payment int(60) default null, "
+                + " PaymentDate char(10) default null, "
+                + " startingContractDate char(10) default null, "
+                + " endingContractDate char(10) default null, "
+                + "PRIMARY KEY (IBAN))";
+
+        stmt.execute(query);
+        stmt.close();
+    }
+
     public void addnewTemporaryEmployee(TemporaryEmployee tempemployee) throws ClassNotFoundException{
         try {
             Connection con = DB_Connection.getConnection();
