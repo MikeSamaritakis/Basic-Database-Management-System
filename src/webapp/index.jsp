@@ -13,8 +13,8 @@
     <center>  <h1> Login/Register</h1> </center>
     <hr>
     <div class="buttonslogreg">
-        <button type="submit" name="Login" onclick='showLogin()'>Login</button>
-        <button type="submit" name="Register" onclick='showRegister()'>Register</button>
+        <button type="submit" name="Login" onclick='showLogin()'>Hire Temp</button>
+        <button type="submit" name="Register" onclick='showRegister()'>Hire Perm</button>
     </div>
 </div>
 
