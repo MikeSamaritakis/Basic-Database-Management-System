@@ -68,7 +68,6 @@ public class Employee {
         this.EmployeeType = EmployeeType;
     }
 
-
     public String getPaymentDate() {
         return PaymentDate;
     }
@@ -96,7 +95,6 @@ public class Employee {
     public boolean getMarried() {
         return Married;
     }
-
 
     public void setMarried(boolean Married) {
         this.Married = Married;

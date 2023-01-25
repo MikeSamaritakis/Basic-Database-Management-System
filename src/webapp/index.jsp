@@ -9,18 +9,19 @@
 </head>
 <body>
 <div class="hire temp/perm">
-    <center>  <h1> Hire Temp/Perm</h1> </center>
+    <center>  <h1> Hire Employee</h1> </center>
     <hr>
     <div class="buttonslogreg">
-        <button type="submit" name="HireTemp" onclick='showTemp()'>Hire Temp</button>
-        <button type="submit" name="HirePerm" onclick='showPerm()'>Hire Perm</button>
+        <button type="submit" name="HireTemp" onclick='showTemp()'>Hire Temporary Employee</button>
+        <button type="submit" name="HirePerm" onclick='showPerm()'>Hire Permanent Employee</button>
+        <button type="submit" name="Hide" onclick='hideAll()'>Hide Current Form</button>
     </div>
 
 
-    <form id="temp" style="display: none">
+    <form id="temp" style="display: none" method="get" action="Servlets.Servlet" >
         <br>
         <label> IBAN</label><br>
-        <input type="number" id="tiban" name="tiban" placeholder="Type in the IBAN"><br><br>
+        <input type="text" id="tiban" name="tiban" placeholder="Type in the IBAN"><br><br>
 
         <label> Name</label><br>
         <input type="text" id="tname" name="tname" placeholder="Type in the name"><br>
@@ -44,7 +45,8 @@
         <input type="text" id="temployeetype" name="temployeetype" placeholder="Type in the type of the employee"><br>
 
         <label> Is the employee Married?</label><br>
-        <input type="checkbox" id="married" name="tmarried"><br><br>
+        <input type="hidden" id="tmarried2" name="tmarried" value="false">
+        <input type="checkbox" id="tmarried" name="tmarried" checked="true"><br><br>
 
         <label> Amount of payment</label><br>
         <input type="number" id="tpaymentamount" name="tpaymentamount" placeholder="Type in the amount of payment"><br><br>
@@ -56,13 +58,15 @@
         <input type="date" id="tstartofcontract" name="tstartofcontract"><br><br>
 
         <label> End of contract</label><br>
-        <input type="date" id="tendofcontract" name="tendofcontract"><br>
+        <input type="date" id="tendofcontract" name="tendofcontract"><br><br>
+
+        <button type="submit" name="tSubmit" value="Call Servlet">Submit</button>
     </form>
 
-    <form id="perm" style="display: none">
+    <form id="perm" style="display: none" method="get" action="Servlets.Servlet">
         <br>
         <label> IBAN</label><br>
-        <input type="number" id="piban" name="piban" placeholder="Type in the IBAN"><br><br>
+        <input type="text" id="piban" name="piban" placeholder="Type in the IBAN"><br><br>
 
         <label> Name</label><br>
         <input type="text" id="pname" name="pname" placeholder="Type in the name"><br>
@@ -86,13 +90,16 @@
         <input type="text" id="pemployeetype" name="pemployeetype" placeholder="Type in the type of the employee"><br>
 
         <label> Is the employee Married?</label><br>
-        <input type="checkbox" id="pmarried" name="pmarried"><br><br>
+        <input type="hidden" id="pmarried2" name="pmarried" value="false">
+        <input type="checkbox" id="pmarried" name="pmarried" checked="true"><br><br>
 
         <label> Amount of payment</label><br>
         <input type="number" id="ppaymentamount" name="ppaymentamount" placeholder="Type in the amount of payment"><br><br>
 
         <label> Date of payment</label><br>
-        <input type="date" id="ppayment date" name="ppaymentdate"><br>
+        <input type="date" id="ppayment date" name="ppaymentdate"><br><br>
+
+        <button type="submit" name="pSubmit" value="Call Servlet">Submit</button>
     </form>
 
 

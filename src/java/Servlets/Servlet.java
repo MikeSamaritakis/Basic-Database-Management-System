@@ -1,6 +1,8 @@
 package Servlets;
 
+import database.tables.EditPermanentEmployee;
 import database.tables.EditTemporaryEmployee;
+import mainClasses.PermanentEmployee;
 import mainClasses.TemporaryEmployee;
 
 import javax.servlet.*;
@@ -25,13 +27,54 @@ public class Servlet extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        PrintWriter write = response.getWriter();
-        write.println("KALHSPERA sto servlet mas!");
+        PrintWriter writer = response.getWriter();
 
-        if (request.getParameter("tstartofcontract") != ""){
-            //perm
-        }
-        else{
+        if (request.getParameter("tstartofcontract") == null){
+            //writer.println("mphka perm");
+            EditPermanentEmployee epe = new EditPermanentEmployee();
+            PermanentEmployee pe = new PermanentEmployee();
+
+            String Iban = request.getParameter("piban");
+            pe.setIBAN(Iban);
+
+            String Name = request.getParameter("pname");
+            pe.setFullname(Name);
+
+            String Address = request.getParameter("paddress");
+            pe.setAddress(Address);
+
+            String PhoneNumber = request.getParameter("pphonenumber");
+            pe.setTelephone(Integer.parseInt(PhoneNumber));
+
+            String BankName = request.getParameter("pbankname");
+            pe.setBankName(BankName);
+
+            String Department = request.getParameter("pdepartment");
+            pe.setDepartment(Department);
+
+            String StartingDate = request.getParameter("pstartingdate");
+            pe.setstartingDate(StartingDate);
+
+            String EmployeeType = request.getParameter("pemployeetype");
+            pe.setEmployeeType(EmployeeType);
+
+            boolean Married = Boolean.parseBoolean(request.getParameter("pmarried")); //den eimai sigouros oti kanei swsto parse se boolean
+            pe.setMarried(Married);
+
+            int PaymentAmount = Integer.parseInt(request.getParameter("ppaymentamount"));
+            pe.setPayment(PaymentAmount);
+
+            String PaymentDate = request.getParameter("ppaymentdate");
+            pe.setPaymentDate(PaymentDate);
+
+            try {
+                epe.addnewPermanentEmployee(pe);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+
+        }else{
+            //writer.println("mphka temp");
             EditTemporaryEmployee ete = new EditTemporaryEmployee();
             TemporaryEmployee te = new TemporaryEmployee();
 
@@ -44,8 +87,8 @@ public class Servlet extends HttpServlet{
             String Address = request.getParameter("taddress");
             te.setAddress(Address);
 
-            int PhoneNumber = Integer.parseInt(request.getParameter("tphonenumber"));
-            te.setTelephone(PhoneNumber);
+            String PhoneNumber = request.getParameter("tphonenumber");
+            te.setTelephone(Integer.parseInt(PhoneNumber));
 
             String BankName = request.getParameter("tbankname");
             te.setBankName(BankName);
@@ -62,11 +105,18 @@ public class Servlet extends HttpServlet{
             boolean Married = Boolean.parseBoolean(request.getParameter("tmarried")); //den eimai sigouros oti kanei swsto parse se boolean
             te.setMarried(Married);
 
+            writer.print(Married);
             int PaymentAmount = Integer.parseInt(request.getParameter("tpaymentamount"));
             te.setPayment(PaymentAmount);
 
             String PaymentDate = request.getParameter("tpaymentdate");
             te.setPaymentDate(PaymentDate);
+
+            String StartOfContract = request.getParameter("tstartofcontract");
+            te.setstartingDate(StartOfContract);
+
+            String EndOfContract = request.getParameter("tendofcontract");
+            te.setendingContractDate(EndOfContract);
 
             try {
                 ete.addnewTemporaryEmployee(te);

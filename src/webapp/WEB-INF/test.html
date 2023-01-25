@@ -9,13 +9,12 @@
 </head>
 <body>
 <div class="hire temp/perm">
-  <center>  <h1> Hire Temp/Perm</h1> </center>
+  <center>  <h1> Hire Employee</h1> </center>
   <hr>
   <div class="buttonslogreg">
-    <button type="submit" name="HireTemp" onclick='showTemp()'>Hire Temp</button>
-    <button type="submit" name="HirePerm" onclick='showPerm()'>Hire Perm</button>
-    <button type="submit" name="Hide" onclick='hideAll()'>Hide</button>
-
+    <button type="submit" name="HireTemp" onclick='showTemp()'>Hire Temporary Employee</button>
+    <button type="submit" name="HirePerm" onclick='showPerm()'>Hire Permanent Employee</button>
+    <button type="submit" name="Hide" onclick='hideAll()'>Hide Current Form</button>
   </div>
 
 
@@ -46,7 +45,8 @@
     <input type="text" id="temployeetype" name="temployeetype" placeholder="Type in the type of the employee"><br>
 
     <label> Is the employee Married?</label><br>
-    <input type="checkbox" id="married" name="tmarried"><br><br>
+    <input type="hidden" id="tmarried2" name="tmarried" value="false">
+    <input type="checkbox" id="tmarried" name="tmarried" value="true"><br><br>
 
     <label> Amount of payment</label><br>
     <input type="number" id="tpaymentamount" name="tpaymentamount" placeholder="Type in the amount of payment"><br><br>
@@ -90,7 +90,7 @@
     <input type="text" id="pemployeetype" name="pemployeetype" placeholder="Type in the type of the employee"><br>
 
     <label> Is the employee Married?</label><br>
-    <input type="checkbox" id="pmarried" name="pmarried"><br><br>
+    <input type="hidden" id="pmarried2" name="pmarried" value="false">
 
     <label> Amount of payment</label><br>
     <input type="number" id="ppaymentamount" name="ppaymentamount" placeholder="Type in the amount of payment"><br><br>

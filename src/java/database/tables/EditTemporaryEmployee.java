@@ -59,7 +59,7 @@ public class EditTemporaryEmployee extends TemporaryEmployee {
                     + ")";
             //stmt.execute(table);
             System.out.println(insertQuery);
-            stmt.executeUpdate(insertQuery);
+            stmt.execute(insertQuery);
             System.out.println("# The temporary employee was successfully added in the database.");
 
             /* Get the member id from the database and set it to the member */
