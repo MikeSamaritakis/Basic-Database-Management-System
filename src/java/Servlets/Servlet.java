@@ -27,7 +27,7 @@ public class Servlet extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        PrintWriter writer = response.getWriter();
+        //PrintWriter writer = response.getWriter();
 
         if (request.getParameter("tstartofcontract") == null){
             //writer.println("mphka perm");
@@ -105,7 +105,7 @@ public class Servlet extends HttpServlet{
             boolean Married = Boolean.parseBoolean(request.getParameter("tmarried")); //den eimai sigouros oti kanei swsto parse se boolean
             te.setMarried(Married);
 
-            writer.print(Married);
+            //writer.print(Married);
             int PaymentAmount = Integer.parseInt(request.getParameter("tpaymentamount"));
             te.setPayment(PaymentAmount);
 

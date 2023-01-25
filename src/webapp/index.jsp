@@ -45,8 +45,10 @@
         <input type="text" id="temployeetype" name="temployeetype" placeholder="Type in the type of the employee"><br>
 
         <label> Is the employee Married?</label><br>
-        <input type="hidden" id="tmarried2" name="tmarried" value="false">
-        <input type="checkbox" id="tmarried" name="tmarried" checked="true"><br><br>
+        <label> Yes</label>
+        <input type="radio" id="tmarriedtrue" name="tmarried" value="true"><br>
+        <label> No</label>
+        <input type="radio" id="tmarriedfalse" name="tmarried" value="false"><br><br>
 
         <label> Amount of payment</label><br>
         <input type="number" id="tpaymentamount" name="tpaymentamount" placeholder="Type in the amount of payment"><br><br>
@@ -75,7 +77,7 @@
         <input type="text" id="paddress" name="paddress" placeholder="Type in the address"><br>
 
         <label> Phone number</label><br>
-        <input type="number" id="pphonenumber" name="pphone number" placeholder="Type in the phone number"><br><br>
+        <input type="number" id="pphonenumber" name="pphonenumber" placeholder="Type in the phone number"><br><br>
 
         <label> Bank name</label><br>
         <input type="text" id="pbankname" name="pbankname" placeholder="Type in the bank's name"><br>
@@ -90,8 +92,10 @@
         <input type="text" id="pemployeetype" name="pemployeetype" placeholder="Type in the type of the employee"><br>
 
         <label> Is the employee Married?</label><br>
-        <input type="hidden" id="pmarried2" name="pmarried" value="false">
-        <input type="checkbox" id="pmarried" name="pmarried" checked="true"><br><br>
+        <label> Yes</label>
+        <input type="radio" id="pmarriedtrue" name="pmarried" value="true"><br>
+        <label> No</label>
+        <input type="radio" id="pmarriedfalse" name="pmarried" value="false"><br><br>
 
         <label> Amount of payment</label><br>
         <input type="number" id="ppaymentamount" name="ppaymentamount" placeholder="Type in the amount of payment"><br><br>
