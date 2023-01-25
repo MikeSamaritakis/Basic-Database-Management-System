@@ -41,7 +41,7 @@ public class EditPermanentEmployee extends PermanentEmployee {
             Statement stmt = con.createStatement();
 
             String insertQuery = "INSERT INTO "
-                    + " permanentemployee (IBAN,FullName, Address, Telephone, BankName, Department, startingDate, EmployeeType, Married"
+                    + " permanentemployee (IBAN,FullName, Address, Telephone, BankName, Department, startingDate, EmployeeType, Married, "
                     + "Payment, PaymentDate)"
                     + " VALUES ("
                     + "'" + permemployee.getIBAN() + "',"
