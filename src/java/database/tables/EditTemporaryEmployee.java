@@ -13,7 +13,7 @@ public class EditTemporaryEmployee extends TemporaryEmployee {
 
         Connection con = DB_Connection.getConnection();
         Statement stmt = con.createStatement();
-        String query = "CREATE TABLE permanentemployee"
+        String query = "CREATE TABLE temporaryemployee"
                 + "( IBAN int(12) not null, "
                 + " Fullname char(100) default null, "
                 + " Address char(100) default null, "
