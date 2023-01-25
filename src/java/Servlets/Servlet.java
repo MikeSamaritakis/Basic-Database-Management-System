@@ -58,7 +58,7 @@ public class Servlet extends HttpServlet{
             String EmployeeType = request.getParameter("pemployeetype");
             pe.setEmployeeType(EmployeeType);
 
-            boolean Married = Boolean.parseBoolean(request.getParameter("pmarried")); //den eimai sigouros oti kanei swsto parse se boolean
+            int Married = Integer.parseInt(request.getParameter("pmarried")); //den eimai sigouros oti kanei swsto parse se boolean
             pe.setMarried(Married);
 
             int PaymentAmount = Integer.parseInt(request.getParameter("ppaymentamount"));
@@ -102,7 +102,7 @@ public class Servlet extends HttpServlet{
             String EmployeeType = request.getParameter("temployeetype");
             te.setEmployeeType(EmployeeType);
 
-            boolean Married = Boolean.parseBoolean(request.getParameter("tmarried")); //den eimai sigouros oti kanei swsto parse se boolean
+            int Married = Integer.parseInt(request.getParameter("tmarried"));
             te.setMarried(Married);
 
             //writer.print(Married);

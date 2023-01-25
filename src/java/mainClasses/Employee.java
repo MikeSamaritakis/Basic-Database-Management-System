@@ -9,8 +9,7 @@ public class Employee {
     String startingDate;
     String EmployeeType;
     String PaymentDate;
-    int Telephone, Payment;
-    boolean Married;
+    int Telephone, Payment, Married;
 
     public String getFullName() {
         return FullName;
@@ -92,11 +91,11 @@ public class Employee {
         this.Payment = Payment;
     }
 
-    public boolean getMarried() {
+    public int getMarried() {
         return Married;
     }
 
-    public void setMarried(boolean Married) {
+    public void setMarried(int Married) {
         this.Married = Married;
     }
 }

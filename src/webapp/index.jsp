@@ -46,9 +46,9 @@
 
         <label> Is the employee Married?</label><br>
         <label> Yes</label>
-        <input type="radio" id="tmarriedtrue" name="tmarried" value="true"><br>
+        <input type="radio" id="tmarriedtrue" name="tmarried" value="1"><br>
         <label> No</label>
-        <input type="radio" id="tmarriedfalse" name="tmarried" value="false"><br><br>
+        <input type="radio" id="tmarriedfalse" name="tmarried" value="0"><br><br>
 
         <label> Amount of payment</label><br>
         <input type="number" id="tpaymentamount" name="tpaymentamount" placeholder="Type in the amount of payment"><br><br>
@@ -93,9 +93,9 @@
 
         <label> Is the employee Married?</label><br>
         <label> Yes</label>
-        <input type="radio" id="pmarriedtrue" name="pmarried" value="true"><br>
+        <input type="radio" id="pmarriedtrue" name="pmarried" value="1"><br>
         <label> No</label>
-        <input type="radio" id="pmarriedfalse" name="pmarried" value="false"><br><br>
+        <input type="radio" id="pmarriedfalse" name="pmarried" value="0"><br><br>
 
         <label> Amount of payment</label><br>
         <input type="number" id="ppaymentamount" name="ppaymentamount" placeholder="Type in the amount of payment"><br><br>
