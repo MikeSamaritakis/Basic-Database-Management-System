@@ -14,13 +14,15 @@
   <div class="buttonslogreg">
     <button type="submit" name="HireTemp" onclick='showTemp()'>Hire Temp</button>
     <button type="submit" name="HirePerm" onclick='showPerm()'>Hire Perm</button>
+    <button type="submit" name="Hide" onclick='hideAll()'>Hide</button>
+
   </div>
 
 
-  <form id="temp" style="display: none">
+  <form id="temp" style="display: none" method="get" action="Servlets.Servlet" >
     <br>
     <label> IBAN</label><br>
-    <input type="number" id="tiban" name="tiban" placeholder="Type in the IBAN"><br><br>
+    <input type="text" id="tiban" name="tiban" placeholder="Type in the IBAN"><br><br>
 
     <label> Name</label><br>
     <input type="text" id="tname" name="tname" placeholder="Type in the name"><br>
@@ -56,44 +58,48 @@
     <input type="date" id="tstartofcontract" name="tstartofcontract"><br><br>
 
     <label> End of contract</label><br>
-    <input type="date" id="tendofcontract" name="tendofcontract"><br>
+    <input type="date" id="tendofcontract" name="tendofcontract"><br><br>
+
+    <button type="submit" name="tSubmit" value="Call Servlet">Submit</button>
   </form>
 
-<form id="perm" style="display: none">
-  <br>
-  <label> IBAN</label><br>
-  <input type="number" id="piban" name="piban" placeholder="Type in the IBAN"><br><br>
+  <form id="perm" style="display: none"  method="get" action="Servlet">
+    <br>
+    <label> IBAN</label><br>
+    <input type="text" id="piban" name="piban" placeholder="Type in the IBAN"><br><br>
 
-  <label> Name</label><br>
-  <input type="text" id="pname" name="pname" placeholder="Type in the name"><br>
+    <label> Name</label><br>
+    <input type="text" id="pname" name="pname" placeholder="Type in the name"><br>
 
-  <label> Address</label><br>
-  <input type="text" id="paddress" name="paddress" placeholder="Type in the address"><br>
+    <label> Address</label><br>
+    <input type="text" id="paddress" name="paddress" placeholder="Type in the address"><br>
 
-  <label> Phone number</label><br>
-  <input type="number" id="pphonenumber" name="pphone number" placeholder="Type in the phone number"><br><br>
+    <label> Phone number</label><br>
+    <input type="number" id="pphonenumber" name="pphone number" placeholder="Type in the phone number"><br><br>
 
-  <label> Bank name</label><br>
-  <input type="text" id="pbankname" name="pbankname" placeholder="Type in the bank's name"><br>
+    <label> Bank name</label><br>
+    <input type="text" id="pbankname" name="pbankname" placeholder="Type in the bank's name"><br>
 
-  <label> Department</label><br>
-  <input type="text" id="pdepartment" name="pdepartment" placeholder="Type in the department"><br>
+    <label> Department</label><br>
+    <input type="text" id="pdepartment" name="pdepartment" placeholder="Type in the department"><br>
 
-  <label> Starting date</label><br>
-  <input type="date" id="pstartingdate" name="pstartingdate"><br><br>
+    <label> Starting date</label><br>
+    <input type="date" id="pstartingdate" name="pstartingdate"><br><br>
 
-  <label> Employee type</label><br>
-  <input type="text" id="pemployeetype" name="pemployeetype" placeholder="Type in the type of the employee"><br>
+    <label> Employee type</label><br>
+    <input type="text" id="pemployeetype" name="pemployeetype" placeholder="Type in the type of the employee"><br>
 
-  <label> Is the employee Married?</label><br>
-  <input type="checkbox" id="pmarried" name="pmarried"><br><br>
+    <label> Is the employee Married?</label><br>
+    <input type="checkbox" id="pmarried" name="pmarried"><br><br>
 
-  <label> Amount of payment</label><br>
-  <input type="number" id="ppaymentamount" name="ppaymentamount" placeholder="Type in the amount of payment"><br><br>
+    <label> Amount of payment</label><br>
+    <input type="number" id="ppaymentamount" name="ppaymentamount" placeholder="Type in the amount of payment"><br><br>
 
-  <label> Date of payment</label><br>
-  <input type="date" id="ppayment date" name="ppaymentdate"><br>
-</form>
+    <label> Date of payment</label><br>
+    <input type="date" id="ppayment date" name="ppaymentdate"><br><br>
+
+    <button type="submit" name="pSubmit" value="Call Servlet">Submit</button>
+  </form>
 
 
 </div>

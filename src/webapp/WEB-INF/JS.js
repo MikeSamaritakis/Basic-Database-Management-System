@@ -16,5 +16,10 @@
         document.getElementById("temp").style.display = "none";
     }
 
+    function hideAll(){
+    hideTemp();
+    hidePerm();
+    }
+
 
 

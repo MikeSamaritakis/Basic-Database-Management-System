@@ -2,7 +2,7 @@ package mainClasses;
 
 public class Employee {
     String FullName;
-    int IBAN;
+    String IBAN;
     String Address;
     String BankName;
     String Department;
@@ -16,15 +16,15 @@ public class Employee {
         return FullName;
     }
 
-    public void setFullname(int Fullname) {
+    public void setFullname(String Fullname) {
         this.FullName = FullName;
     }
 
-    public int getIBAN() {
+    public String getIBAN() {
         return IBAN;
     }
 
-    public void setIBAN(int IBAN) {
+    public void setIBAN(String IBAN) {
         this.IBAN = IBAN;
     }
 
@@ -97,7 +97,8 @@ public class Employee {
         return Married;
     }
 
-    public void setPayment(boolean Married) {
+
+    public void setMarried(boolean Married) {
         this.Married = Married;
     }
 }

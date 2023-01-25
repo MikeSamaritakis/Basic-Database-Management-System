@@ -14,7 +14,7 @@ public class EditTemporaryEmployee extends TemporaryEmployee {
         Connection con = DB_Connection.getConnection();
         Statement stmt = con.createStatement();
         String query = "CREATE TABLE permanentemployee"
-                + "( IBAN int(12) not null, "
+                + "( IBAN char(12) not null, "
                 + " Fullname char(100) default null, "
                 + " Address char(100) default null, "
                 + " Telephone int(10) default null, "
@@ -76,7 +76,7 @@ public class EditTemporaryEmployee extends TemporaryEmployee {
 
             Statement stmt = con.createStatement();
 
-            int ibantemp = getIBAN();
+            String ibantemp = getIBAN();
 
             String insertQuery = "DROP FROM temporaryemployee WHERE iban=ibantemp";
             //stmt.execute(table);
