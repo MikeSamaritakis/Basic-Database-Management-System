@@ -23,8 +23,8 @@ public class EditTemporaryEmployee extends TemporaryEmployee {
                 + " startingDate date default null, "
                 + " EmployeeType char(9) default null, "
                 + " Married int(1) default null, "
+                + " Kids int(2) default null, "
                 + " Payment int(60) default null, "
-                + " PaymentDate DATE default null, "
                 + " startingContractDate date default null, "
                 + " endingContractDate date default null, "
                 + "PRIMARY KEY (IBAN))";
@@ -40,8 +40,8 @@ public class EditTemporaryEmployee extends TemporaryEmployee {
             Statement stmt = con.createStatement();
 
             String insertQuery = "INSERT INTO "
-                    + " temporaryemployee (IBAN,FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,"
-                    + "Payment,PaymentDate,startingContractDate,endingContractDate)"
+                    + " temporaryemployee (IBAN,FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Kids,"
+                    + "Payment,startingContractDate,endingContractDate)"
                     + " VALUES ("
                     + "'" + tempemployee.getIBAN() + "',"
                     + "'" + tempemployee.getFullName() + "',"
@@ -52,8 +52,8 @@ public class EditTemporaryEmployee extends TemporaryEmployee {
                     + "'" + tempemployee.getstartingDate() + "',"
                     + "'" + tempemployee.getEmployeeType() + "',"
                     + "'" + tempemployee.getMarried() + "',"
+                    + "'" + tempemployee.getKids() + "',"
                     + "'" + tempemployee.getPayment() + "',"
-                    + "'" + tempemployee.getPaymentDate() + "',"
                     + "'" + tempemployee.getstartingContractDate() + "',"
                     + "'" + tempemployee.getendingContractDate() + "'"
                     + ")";

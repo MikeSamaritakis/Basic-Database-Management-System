@@ -19,7 +19,7 @@ CREATE TABLE `permanentemployee` (
   `EmployeeType` char(9) DEFAULT NULL,
   `Married` int(1) DEFAULT NULL,
   `Payment` int(60) DEFAULT NULL,
-  `PaymentDate` date DEFAULT NULL
+#  `PaymentDate` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE `temporaryemployee` (
@@ -33,7 +33,7 @@ CREATE TABLE `temporaryemployee` (
   `EmployeeType` char(9) DEFAULT NULL,
   `Married` int(1) DEFAULT NULL,
   `Payment` int(60) DEFAULT NULL,
-  `PaymentDate` date DEFAULT NULL,
+#   `PaymentDate` date DEFAULT NULL,
   `startingContractDate` date DEFAULT NULL,
   `endingContractDate` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;

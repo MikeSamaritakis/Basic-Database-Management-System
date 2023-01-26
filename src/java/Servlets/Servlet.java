@@ -27,7 +27,7 @@ public class Servlet extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //PrintWriter writer = response.getWriter();
+        PrintWriter writer = response.getWriter();
 
         if (request.getParameter("tstartofcontract") == null){
             //writer.println("mphka perm");
@@ -61,11 +61,14 @@ public class Servlet extends HttpServlet{
             int Married = Integer.parseInt(request.getParameter("pmarried")); //den eimai sigouros oti kanei swsto parse se boolean
             pe.setMarried(Married);
 
-            int PaymentAmount = Integer.parseInt(request.getParameter("ppaymentamount"));
-            pe.setPayment(PaymentAmount);
+            int Kids = Integer.parseInt(request.getParameter("pkids"));
+            pe.setKids(Kids);
 
-            String PaymentDate = request.getParameter("ppaymentdate");
-            pe.setPaymentDate(PaymentDate);
+//            int PaymentAmount = Integer.parseInt(request.getParameter("ppaymentamount"));
+//            pe.setPayment(PaymentAmount);
+
+//            String PaymentDate = request.getParameter("ppaymentdate");
+//            pe.setPaymentDate(PaymentDate);
 
             try {
                 epe.addnewPermanentEmployee(pe);
@@ -109,14 +112,18 @@ public class Servlet extends HttpServlet{
             int PaymentAmount = Integer.parseInt(request.getParameter("tpaymentamount"));
             te.setPayment(PaymentAmount);
 
-            String PaymentDate = request.getParameter("tpaymentdate");
-            te.setPaymentDate(PaymentDate);
+//            String PaymentDate = request.getParameter("tpaymentdate");
+//            te.setPaymentDate(PaymentDate);
 
             String StartOfContract = request.getParameter("tstartofcontract");
             te.setstartingContractDate(StartOfContract);
 
             String EndOfContract = request.getParameter("tendofcontract");
             te.setendingContractDate(EndOfContract);
+
+            int Kids = Integer.parseInt(request.getParameter("tkids"));
+            te.setKids(Kids);
+
 
             try {
                 ete.addnewTemporaryEmployee(te);

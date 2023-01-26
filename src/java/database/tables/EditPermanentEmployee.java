@@ -26,8 +26,8 @@ public class EditPermanentEmployee extends PermanentEmployee {
                 + " startingDate date default null, "
                 + " EmployeeType char(9) default null, "
                 + " Married int(1) default null, "
+                + " Kids int(2) default null, "
                 + " Payment int(60) default null, "
-                + " PaymentDate date default null, "
                 + "PRIMARY KEY (IBAN))";
 
         stmt.execute(query);
@@ -42,7 +42,7 @@ public class EditPermanentEmployee extends PermanentEmployee {
 
             String insertQuery = "INSERT INTO "
                     + " permanentemployee (IBAN,FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,"
-                    + "Payment,PaymentDate)"
+                    + "Payment,Kids)"
                     + " VALUES ("
                     + "'" + permemployee.getIBAN() + "',"
                     + "'" + permemployee.getFullName() + "',"
@@ -54,7 +54,7 @@ public class EditPermanentEmployee extends PermanentEmployee {
                     + "'" + permemployee.getEmployeeType() + "',"
                     + "'" + permemployee.getMarried() + "',"
                     + "'" + permemployee.getPayment() + "',"
-                    + "'" + permemployee.getPaymentDate() + "'"
+                    + "'" + permemployee.getKids() + "'"
                     + ")";
             //stmt.execute(table);
             System.out.println(insertQuery);

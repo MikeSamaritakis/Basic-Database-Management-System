@@ -50,11 +50,14 @@
         <label> No</label>
         <input type="radio" id="tmarriedfalse" name="tmarried" value="0"><br><br>
 
-        <label> Amount of payment</label><br>
+        <label> Number of kids</label><br>
+        <input type="number" id="tkids" name="tkids" placeholder="Type in the number of kids"><br><br>
+
+        <label> Amount of contract payment</label><br>
         <input type="number" id="tpaymentamount" name="tpaymentamount" placeholder="Type in the amount of payment"><br><br>
 
-        <label> Date of payment</label><br>
-        <input type="date" id="tpaymentdate" name="tpaymentdate"><br><br>
+<%--        <label> Date of payment</label><br>--%>
+<%--        <input type="date" id="tpaymentdate" name="tpaymentdate"><br><br>--%>
 
         <label> Start of contract</label><br>
         <input type="date" id="tstartofcontract" name="tstartofcontract"><br><br>
@@ -91,17 +94,21 @@
         <label> Employee type</label><br>
         <input type="text" id="pemployeetype" name="pemployeetype" placeholder="Type in the type of the employee"><br>
 
+
         <label> Is the employee Married?</label><br>
         <label> Yes</label>
         <input type="radio" id="pmarriedtrue" name="pmarried" value="1"><br>
         <label> No</label>
         <input type="radio" id="pmarriedfalse" name="pmarried" value="0"><br><br>
 
-        <label> Amount of payment</label><br>
-        <input type="number" id="ppaymentamount" name="ppaymentamount" placeholder="Type in the amount of payment"><br><br>
+        <label> Number of kids</label><br>
+        <input type="number" id="pkids" name="pkids" placeholder="Type in the number of kids"><br><br>
+    e
+<%--        <label> Amount of payment</label><br>--%>
+<%--        <input type="number" id="ppaymentamount" name="ppaymentamount" placeholder="Type in the amount of payment"><br><br>--%>
 
-        <label> Date of payment</label><br>
-        <input type="date" id="ppayment date" name="ppaymentdate"><br><br>
+<%--        <label> Date of payment</label><br>--%>
+<%--        <input type="date" id="ppayment date" name="ppaymentdate"><br><br>--%>
 
         <button type="submit" name="pSubmit" value="Call Servlet">Submit</button>
     </form>

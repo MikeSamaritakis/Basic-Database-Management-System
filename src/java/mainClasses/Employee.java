@@ -8,8 +8,8 @@ public class Employee {
     String Department;
     String startingDate;
     String EmployeeType;
-    String PaymentDate;
-    int Telephone, Payment, Married;
+    int Telephone, Payment, Married, Kids;
+
 
     public String getFullName() {
         return FullName;
@@ -67,13 +67,13 @@ public class Employee {
         this.EmployeeType = EmployeeType;
     }
 
-    public String getPaymentDate() {
+    /*public String getPaymentDate() {
         return PaymentDate;
     }
 
     public void setPaymentDate(String PaymentDate) {
         this.PaymentDate = PaymentDate;
-    }
+    }*/
 
     public int getTelephone() {
         return Telephone;
@@ -97,5 +97,13 @@ public class Employee {
 
     public void setMarried(int Married) {
         this.Married = Married;
+    }
+
+    public int getKids(){
+        return Kids;
+    }
+
+    public void setKids(int kids){
+        this.Kids = kids;
     }
 }
