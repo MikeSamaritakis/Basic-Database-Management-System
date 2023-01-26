@@ -8,8 +8,8 @@ public class Employee {
     String Department;
     String startingDate;
     String EmployeeType;
-    int Telephone, Payment, Married, Kids;
-
+    int Payment, Married, Kids;
+    long Telephone;
 
     public String getFullName() {
         return FullName;
@@ -67,11 +67,19 @@ public class Employee {
         this.EmployeeType = EmployeeType;
     }
 
-    public int getTelephone() {
+    /*public String getPaymentDate() {
+        return PaymentDate;
+    }
+
+    public void setPaymentDate(String PaymentDate) {
+        this.PaymentDate = PaymentDate;
+    }*/
+
+    public long getTelephone() {
         return Telephone;
     }
 
-    public void setTelephone(int Telephone) {
+    public void setTelephone(long Telephone) {
         this.Telephone = Telephone;
     }
 
