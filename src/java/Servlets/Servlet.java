@@ -68,7 +68,7 @@ public class Servlet extends HttpServlet{
 
             int PaymentAmount = 0;
             if ("pemployeetype" == "Managing") {
-                PaymentAmount = calculatePayment(Integer.parseInt(request.getParameter("basicPaymentManaging")));
+                PaymentAmount = Utilities.calculatePayment(Integer.parseInt(request.getParameter("basicPaymentManaging")));
             }else{
                 PaymentAmount = calculatePayment(Integer.parseInt(request.getParameter("basicPaymentEducational")));
             }
