@@ -43,65 +43,137 @@ public class EditForm extends HttpServlet {
 
         String Name = request.getParameter("edittname");
         if (Name != null) {
-            ete.updateTemporaryEmployeeFullName(iban, Name);
+            try {
+                ete.updateTemporaryEmployeeFullName(iban, Name);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
         }
 
         String Address = request.getParameter("edittaddress");
         if (Address != null) {
-            ete.updateTemporaryEmployeeAddress(iban, Address);
+            try {
+                ete.updateTemporaryEmployeeAddress(iban, Address);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
         }
 
         String PhoneNumber = request.getParameter("edittphonenumber");
         if (PhoneNumber != null) {
-            ete.updateTemporaryEmployeeTelephone(iban, PhoneNumber);
+            try {
+                ete.updateTemporaryEmployeeTelephone(iban, PhoneNumber);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
         }
 
         String BankName = request.getParameter("edittbankname");
         if (BankName != null) {
-            ete.updateTemporaryEmployeeBankName(iban, BankName);
+            try {
+                ete.updateTemporaryEmployeeBankName(iban, BankName);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
         }
 
         String Department = request.getParameter("edittdepartment");
         if (Department != null) {
-            ete.updateTemporaryEmployeeDepartment(iban, Department);
+            try {
+                ete.updateTemporaryEmployeeDepartment(iban, Department);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
         }
 
         String StartingDate = request.getParameter("edittstartingdate");
         if (StartingDate != null) {
-            ete.updateTemporaryEmployeestartingDate(iban ,StartingDate);
+            try {
+                ete.updateTemporaryEmployeestartingDate(iban ,StartingDate);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
         }
 
         String EmployeeType = request.getParameter("edittemployeetype");
         if (EmployeeType != null) {
-            ete.updateTemporaryEmployeeEmployeeType(iban, EmployeeType);
+            try {
+                ete.updateTemporaryEmployeeEmployeeType(iban, EmployeeType);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
         }
 
         String Marriedstring = request.getParameter("edittmarried");
         if (Marriedstring != null) {
             int Married = Integer.parseInt(Marriedstring);
-            ete.updateTemporaryEmployeeMarried(iban, Married);
+            try {
+                ete.updateTemporaryEmployeeMarried(iban, Married);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
         }
 
         String PaymentAmountstring = request.getParameter("edittpaymentamount");
         if (PaymentAmountstring != null) {
             int PaymentAmount = Integer.parseInt(PaymentAmountstring);
-            ete.updateTemporaryEmployeePayment(iban, PaymentAmount);
+            try {
+                ete.updateTemporaryEmployeePayment(iban, PaymentAmount);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
         }
 
         String StartOfContract = request.getParameter("edittstartofcontract");
         if (StartOfContract != null) {
-            ete.updateTemporaryEmployeestartingContractDate(iban, StartOfContract);
+            try {
+                ete.updateTemporaryEmployeestartingContractDate(iban, StartOfContract);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
         }
 
         String EndOfContract = request.getParameter("edittendofcontract");
         if (EndOfContract != null) {
-            ete.updateTemporaryEmployeeendingContractDate(iban, EndOfContract);
+            try {
+                ete.updateTemporaryEmployeeendingContractDate(iban, EndOfContract);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
         }
 
         String Kidsstring = request.getParameter("edittkids");
         if (Kidsstring != null) {
             int Kids = Integer.parseInt(Kidsstring);
-            ete.updateTemporaryEmployeeKids(iban, Kids);
+            try {
+                ete.updateTemporaryEmployeeKids(iban, Kids);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
         }
 
     }
@@ -116,37 +188,79 @@ public class EditForm extends HttpServlet {
 
         String Name = request.getParameter("editpname");
         if (Name != null) {
-            epe.updatePermanentEmployeeFullName(iban, Name);
+            try {
+                epe.updatePermanentEmployeeFullName(iban, Name);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
         }
 
         String Address = request.getParameter("editpaddress");
         if (Address != null) {
-            epe.updatePermanentEmployeeAddress(iban, Address);
+            try {
+                epe.updatePermanentEmployeeAddress(iban, Address);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
         }
 
         String PhoneNumber = request.getParameter("editpphonenumber");
         if (PhoneNumber != null) {
-            epe.updatePermanentEmployeeTelephone(iban, PhoneNumber);
+            try {
+                epe.updatePermanentEmployeeTelephone(iban, PhoneNumber);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
         }
 
         String BankName = request.getParameter("editpbankname");
         if (BankName != null) {
-            epe.updatePermanentEmployeeBankName(iban, BankName);
+            try {
+                epe.updatePermanentEmployeeBankName(iban, BankName);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
         }
 
         String Department = request.getParameter("editpdepartment");
         if (Department != null) {
-            epe.updatePermanentEmployeeDepartment(iban, Department);
+            try {
+                epe.updatePermanentEmployeeDepartment(iban, Department);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
         }
 
         String StartingDate = request.getParameter("editpstartingdate");
         if (StartingDate != null) {
-            epe.updatePermanentEmployeestartingDate(iban, StartingDate);
+            try {
+                epe.updatePermanentEmployeestartingDate(iban, StartingDate);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
         }
 
         String EmployeeType = request.getParameter("editpemployeetype");
         if (EmployeeType != null) {
-            epe.updatePermanentEmployeeEmployeeType(iban, EmployeeType);
+            try {
+                epe.updatePermanentEmployeeEmployeeType(iban, EmployeeType);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
         }
 
         int Married = Integer.parseInt(request.getParameter("editpmarried"));
