@@ -73,7 +73,7 @@ public class EditPermanentEmployee extends PermanentEmployee {
 
             Statement stmt = con.createStatement();
 
-            String insertQuery = "DROP FROM permanentemployee WHERE iban=ibanperm";
+            String insertQuery = "DELETE FROM permanentemployee WHERE IBAN = '" + ibanperm + "'";
             //stmt.execute(table);
             System.out.println(insertQuery);
             stmt.executeUpdate(insertQuery);

@@ -75,7 +75,7 @@ public class EditTemporaryEmployee extends TemporaryEmployee {
 
             Statement stmt = con.createStatement();
 
-            String insertQuery = "DROP FROM temporaryemployee WHERE iban=ibantemp";
+            String insertQuery = "DELETE FROM temporaryemployee WHERE IBAN = '" + ibantemp + "'";
             //stmt.execute(table);
             System.out.println(insertQuery);
             stmt.executeUpdate(insertQuery);
