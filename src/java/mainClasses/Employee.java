@@ -67,14 +67,6 @@ public class Employee {
         this.EmployeeType = EmployeeType;
     }
 
-    /*public String getPaymentDate() {
-        return PaymentDate;
-    }
-
-    public void setPaymentDate(String PaymentDate) {
-        this.PaymentDate = PaymentDate;
-    }*/
-
     public int getTelephone() {
         return Telephone;
     }

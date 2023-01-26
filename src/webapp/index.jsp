@@ -108,7 +108,7 @@
 
         <label> Number of kids</label><br>
         <input type="number" id="pkids" name="pkids" placeholder="Type in the number of kids"><br><br>
-    e
+
 <%--        <label> Amount of payment</label><br>--%>
 <%--        <input type="number" id="ppaymentamount" name="ppaymentamount" placeholder="Type in the amount of payment"><br><br>--%>
 
