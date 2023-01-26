@@ -44,7 +44,7 @@ public class Servlet extends HttpServlet{
             pe.setAddress(Address);
 
             String PhoneNumber = request.getParameter("pphonenumber");
-            pe.setTelephone(Integer.parseInt(PhoneNumber));
+            pe.setTelephone(Long.parseLong(PhoneNumber));
 
             String BankName = request.getParameter("pbankname");
             pe.setBankName(BankName);
