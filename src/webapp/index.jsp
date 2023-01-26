@@ -41,8 +41,11 @@
         <label> Starting date</label><br>
         <input type="date" id="tstartingdate" name="tstartingdate"><br><br>
 
-        <label> Employee type</label><br>
-        <input type="text" id="temployeetype" name="temployeetype" placeholder="Type in the type of the employee"><br>
+        <label> Type of employee</label><br>
+        <label> Educational Staff</label>
+        <input type="radio" id="temployeetypeeducation" name="temployeetype" value="Education"><br>
+        <label> Managing Staff</label>
+        <input type="radio" id="temployeetypemanagement" name="temployeetype" value="Management"><br><br>
 
         <label> Is the employee Married?</label><br>
         <label> Yes</label>
@@ -91,9 +94,11 @@
         <label> Starting date</label><br>
         <input type="date" id="pstartingdate" name="pstartingdate"><br><br>
 
-        <label> Employee type</label><br>
-        <input type="text" id="pemployeetype" name="pemployeetype" placeholder="Type in the type of the employee"><br>
-
+        <label> Type of employee</label><br>
+        <label> Educational Staff</label>
+        <input type="radio" id="pemployeetypeeducation" name="pemployeetype" value="Education"><br>
+        <label> Managing Staff</label>
+        <input type="radio" id="pemployeetypemanagement" name="pemployeetype" value="Management"><br><br>
 
         <label> Is the employee Married?</label><br>
         <label> Yes</label>
@@ -110,7 +115,11 @@
 <%--        <label> Date of payment</label><br>--%>
 <%--        <input type="date" id="ppayment date" name="ppaymentdate"><br><br>--%>
 
+
+
         <button type="submit" name="pSubmit" value="Call Servlet">Submit</button>
+
+
     </form>
 
 
