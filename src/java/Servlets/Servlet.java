@@ -4,6 +4,7 @@ import database.tables.EditPermanentEmployee;
 import database.tables.EditTemporaryEmployee;
 import mainClasses.PermanentEmployee;
 import mainClasses.TemporaryEmployee;
+import database.tables.Utilities;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -30,7 +31,7 @@ public class Servlet extends HttpServlet{
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter writer = response.getWriter();
 
-        if (request.getParameter("tstartofcontract") == null){
+        if (request.getParameter("tstartofcontract") == null) {
             //writer.println("mphka perm");
             EditPermanentEmployee epe = new EditPermanentEmployee();
             PermanentEmployee pe = new PermanentEmployee();
@@ -59,17 +60,20 @@ public class Servlet extends HttpServlet{
             String EmployeeType = request.getParameter("pemployeetype");
             pe.setEmployeeType(EmployeeType);
 
-            int Married = Integer.parseInt(request.getParameter("pmarried")); //den eimai sigouros oti kanei swsto parse se boolean
+            int Married = Integer.parseInt(request.getParameter("pmarried"));
             pe.setMarried(Married);
 
             int Kids = Integer.parseInt(request.getParameter("pkids"));
             pe.setKids(Kids);
 
-//            int PaymentAmount = Integer.parseInt(request.getParameter("ppaymentamount"));
-//            pe.setPayment(PaymentAmount);
+            int PaymentAmount = 0;
+            if ("pemployeetype" == "Managing") {
+                PaymentAmount = calculatePayment(Integer.parseInt(request.getParameter("basicPaymentManaging")));
+            }else{
+                PaymentAmount = calculatePayment(Integer.parseInt(request.getParameter("basicPaymentEducational")));
+            }
+            pe.setPayment(PaymentAmount);
 
-//            String PaymentDate = request.getParameter("ppaymentdate");
-//            pe.setPaymentDate(PaymentDate);
 
             try {
                 epe.addnewPermanentEmployee(pe);
@@ -109,12 +113,13 @@ public class Servlet extends HttpServlet{
             int Married = Integer.parseInt(request.getParameter("tmarried"));
             te.setMarried(Married);
 
-            //writer.print(Married);
-            int PaymentAmount = Integer.parseInt(request.getParameter("tpaymentamount"));
+            int PaymentAmount = 0;
+            if ("temployeetype" == "Managing") {
+                PaymentAmount = calculatePayment(Integer.parseInt(request.getParameter("basicPaymentManaging")));
+            }else{
+                PaymentAmount = calculatePayment(Integer.parseInt(request.getParameter("basicPaymentEducational")));
+            }
             te.setPayment(PaymentAmount);
-
-//            String PaymentDate = request.getParameter("tpaymentdate");
-//            te.setPaymentDate(PaymentDate);
 
             String StartOfContract = request.getParameter("tstartofcontract");
             te.setstartingContractDate(StartOfContract);
@@ -137,8 +142,6 @@ public class Servlet extends HttpServlet{
 
 
     }
-
-
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
