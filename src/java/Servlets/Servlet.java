@@ -133,9 +133,6 @@ public class Servlet extends HttpServlet{
             String EndOfContract = request.getParameter("tendofcontract");
             te.setendingContractDate(EndOfContract);
 
-
-
-
             try {
                 ete.addnewTemporaryEmployee(te);
             } catch (ClassNotFoundException e) {

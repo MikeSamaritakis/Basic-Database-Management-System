@@ -263,19 +263,41 @@ public class EditForm extends HttpServlet {
             }
         }
 
-        int Married = Integer.parseInt(request.getParameter("editpmarried"));
-        if (Married != NaN) {
-            epe.updatePermanentEmployeeMarried(iban, String.valueOf(Married));
+        String Marriedstring = request.getParameter("editpmarried");
+        if (Marriedstring != null) {
+            int Married = Integer.parseInt(Marriedstring);
+            try {
+                epe.updatePermanentEmployeeMarried(iban, Married);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
         }
 
-        int PaymentAmount = Integer.parseInt(request.getParameter("editppaymentamount"));
-        if (PaymentAmount != NaN) {
-            pe.setPayment(PaymentAmount);
+        String PaymentAmountstring = request.getParameter("editppaymentamount");
+        if (PaymentAmountstring != null) {
+            int PaymentAmount = Integer.parseInt(PaymentAmountstring);
+            try {
+                epe.updatePermanentEmployeePayment(iban, PaymentAmount);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
         }
 
-        int Kids = Integer.parseInt(request.getParameter("ediptkids"));
-        if (Kids != NaN) {
-            pe.setKids(Kids);
+        String Kidsstring = request.getParameter("ediptkids");
+        if (Kidsstring != null) {
+            int Kids = Integer.parseInt(Kidsstring);
+            try {
+                epe.updatePermanentEmployeeKids(iban, Kids);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
+
 }

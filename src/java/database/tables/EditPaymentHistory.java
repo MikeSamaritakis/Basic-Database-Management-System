@@ -52,5 +52,20 @@ public class EditPaymentHistory extends PaymentHistory {
         }
     }
 
+//    public void printPayment(String iban){
+//        try {
+//            Connection con = DB_Connection.getConnection();
+//
+//            Statement stmt = con.createStatement();
+//
+//            String retrieveQuery =
+//
+//        } catch (SQLException ex) {
+//            Logger.getLogger(EditPaymentHistory.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (ClassNotFoundException e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
+
 }
 

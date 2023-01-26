@@ -17,9 +17,14 @@
         <button type="button" name="Delete" onclick='showDel()'>Delete Employee by IBAN</button>
         <button type="button" name="EditTInfo" onclick='showEdittemp()'>Edit Temporary Employee Info by IBAN</button>
         <button type="button" name="EditPInfo" onclick='showEditperm()'>Edit Permanent Employee Info by IBAN</button>
+        <button type="button" name="calcpayment" onclick='showpayment()'>Calculate Payment</button>
         <button type="button" name="Hide" onclick='hideAll()'>Hide Current Form</button>
     </div>
 <br><br>
+
+    <form id="payment" style="display: none" method="get" action="/Servlets.PaymentUpdate">
+        <button type="submit" name="paymentSubmit" value="Call Servlet">Submit Payments</button>
+    </form>
 
     <form id="edittinfo" style="display: none" method="get" action="/Servlets.EditForm">
         <br>

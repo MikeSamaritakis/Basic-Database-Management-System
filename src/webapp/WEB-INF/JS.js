@@ -30,6 +30,15 @@
         document.getElementById("editpinfo").style.display = "none";
     }
 
+    function showpayment(){
+        document.getElementById("payment").style.display = "block";
+    }
+
+    function  hidepayment(){
+        hideAll();
+        document.getElementById("payment").style.display = "none";
+    }
+
     function hideTemp(){
         document.getElementById("temp").style.display = "none";
     }
@@ -50,4 +59,5 @@
         hideDel();
         hideEdittemp();
         hideEditperm();
+        hidepayment();
     }
