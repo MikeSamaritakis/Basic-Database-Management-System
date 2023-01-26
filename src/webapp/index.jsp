@@ -14,10 +14,110 @@
     <div class="buttonslogreg">
         <button type="button" name="HireTemp" onclick='showTemp()'>Hire Temporary Employee</button>
         <button type="button" name="HirePerm" onclick='showPerm()'>Hire Permanent Employee</button>
-        <button type="button" name="Hide" onclick='hideAll()'>Hide Current Form</button>
         <button type="button" name="Delete" onclick='showDel()'>Delete Employee by IBAN</button>
+        <button type="button" name="EditTInfo" onclick='showEdittemp()'>Edit Temporary Employee Info by IBAN</button>
+        <button type="button" name="EditPInfo" onclick='showEditperm()'>Edit Permanent Employee Info by IBAN</button>
+        <button type="button" name="Hide" onclick='hideAll()'>Hide Current Form</button>
     </div>
 <br><br>
+
+    <form id="edittinfo" style="display: none" method="get" action="/Servlets.EditForm">
+        <br>
+        <label> IBAN</label><br>
+        <input type="text" id="edittiban" name="edittiban" placeholder="Type in the IBAN"><br><br>
+
+        <label> Name</label><br>
+        <input type="text" id="edittname" name="edittname" placeholder="Type in the name"><br>
+
+        <label> Address</label><br>
+        <input type="text" id="edittaddress" name="edittaddress" placeholder="Type in the address"><br>
+
+        <label> Phone number</label><br>
+        <input type="number" id="edittphonenumber" name="edittphonenumber" placeholder="Type in the phone number"><br><br>
+
+        <label> Bank name</label><br>
+        <input type="text" id="edittbankname" name="edittbankname" placeholder="Type in the bank's name"><br>
+
+        <label> Department</label><br>
+        <input type="text" id="edittdepartment" name="edittdepartment" placeholder="Type in the department"><br>
+
+        <label> Starting date</label><br>
+        <input type="date" id="edittstartingdate" name="edittstartingdate"><br><br>
+
+        <label> Type of employee</label><br>
+        <label> Educational Staff</label>
+        <input type="radio" id="edittemployeetypeeducation" name="edittemployeetype" value="Education"><br>
+        <label> Managing Staff</label>
+        <input type="radio" id="edittemployeetypemanagement" name="edittemployeetype" value="Management"><br><br>
+
+        <label> Is the employee Married?</label><br>
+        <label> Yes</label>
+        <input type="radio" id="edittmarriedtrue" name="edittmarried" value="1"><br>
+        <label> No</label>
+        <input type="radio" id="edittmarriedfalse" name="edittmarried" value="0"><br><br>
+
+        <label> Number of kids</label><br>
+        <input type="number" id="edittkids" name="edittkids" placeholder="Type in the number of kids"><br><br>
+
+        <label> Amount of contract payment</label><br>
+        <input type="number" id="edittpaymentamount" name="edittpaymentamount" placeholder="Type in the amount of payment"><br><br>
+
+        <%--        <label> Date of payment</label><br>--%>
+        <%--        <input type="date" id="tpaymentdate" name="tpaymentdate"><br><br>--%>
+
+        <label> Start of contract</label><br>
+        <input type="date" id="edittstartofcontract" name="edittstartofcontract"><br><br>
+
+        <label> End of contract</label><br>
+        <input type="date" id="edittendofcontract" name="edittendofcontract"><br><br>
+
+        <button type="submit" name="edittSubmit" value="Call Servlet">Submit</button>
+    </form>
+
+    <form id="editpinfo" style="display: none" method="post" action="/Servlets.EditForm">
+        <br>
+        <label> IBAN</label><br>
+        <input type="text" id="editpiban" name="editpiban" placeholder="Type in the IBAN"><br><br>
+
+        <label> Name</label><br>
+        <input type="text" id="editpname" name="editpname" placeholder="Type in the name"><br>
+
+        <label> Address</label><br>
+        <input type="text" id="editpaddress" name="editpaddress" placeholder="Type in the address"><br>
+
+        <label> Phone number</label><br>
+        <input type="number" id="editpphonenumber" name="editpphonenumber" placeholder="Type in the phone number"><br><br>
+
+        <label> Bank name</label><br>
+        <input type="text" id="editpbankname" name="editpbankname" placeholder="Type in the bank's name"><br>
+
+        <label> Department</label><br>
+        <input type="text" id="editpdepartment" name="editpdepartment" placeholder="Type in the department"><br>
+
+        <label> Starting date</label><br>
+        <input type="date" id="editpstartingdate" name="editpstartingdate"><br><br>
+
+        <label> Type of employee</label><br>
+        <label> Educational Staff</label>
+        <input type="radio" id="editpemployeetypeeducation" name="editpemployeetype" value="Education"><br>
+        <label> Managing Staff</label>
+        <input type="radio" id="editpemployeetypemanagement" name="editpemployeetype" value="Management"><br><br>
+
+        <label> Is the employee Married?</label><br>
+        <label> Yes</label>
+        <input type="radio" id="editpmarriedtrue" name="editpmarried" value="1"><br>
+        <label> No</label>
+        <input type="radio" id="editpmarriedfalse" name="editpmarried" value="0"><br><br>
+
+        <label> Number of kids</label><br>
+        <input type="number" id="editpkids" name="editpkids" placeholder="Type in the number of kids"><br><br>
+
+        <label> Amount of contract payment</label><br>
+        <input type="number" id="editppaymentamount" name="editppaymentamount" placeholder="Type in the amount of payment"><br><br>
+
+        <button type="submit" name="editpSubmit" value="Call Servlet">Submit</button>
+    </form>
+
     <form id="deleteemp" style="display: none" method="post" action="Servlets.Servlet">
         <label> Delete Employee by IBAN </label><br>
         <input type="text" id="diban" name="diban"><br>
@@ -127,7 +227,6 @@
 
 
     </form>
-
 
 </div>
 </body>
