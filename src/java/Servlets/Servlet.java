@@ -70,10 +70,10 @@ public class Servlet extends HttpServlet{
             pe.setKids(Kids);
 
             int PaymentAmount = 0;
-            if ("pemployeetype" == "Managing") {
-                PaymentAmount = Utilities.calculatePayment(Integer.parseInt(request.getParameter("basicPaymentManaging")));
+            if ("temployeetype" == "Managing") {
+                PaymentAmount = Utilities.calculatePayment(true, Integer.parseInt(request.getParameter("basicPaymentManaging")), Married+Kids, StartingDate);
             }else{
-                PaymentAmount = Utilities.calculatePayment(Integer.parseInt(request.getParameter("basicPaymentEducational")));
+                PaymentAmount = Utilities.calculatePayment(true, Integer.parseInt(request.getParameter("basicPaymentEducational")) + 300, Married+Kids, StartingDate);
             }
             pe.setPayment(PaymentAmount);
 
@@ -116,11 +116,14 @@ public class Servlet extends HttpServlet{
             int Married = Integer.parseInt(request.getParameter("tmarried"));
             te.setMarried(Married);
 
+            int Kids = Integer.parseInt(request.getParameter("tkids"));
+            te.setKids(Kids);
+
             int PaymentAmount = 0;
             if ("temployeetype" == "Managing") {
-                PaymentAmount = Utilities.calculatePayment(Integer.parseInt(request.getParameter("basicPaymentManaging")));
+                PaymentAmount = Utilities.calculatePayment(false, Integer.parseInt(request.getParameter("basicPaymentManaging")), Married+Kids, StartingDate);
             }else{
-                PaymentAmount = Utilities.scalculatePayment(Integer.parseInt(request.getParameter("basicPaymentEducational")));
+                PaymentAmount = Utilities.calculatePayment(false, Integer.parseInt(request.getParameter("basicPaymentEducational")) + 150, Married+Kids, StartingDate);
             }
             te.setPayment(PaymentAmount);
 
@@ -130,8 +133,7 @@ public class Servlet extends HttpServlet{
             String EndOfContract = request.getParameter("tendofcontract");
             te.setendingContractDate(EndOfContract);
 
-            int Kids = Integer.parseInt(request.getParameter("tkids"));
-            te.setKids(Kids);
+
 
 
             try {
