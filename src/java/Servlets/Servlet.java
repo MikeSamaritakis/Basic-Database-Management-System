@@ -2,9 +2,11 @@ package Servlets;
 
 import database.tables.EditPermanentEmployee;
 import database.tables.EditTemporaryEmployee;
+import database.tables.EditPaymentHistory;
+import database.tables.Utilities;
+import mainClasses.PaymentHistory;
 import mainClasses.PermanentEmployee;
 import mainClasses.TemporaryEmployee;
-import database.tables.Utilities;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -29,6 +31,7 @@ public class Servlet extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Insert employees into the database.
         PrintWriter writer = response.getWriter();
 
         if (request.getParameter("tstartofcontract") == null) {
@@ -68,9 +71,9 @@ public class Servlet extends HttpServlet{
 
             int PaymentAmount = 0;
             if ("pemployeetype" == "Managing") {
-                PaymentAmount = calculatePayment(Integer.parseInt(request.getParameter("basicPaymentManaging")));
+                PaymentAmount = Utilities.calculatePayment(Integer.parseInt(request.getParameter("basicPaymentManaging")));
             }else{
-                PaymentAmount = calculatePayment(Integer.parseInt(request.getParameter("basicPaymentEducational")));
+                PaymentAmount = Utilities.calculatePayment(Integer.parseInt(request.getParameter("basicPaymentEducational")));
             }
             pe.setPayment(PaymentAmount);
 
@@ -115,9 +118,9 @@ public class Servlet extends HttpServlet{
 
             int PaymentAmount = 0;
             if ("temployeetype" == "Managing") {
-                PaymentAmount = calculatePayment(Integer.parseInt(request.getParameter("basicPaymentManaging")));
+                PaymentAmount = Utilities.calculatePayment(Integer.parseInt(request.getParameter("basicPaymentManaging")));
             }else{
-                PaymentAmount = calculatePayment(Integer.parseInt(request.getParameter("basicPaymentEducational")));
+                PaymentAmount = Utilities.scalculatePayment(Integer.parseInt(request.getParameter("basicPaymentEducational")));
             }
             te.setPayment(PaymentAmount);
 
@@ -138,13 +141,33 @@ public class Servlet extends HttpServlet{
             }
         }
 
-
-
-
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Delete employees.
+        PrintWriter writer = response.getWriter();
+
+        String Iban = request.getParameter("diban");
+        if (request.getParameter("tstartofcontract") == null) {
+            //perm
+            EditPermanentEmployee epe = new EditPermanentEmployee();
+            try {
+                epe.deletePermanentEmployee(Iban);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        else{
+            //temp
+            EditTemporaryEmployee ete = new EditTemporaryEmployee();
+            try {
+                ete.deleteTemporaryEmployee(Iban);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        }
 
     }
+
 }
