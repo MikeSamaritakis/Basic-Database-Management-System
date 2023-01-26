@@ -70,11 +70,11 @@ public class Servlet extends HttpServlet{
             pe.setKids(Kids);
 
             int PaymentAmount = 0;
-            if ("temployeetype" == "Managing") {
-                PaymentAmount = Utilities.calculatePayment(true, Integer.parseInt(request.getParameter("basicPaymentManaging")), Married+Kids, StartingDate);
-            }else{
-                PaymentAmount = Utilities.calculatePayment(true, Integer.parseInt(request.getParameter("basicPaymentEducational")) + 300, Married+Kids, StartingDate);
-            }
+//            if ("temployeetype" == "Managing") {
+//                PaymentAmount = Utilities.calculatePayment(true, Integer.parseInt(request.getParameter("basicPaymentManaging")), Married+Kids, StartingDate);
+//            }else{
+//                PaymentAmount = Utilities.calculatePayment(true, Integer.parseInt(request.getParameter("basicPaymentEducational")) + 300, Married+Kids, StartingDate);
+//            }
             pe.setPayment(PaymentAmount);
 
 
@@ -120,11 +120,11 @@ public class Servlet extends HttpServlet{
             te.setKids(Kids);
 
             int PaymentAmount = 0;
-            if ("temployeetype" == "Managing") {
-                PaymentAmount = Utilities.calculatePayment(false, Integer.parseInt(request.getParameter("basicPaymentManaging")), Married+Kids, StartingDate);
-            }else{
-                PaymentAmount = Utilities.calculatePayment(false, Integer.parseInt(request.getParameter("basicPaymentEducational")) + 150, Married+Kids, StartingDate);
-            }
+//            if ("temployeetype" == "Managing") {
+//                PaymentAmount = Utilities.calculatePayment(false, Integer.parseInt(request.getParameter("basicPaymentManaging")), Married+Kids, StartingDate);
+//            }else{
+//                PaymentAmount = Utilities.calculatePayment(false, Integer.parseInt(request.getParameter("basicPaymentEducational")) + 150, Married+Kids, StartingDate);
+//            }
             te.setPayment(PaymentAmount);
 
             String StartOfContract = request.getParameter("tstartofcontract");

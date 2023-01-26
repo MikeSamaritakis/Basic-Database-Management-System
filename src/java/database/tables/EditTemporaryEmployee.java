@@ -14,19 +14,19 @@ public class EditTemporaryEmployee extends TemporaryEmployee {
         Connection con = DB_Connection.getConnection();
         Statement stmt = con.createStatement();
         String query = "CREATE TABLE temporaryemployee"
-                + "( IBAN char(12) not null, "
-                + " Fullname char(100) default null, "
-                + " Address char(100) default null, "
-                + " Telephone int(10) default null, "
-                + " BankName char(100) default null, "
-                + " Department char(100) default null, "
-                + " startingDate date default null, "
-                + " EmployeeType char(15) default null, "
+                + "( IBAN char(255) not null, "
+                + " Fullname char(255) default null, "
+                + " Address char(255) default null, "
+                + " Telephone int default null, "
+                + " BankName char(255) default null, "
+                + " Department char(255) default null, "
+                + " startingDate char(255) default null, "
+                + " EmployeeType char(255) default null, "
                 + " Married int(1) default null, "
-                + " Kids int(2) default null, "
-                + " Payment int(60) default null, "
-                + " startingContractDate date default null, "
-                + " endingContractDate date default null, "
+                + " Kids int default null, "
+                + " Payment int default null, "
+                + " startingContractDate char(255) default null, "
+                + " endingContractDate char(255) default null, "
                 + "PRIMARY KEY (IBAN))";
 
         stmt.execute(query);
@@ -109,7 +109,7 @@ public class EditTemporaryEmployee extends TemporaryEmployee {
         stmt.executeUpdate(update);
     }
 
-    public void updateTemporaryEmployeeTelephone(String iban, String telephone) throws SQLException, ClassNotFoundException {
+    public void updateTemporaryEmployeeTelephone(String iban, int telephone) throws SQLException, ClassNotFoundException {
         Connection con = DB_Connection.getConnection();
         Statement stmt = con.createStatement();
         String update = "UPDATE temporaryemployee SET Telephone='" +  telephone + "' WHERE IBAN = '" + iban + "'";

@@ -17,9 +17,9 @@ public class EditPaymentHistory extends PaymentHistory {
         Statement stmt = con.createStatement();
         String query = "CREATE TABLE paymenthistory"
                 + "( payment_id INTEGER not null AUTO_INCREMENT, "
-                + " PaymentName char(100) default null, "
-                + " PaymentDate date default null, "
-                + " Salary int(11) default null, "
+                + " PaymentName char(255) default null, "
+                + " PaymentDate char(255) default null, "
+                + " Salary int default null, "
                 + "PRIMARY KEY (payment_id))";
 
         stmt.execute(query);

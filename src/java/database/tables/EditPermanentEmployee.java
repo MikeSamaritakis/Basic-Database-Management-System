@@ -16,17 +16,17 @@ public class EditPermanentEmployee extends PermanentEmployee {
         Connection con = DB_Connection.getConnection();
         Statement stmt = con.createStatement();
         String query = "CREATE TABLE permanentemployee"
-                + "( IBAN char(12) not null, "
-                + " Fullname char(100) default null, "
-                + " Address char(100) default null, "
-                + " Telephone int(10) default null, "
-                + " BankName char(100) default null, "
-                + " Department char(100) default null, "
-                + " startingDate date default null, "
-                + " EmployeeType char(15) default null, "
+                + "( IBAN char(255) not null, "
+                + " Fullname char(255) default null, "
+                + " Address char(255) default null, "
+                + " Telephone int default null, "
+                + " BankName char(255) default null, "
+                + " Department char(255) default null, "
+                + " startingDate char(255) default null, "
+                + " EmployeeType char(255) default null, "
                 + " Married int(1) default null, "
-                + " Kids int(2) default null, "
-                + " Payment int(60) default null, "
+                + " Kids int default null, "
+                + " Payment int default null, "
                 + "PRIMARY KEY (IBAN))";
 
         stmt.execute(query);
@@ -96,70 +96,70 @@ public class EditPermanentEmployee extends PermanentEmployee {
     public void updatePermanentEmployeeFullName(String iban, String fullname) throws SQLException, ClassNotFoundException {
         Connection con = DB_Connection.getConnection();
         Statement stmt = con.createStatement();
-        String update = "UPDATE temporaryemployee SET FullName='" +  fullname + "' WHERE IBAN = '" + iban + "'";
+        String update = "UPDATE permanentemployee SET FullName='" +  fullname + "' WHERE IBAN = '" + iban + "'";
         stmt.executeUpdate(update);
     }
 
     public void updatePermanentEmployeeAddress(String iban, String address) throws SQLException, ClassNotFoundException {
         Connection con = DB_Connection.getConnection();
         Statement stmt = con.createStatement();
-        String update = "UPDATE temporaryemployee SET Address='" +  address + "' WHERE IBAN = '" + iban + "'";
+        String update = "UPDATE permanentemployee SET Address='" +  address + "' WHERE IBAN = '" + iban + "'";
         stmt.executeUpdate(update);
     }
 
-    public void updatePermanentEmployeeTelephone(String iban, String telephone) throws SQLException, ClassNotFoundException {
+    public void updatePermanentEmployeeTelephone(String iban, int telephone) throws SQLException, ClassNotFoundException {
         Connection con = DB_Connection.getConnection();
         Statement stmt = con.createStatement();
-        String update = "UPDATE temporaryemployee SET Telephone='" +  telephone + "' WHERE IBAN = '" + iban + "'";
+        String update = "UPDATE permanentemployee SET Telephone='" +  telephone + "' WHERE IBAN = '" + iban + "'";
         stmt.executeUpdate(update);
     }
 
     public void updatePermanentEmployeeBankName(String iban, String bankname) throws SQLException, ClassNotFoundException {
         Connection con = DB_Connection.getConnection();
         Statement stmt = con.createStatement();
-        String update = "UPDATE temporaryemployee SET BankName='" +  bankname + "' WHERE IBAN = '" + iban + "'";
+        String update = "UPDATE permanentemployee SET BankName='" +  bankname + "' WHERE IBAN = '" + iban + "'";
         stmt.executeUpdate(update);
     }
 
     public void updatePermanentEmployeeDepartment(String iban, String department) throws SQLException, ClassNotFoundException {
         Connection con = DB_Connection.getConnection();
         Statement stmt = con.createStatement();
-        String update = "UPDATE temporaryemployee SET Department='" +  department + "' WHERE IBAN = '" + iban + "'";
+        String update = "UPDATE permanentemployee SET Department='" +  department + "' WHERE IBAN = '" + iban + "'";
         stmt.executeUpdate(update);
     }
 
     public void updatePermanentEmployeestartingDate(String iban, String startingdate) throws SQLException, ClassNotFoundException {
         Connection con = DB_Connection.getConnection();
         Statement stmt = con.createStatement();
-        String update = "UPDATE temporaryemployee SET startingDate='" +  startingdate + "' WHERE IBAN = '" + iban + "'";
+        String update = "UPDATE permanentemployee SET startingDate='" +  startingdate + "' WHERE IBAN = '" + iban + "'";
         stmt.executeUpdate(update);
     }
 
     public void updatePermanentEmployeeEmployeeType(String iban, String employeetype) throws SQLException, ClassNotFoundException {
         Connection con = DB_Connection.getConnection();
         Statement stmt = con.createStatement();
-        String update = "UPDATE temporaryemployee SET EmployeeType='" +  employeetype + "' WHERE IBAN = '" + iban + "'";
+        String update = "UPDATE permanentemployee SET EmployeeType='" +  employeetype + "' WHERE IBAN = '" + iban + "'";
         stmt.executeUpdate(update);
     }
 
     public void updatePermanentEmployeeMarried(String iban, int married) throws SQLException, ClassNotFoundException {
         Connection con = DB_Connection.getConnection();
         Statement stmt = con.createStatement();
-        String update = "UPDATE temporaryemployee SET Married='" +  married + "' WHERE IBAN = '" + iban + "'";
+        String update = "UPDATE permanentemployee SET Married='" +  married + "' WHERE IBAN = '" + iban + "'";
         stmt.executeUpdate(update);
     }
 
     public void updatePermanentEmployeeKids(String iban, int kids) throws SQLException, ClassNotFoundException {
         Connection con = DB_Connection.getConnection();
         Statement stmt = con.createStatement();
-        String update = "UPDATE temporaryemployee SET Kids='" +  kids + "' WHERE IBAN = '" + iban + "'";
+        String update = "UPDATE permanentemployee SET Kids='" +  kids + "' WHERE IBAN = '" + iban + "'";
         stmt.executeUpdate(update);
     }
 
     public void updatePermanentEmployeePayment(String iban, int payment) throws SQLException, ClassNotFoundException {
         Connection con = DB_Connection.getConnection();
         Statement stmt = con.createStatement();
-        String update = "UPDATE temporaryemployee SET Payment='" +  payment + "' WHERE IBAN = '" + iban + "'";
+        String update = "UPDATE permanentemployee SET Payment='" +  payment + "' WHERE IBAN = '" + iban + "'";
         stmt.executeUpdate(update);
     }
 

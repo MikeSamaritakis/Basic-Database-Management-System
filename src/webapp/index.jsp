@@ -22,11 +22,11 @@
     </div>
 <br><br>
 
-    <form id="payment" style="display: none" method="get" action="/Servlets.PaymentUpdate">
+    <form id="payment" style="display: none" method="get" action="Servlets.PaymentUpdate">
         <button type="submit" name="paymentSubmit" value="Call Servlet">Submit Payments</button>
     </form>
 
-    <form id="edittinfo" style="display: none" method="get" action="/Servlets.EditForm">
+    <form id="edittinfo" style="display: none" method="get" action="Servlets.EditForm">
         <br>
         <label> IBAN</label><br>
         <input type="text" id="edittiban" name="edittiban" placeholder="Type in the IBAN"><br><br>
@@ -79,7 +79,7 @@
         <button type="submit" name="edittSubmit" value="Call Servlet">Submit</button>
     </form>
 
-    <form id="editpinfo" style="display: none" method="post" action="/Servlets.EditForm">
+    <form id="editpinfo" style="display: none" method="post" action="Servlets.EditForm">
         <br>
         <label> IBAN</label><br>
         <input type="text" id="editpiban" name="editpiban" placeholder="Type in the IBAN"><br><br>
