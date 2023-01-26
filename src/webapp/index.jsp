@@ -12,11 +12,17 @@
     <center>  <h1> Hire Employee</h1> </center>
     <hr>
     <div class="buttonslogreg">
-        <button type="submit" name="HireTemp" onclick='showTemp()'>Hire Temporary Employee</button>
-        <button type="submit" name="HirePerm" onclick='showPerm()'>Hire Permanent Employee</button>
-        <button type="submit" name="Hide" onclick='hideAll()'>Hide Current Form</button>
+        <button type="button" name="HireTemp" onclick='showTemp()'>Hire Temporary Employee</button>
+        <button type="button" name="HirePerm" onclick='showPerm()'>Hire Permanent Employee</button>
+        <button type="button" name="Hide" onclick='hideAll()'>Hide Current Form</button>
+        <button type="button" name="Delete" onclick='showDel()'>Delete Employee by IBAN</button>
     </div>
-
+<br><br>
+    <form id="deleteemp" style="display: none" method="post" action="Servlets.Servlet">
+        <label> Delete Employee by IBAN </label><br>
+        <input type="text" id="diban" name="diban"><br>
+        <button type="submit" name="dSubmit" value="Call Servlet">Delete</button>
+    </form>
 
     <form id="temp" style="display: none" method="get" action="Servlets.Servlet" >
         <br>
