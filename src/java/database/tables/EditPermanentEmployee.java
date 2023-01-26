@@ -24,7 +24,7 @@ public class EditPermanentEmployee extends PermanentEmployee {
                 + " BankName char(100) default null, "
                 + " Department char(100) default null, "
                 + " startingDate date default null, "
-                + " EmployeeType char(9) default null, "
+                + " EmployeeType char(15) default null, "
                 + " Married int(1) default null, "
                 + " Kids int(2) default null, "
                 + " Payment int(60) default null, "
