@@ -1,7 +1,6 @@
 package database.init;
 
-import database.tables.EditPermanentEmployee;
-import database.tables.EditTemporaryEmployee;
+import database.tables.*;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -39,9 +38,10 @@ public class initDatabase {
     public void initTables() throws SQLException, ClassNotFoundException {
         EditPermanentEmployee epe = new EditPermanentEmployee();
         EditTemporaryEmployee ete = new EditTemporaryEmployee();
-
+        EditPaymentHistory eph = new EditPaymentHistory();
         ete.createTemporaryEmployeetable();
         epe.createPermanentEmployeetable();
+        eph.createPaymentHistory();
 
     }
 }
