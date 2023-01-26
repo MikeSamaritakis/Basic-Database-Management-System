@@ -69,21 +69,18 @@ public class EditTemporaryEmployee extends TemporaryEmployee {
         }
     }
 
-    public void deleteTemporaryEmployee(TemporaryEmployee tempemployee) throws ClassNotFoundException{
+    public void deleteTemporaryEmployee(String ibantemp) throws ClassNotFoundException{
         try {
             Connection con = DB_Connection.getConnection();
 
             Statement stmt = con.createStatement();
 
-            String ibantemp = getIBAN();
-
             String insertQuery = "DROP FROM temporaryemployee WHERE iban=ibantemp";
             //stmt.execute(table);
             System.out.println(insertQuery);
             stmt.executeUpdate(insertQuery);
-            System.out.println("# The temporary employee was successfully deleted in the database.");
+            System.out.println("# The temporary employee was successfully deleted from the database.");
 
-            /* Get the member id from the database and set it to the member */
             stmt.close();
 
         } catch (SQLException ex) {

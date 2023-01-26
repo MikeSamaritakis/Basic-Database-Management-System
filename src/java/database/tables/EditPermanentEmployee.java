@@ -68,21 +68,18 @@ public class EditPermanentEmployee extends PermanentEmployee {
         }
     }
 
-    public void deletePermanentEmployee(PermanentEmployee permemployee) throws ClassNotFoundException{
+    public void deletePermanentEmployee(String ibanperm) throws ClassNotFoundException{
         try {
             Connection con = DB_Connection.getConnection();
 
             Statement stmt = con.createStatement();
 
-            String ibanperm = getIBAN();
-
             String insertQuery = "DROP FROM permanentemployee WHERE iban=ibanperm";
             //stmt.execute(table);
             System.out.println(insertQuery);
             stmt.executeUpdate(insertQuery);
-            System.out.println("# The permanent employee was successfully deleted in the database.");
+            System.out.println("# The permanent employee was successfully deleted from the database.");
 
-            /* Get the member id from the database and set it to the member */
             stmt.close();
 
         } catch (SQLException ex) {
