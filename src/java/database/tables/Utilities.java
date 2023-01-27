@@ -23,7 +23,7 @@ public class Utilities {
 //                kratoumeno++;
 //            }
 
-            if (Integer.parseInt(currentDate[5]) * 10 + Integer.parseInt(currentDate[6]) - Integer.parseInt(startingDate[5]) * 10 + Integer.parseInt(startingDate[6]) + kratoumeno > 0) {
+            if (Integer.parseInt(currentDate[5]) * 10 + Integer.parseInt(currentDate[6]) - Integer.parseInt(startingDate[5]) * 10 + Integer.parseInt(startingDate[6]) > 0) {
                 kratoumeno = 1;
             }
             int xroniaPouPerasan = ((Integer.parseInt(currentDate[0]) * 1000 + Integer.parseInt(currentDate[1]) * 100 + Integer.parseInt(currentDate[2]) * 10 + Integer.parseInt(currentDate[3])) - (Integer.parseInt(startingDate[0]) * 1000 + Integer.parseInt(startingDate[1]) * 100 + Integer.parseInt(startingDate[2]) * 10 + Integer.parseInt(startingDate[3])) + kratoumeno) ;
