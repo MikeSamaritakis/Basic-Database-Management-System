@@ -67,9 +67,6 @@
         <label> Amount of contract payment</label><br>
         <input type="number" id="edittpaymentamount" name="edittpaymentamount" placeholder="Type in the amount of payment"><br><br>
 
-        <%--        <label> Date of payment</label><br>--%>
-        <%--        <input type="date" id="tpaymentdate" name="tpaymentdate"><br><br>--%>
-
         <label> Start of contract</label><br>
         <input type="date" id="edittstartofcontract" name="edittstartofcontract"><br><br>
 
@@ -170,9 +167,6 @@
         <label> Amount of contract payment</label><br>
         <input type="number" id="tpaymentamount" name="tpaymentamount" placeholder="Type in the amount of payment"><br><br>
 
-<%--        <label> Date of payment</label><br>--%>
-<%--        <input type="date" id="tpaymentdate" name="tpaymentdate"><br><br>--%>
-
         <label> Start of contract</label><br>
         <input type="date" id="tstartofcontract" name="tstartofcontract"><br><br>
 
@@ -222,10 +216,6 @@
 
 <%--        <label> Amount of payment</label><br>--%>
 <%--        <input type="number" id="ppaymentamount" name="ppaymentamount" placeholder="Type in the amount of payment"><br><br>--%>
-
-<%--        <label> Date of payment</label><br>--%>
-<%--        <input type="date" id="ppayment date" name="ppaymentdate"><br><br>--%>
-
 
 
         <button type="submit" name="pSubmit" value="Call Servlet">Submit</button>

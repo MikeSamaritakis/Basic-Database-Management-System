@@ -17,6 +17,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.math.BigInteger;
+import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.*;
 import java.sql.*;
@@ -35,7 +36,6 @@ public class Servlet extends HttpServlet{
         PrintWriter writer = response.getWriter();
 
         if (request.getParameter("tstartofcontract") == null) {
-            //writer.println("mphka perm");
             EditPermanentEmployee epe = new EditPermanentEmployee();
             PermanentEmployee pe = new PermanentEmployee();
 
@@ -69,13 +69,13 @@ public class Servlet extends HttpServlet{
             int Kids = Integer.parseInt(request.getParameter("pkids"));
             pe.setKids(Kids);
 
-            int PaymentAmount = 0;
-//            if ("temployeetype" == "Managing") {
-//                PaymentAmount = Utilities.calculatePayment(true, Integer.parseInt(request.getParameter("basicPaymentManaging")), Married+Kids, StartingDate);
-//            }else{
-//                PaymentAmount = Utilities.calculatePayment(true, Integer.parseInt(request.getParameter("basicPaymentEducational")) + 300, Married+Kids, StartingDate);
-//            }
-            pe.setPayment(PaymentAmount);
+            double PaymentAmount = 0;
+            if (Objects.equals(EmployeeType, "Managing")) {
+                PaymentAmount = Utilities.calculatePayment(true, 1400/*Integer.parseInt(request.getParameter("basicPaymentManaging"))*/, Married+Kids, StartingDate);
+            }else{
+                PaymentAmount = Utilities.calculatePayment(true, 1200 + 300/*Integer.parseInt(request.getParameter("basicPaymentEducational"))*/, Married+Kids, StartingDate);
+            }
+            pe.setPayment((int)PaymentAmount);
 
 
             try {
@@ -85,7 +85,6 @@ public class Servlet extends HttpServlet{
             }
 
         }else{
-            //writer.println("mphka temp");
             EditTemporaryEmployee ete = new EditTemporaryEmployee();
             TemporaryEmployee te = new TemporaryEmployee();
 
@@ -119,13 +118,13 @@ public class Servlet extends HttpServlet{
             int Kids = Integer.parseInt(request.getParameter("tkids"));
             te.setKids(Kids);
 
-            int PaymentAmount = 0;
-//            if ("temployeetype" == "Managing") {
-//                PaymentAmount = Utilities.calculatePayment(false, Integer.parseInt(request.getParameter("basicPaymentManaging")), Married+Kids, StartingDate);
-//            }else{
-//                PaymentAmount = Utilities.calculatePayment(false, Integer.parseInt(request.getParameter("basicPaymentEducational")) + 150, Married+Kids, StartingDate);
-//            }
-            te.setPayment(PaymentAmount);
+            double PaymentAmount = 0;
+            if (Objects.equals(EmployeeType, "Managing")) {
+                PaymentAmount = Utilities.calculatePayment(false, Integer.parseInt(request.getParameter("tpaymentamount"))/*Integer.parseInt(request.getParameter("basicPaymentManaging"))*/, Married+Kids, StartingDate);
+            }else{
+                PaymentAmount = Utilities.calculatePayment(false, Integer.parseInt(request.getParameter("tpaymentamount")) + 150/*Integer.parseInt(request.getParameter("basicPaymentEducational"))*/, Married+Kids, StartingDate);
+            }
+            te.setPayment((int)PaymentAmount);
 
             String StartOfContract = request.getParameter("tstartofcontract");
             te.setstartingContractDate(StartOfContract);
