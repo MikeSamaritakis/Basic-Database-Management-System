@@ -31,10 +31,45 @@ public class PaymentUpdate extends HttpServlet{
     }
 
     /**
-     * Katavolh misthodosiwn ston pinaka
+     * Prwta enhmerwnei ton mistho kathe ypaliloi kai meta kanei katavolh misthodosiwn ston pinaka
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        /* kwdikas pou enhmerwnei tous misthous stous pinakes permanentemployee kai temporary employee"*/
+
+        EditPaymentHistory eph = new EditPaymentHistory();
+        for(GIA KATHE EMPLOYEE STON PINAKA TEMP){
+            PaymentHistory ph = new EditPaymentHistory();
+
+            ph.setPaymentDate(String.valueOf(java.time.LocalDate.now()));
+
+            ph.setPaymentName();
+
+            ph.setSalary();
+
+            try {
+                eph.addnewPaymentHistory(ph);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+        for(GIA KATHE EMPLOYEE STON PINAKA PERM){
+            PaymentHistory ph = new EditPaymentHistory();
+
+            ph.setPaymentDate(String.valueOf(java.time.LocalDate.now()));
+
+            ph.setPaymentName();
+
+            ph.setSalary();
+
+            try {
+                eph.addnewPaymentHistory(ph);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
 
     }
 
