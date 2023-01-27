@@ -63,7 +63,7 @@ public class EditPermanentEmployee extends PermanentEmployee {
             stmt.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(EditTemporaryEmployee.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(EditPermanentEmployee.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

@@ -18,6 +18,8 @@ import static database.DB_Connection.getInitialConnection;
 
 import database.tables.EditTemporaryEmployee;
 import database.tables.EditPermanentEmployee;
+import database.tables.EditFiredPermanentEmployees;
+import database.tables.EditFiredTemporaryEmployee;
 
 public class initDatabase {
 
@@ -39,9 +41,14 @@ public class initDatabase {
         EditPermanentEmployee epe = new EditPermanentEmployee();
         EditTemporaryEmployee ete = new EditTemporaryEmployee();
         EditPaymentHistory eph = new EditPaymentHistory();
+        EditFiredPermanentEmployees efpe = new EditFiredPermanentEmployees();
+        EditFiredTemporaryEmployee efte = new EditFiredTemporaryEmployee();
+        EditSalary es = new EditSalary();
         ete.createTemporaryEmployeetable();
         epe.createPermanentEmployeetable();
         eph.createPaymentHistory();
-
+        efte.createFiredTemporaryEmployeetable();
+        efpe.createFiredPermanentEmployeetable();
+        es.createSalarytable();
     }
 }
