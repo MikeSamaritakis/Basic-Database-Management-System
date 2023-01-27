@@ -19,17 +19,17 @@ public class Utilities {
             }
 
             int kratoumeno = 0;
-//            if (Integer.parseInt(currentDate[8]) * 10 + Integer.parseInt(currentDate[9]) - Integer.parseInt(startingDate[8]) * 10 + Integer.parseInt(startingDate[9]) > 0) {
-//                kratoumeno++;
-//            }
-
-            if (Integer.parseInt(currentDate[5]) * 10 + Integer.parseInt(currentDate[6]) - Integer.parseInt(startingDate[5]) * 10 + Integer.parseInt(startingDate[6]) > 0) {
+            if (Integer.parseInt(currentDate[5]) * 10 + Integer.parseInt(currentDate[6]) < Integer.parseInt(startingDate[5]) * 10 + Integer.parseInt(startingDate[6])) {
                 kratoumeno = 1;
             }
-            int xroniaPouPerasan = ((Integer.parseInt(currentDate[0]) * 1000 + Integer.parseInt(currentDate[1]) * 100 + Integer.parseInt(currentDate[2]) * 10 + Integer.parseInt(currentDate[3])) - (Integer.parseInt(startingDate[0]) * 1000 + Integer.parseInt(startingDate[1]) * 100 + Integer.parseInt(startingDate[2]) * 10 + Integer.parseInt(startingDate[3])) + kratoumeno) ;
 
+            int xroniaPouPerasan = ((Integer.parseInt(currentDate[0]) * 1000 + Integer.parseInt(currentDate[1]) * 100 + Integer.parseInt(currentDate[2]) * 10 + Integer.parseInt(currentDate[3])) - (Integer.parseInt(startingDate[0]) * 1000 + Integer.parseInt(startingDate[1]) * 100 + Integer.parseInt(startingDate[2]) * 10 + Integer.parseInt(startingDate[3])) - kratoumeno) ;
 
-            return basicPayment + xroniaPouPerasan * basicPayment * 0.15  + extraFamilyMembers * (basicPayment * 0.05);
+            if(xroniaPouPerasan>0){
+                return basicPayment + (xroniaPouPerasan-1) * basicPayment * 0.15  + extraFamilyMembers * (basicPayment * 0.05);
+            }else{
+                return basicPayment + extraFamilyMembers * (basicPayment * 0.05);
+            }
         } else {
             return basicPayment +  extraFamilyMembers * (basicPayment * 0.05);
         }
