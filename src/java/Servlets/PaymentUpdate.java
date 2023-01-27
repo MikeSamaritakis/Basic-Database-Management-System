@@ -7,7 +7,7 @@ import database.tables.Utilities;
 import mainClasses.PaymentHistory;
 import mainClasses.PermanentEmployee;
 import mainClasses.TemporaryEmployee;
-
+import database.tables.Utilities;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -17,6 +17,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.math.BigInteger;
+import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.*;
 import java.sql.*;
@@ -29,14 +30,39 @@ public class PaymentUpdate extends HttpServlet{
         super();
     }
 
+    /**
+     * Katavolh misthodosiwn ston pinaka
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//  katavolh misthodosias
+
     }
 
+    /**
+     * Update sto basic payment kai sta epidomata
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String basicEducationalString = request.getParameter("paymenteditbasicpaymenteducational");
+        if(!Objects.equals(basicEducationalString, "")){
+            Utilities.setBasicPaymentEducational(Integer.parseInt(basicEducationalString));
+        }
 
+        String basicManagingString = request.getParameter("paymenteditbasicpaymentmanaging");
+        if(!Objects.equals(basicManagingString, "")){
+            Utilities.setBasicPaymentManaging(Integer.parseInt(basicManagingString));
+        }
+
+        String benefitLibrary = request.getParameter("paymenteditlibrarybenefit");
+        if(!Objects.equals(benefitLibrary, "")){
+            Utilities.setBenefitLibrary(Integer.parseInt(benefitLibrary));
+        }
+
+
+        String benefitResearch = request.getParameter("paymenteditresearchbenefit");
+        if(!Objects.equals(benefitResearch, "")){
+            Utilities.setBenefitResearch(Integer.parseInt(benefitResearch));
+        }
     }
 
 }

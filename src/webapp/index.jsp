@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="hire temp/perm">
-    <center>  <h1> Hire Employee</h1> </center>
+    <center>  <h1> UOC Database</h1> </center>
     <hr>
     <div class="buttonslogreg">
         <button type="button" name="HireTemp" onclick='showTemp()'>Hire Temporary Employee</button>
@@ -17,13 +17,32 @@
         <button type="button" name="Delete" onclick='showDel()'>Delete Employee by IBAN</button>
         <button type="button" name="EditTInfo" onclick='showEdittemp()'>Edit Temporary Employee Info by IBAN</button>
         <button type="button" name="EditPInfo" onclick='showEditperm()'>Edit Permanent Employee Info by IBAN</button>
-        <button type="button" name="calcpayment" onclick='showpayment()'>Calculate Payment</button>
+        <button type="button" name="calcpayment" onclick='showpayment()'>Submit Payments</button>
+        <button type="button" name="changepayment" onclick='showEditPayment()'>Edit Payment</button>
         <button type="button" name="Hide" onclick='hideAll()'>Hide Current Form</button>
     </div>
 <br><br>
 
+    <form id="EditPayment" style="display: none" method="post" action="Servlets.PaymentUpdate">
+        <br>
+        <label> New basic payment for educational permanent employees</label><br>
+        <input type="number" id="paymenteditbasicpaymenteducational" name="paymenteditbasicpaymenteducational" ><br><br>
+
+        <label> New basic payment for managing permanent employees</label><br>
+        <input type="number" id="paymenteditbasicpaymentmanaging" name="paymenteditbasicpaymentmanaging" ><br><br>
+
+        <label> New library benefit</label><br>
+        <input type="number" id="paymenteditlibrarybenefit" name="paymenteditlibrarybenefit" ><br><br>
+
+        <label> New research benefit</label><br>
+        <input type="number" id="paymenteditresearchbenefit" name="paymenteditresearchbenefit"><br><br>
+
+        <button type="submit" name="EditPaymentSubmit" value="Call Servlet">Submit</button>
+
+    </form>
+
     <form id="payment" style="display: none" method="get" action="Servlets.PaymentUpdate">
-        <button type="submit" name="paymentSubmit" value="Call Servlet">Submit Payments</button>
+        <button type="submit" name="paymentSubmit" value="Call Servlet">Submit Payments for all employees</button>
     </form>
 
     <form id="edittinfo" style="display: none" method="get" action="Servlets.EditForm">

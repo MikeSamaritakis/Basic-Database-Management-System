@@ -5,6 +5,43 @@ import java.time.LocalDate;
 
 
 public class Utilities {
+    private static int basicPaymentEducational = 1200;
+    private static int basicPaymentManaging = 1400;
+    private static int benefitResearch = 300;
+    private static int benefitLibrary = 150;
+
+    public static int getBasicPaymentEducational() {
+        return basicPaymentEducational;
+    }
+
+    public static void setBasicPaymentEducational(int abasicPaymentEducational) {
+        basicPaymentEducational = abasicPaymentEducational;
+    }
+
+    public static int getBasicPaymentManaging() {
+        return basicPaymentManaging;
+    }
+
+    public static void setBasicPaymentManaging(int abasicPaymentManaging) {
+        basicPaymentManaging = abasicPaymentManaging;
+    }
+
+    public static int getBenefitLibrary() {
+        return benefitLibrary;
+    }
+
+    public static void setBenefitLibrary(int abenefitLibrary) {
+        benefitLibrary = abenefitLibrary;
+    }
+
+    public static int getBenefitResearch() {
+        return benefitResearch;
+    }
+
+    public static void setBenefitResearch(int abenefitResearch) {
+        benefitResearch = abenefitResearch;
+    }
+
     public static double calculatePayment(boolean isPermanent, int basicPayment, int extraFamilyMembers, String dateofEmployment) {
         if (isPermanent) {
             // int yearsInEmployment = Integer.parseInt(java.time.LocalDate.now().toString().replaceAll("-","")) - Integer.parseInt(startingDate.replaceAll("-",""));

@@ -4,6 +4,7 @@
         hideEdittemp();
         hideEditperm();
         hidepayment();
+        hideEditPayment()
         document.getElementById("perm").style.display = "block";
     }
 
@@ -17,6 +18,7 @@
         hideEdittemp();
         hideEditperm();
         hidepayment();
+        hideEditPayment()
         document.getElementById("temp").style.display = "block";
     }
 
@@ -26,6 +28,7 @@
         hideDel();
         hideEditperm();
         hidepayment();
+        hideEditPayment()
         document.getElementById("edittinfo").style.display = "block";
     }
 
@@ -39,6 +42,7 @@
         hideDel();
         hideEdittemp();
         hidepayment();
+        hideEditPayment()
         document.getElementById("editpinfo").style.display = "block";
     }
 
@@ -52,6 +56,7 @@
         hideDel();
         hideEdittemp();
         hideEditperm();
+        hideEditPayment()
         document.getElementById("payment").style.display = "block";
     }
 
@@ -69,11 +74,26 @@
         hideEdittemp();
         hideEditperm();
         hidepayment();
+        hideEditPayment()
         document.getElementById("deleteemp").style.display = "block";
     }
 
     function hideDel(){
         document.getElementById("deleteemp").style.display = "none";
+    }
+
+    function showEditPayment(){
+        hideDel();
+        hideTemp();
+        hidePerm();
+        hideEdittemp();
+        hideEditperm();
+        hidepayment();
+        document.getElementById(("EditPayment")).style.display = "block";
+    }
+
+    function hideEditPayment(){
+        document.getElementById(("EditPayment")).style.display = "none";
     }
 
     function hideAll(){
@@ -83,4 +103,5 @@
         hideEdittemp();
         hideEditperm();
         hidepayment();
+        hideEditPayment()
     }
