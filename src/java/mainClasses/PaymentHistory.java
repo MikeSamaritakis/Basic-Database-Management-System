@@ -3,7 +3,7 @@ package mainClasses;
 public class PaymentHistory {
     String PaymentName;
     String PaymentDate;
-    String Salary;
+    int Salary;
 
     public String getPaymentName() {
         return PaymentName;
@@ -21,11 +21,11 @@ public class PaymentHistory {
         this.PaymentDate = PaymentDate;
     }
 
-    public String getSalary() {
+    public int getSalary() {
         return Salary;
     }
 
-    public void setSalary(String Salary) {
+    public void setSalary(int Salary) {
         this.Salary = Salary;
     }
 }

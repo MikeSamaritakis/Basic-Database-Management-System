@@ -33,7 +33,7 @@ public class EditPaymentHistory extends PaymentHistory {
             Statement stmt = con.createStatement();
 
             String insertQuery = "INSERT INTO "
-                    + " permanentemployee (PaymentName,"
+                    + " paymenthistory (PaymentName,"
                     + " PaymentDate, Salary)"
                     + " VALUES ("
                     + "'" + paymenthist.getPaymentName() + "',"
