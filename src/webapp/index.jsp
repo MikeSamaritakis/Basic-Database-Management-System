@@ -74,7 +74,7 @@
 
         <label> Type of employee</label><br>
         <label> Educational Staff</label>
-        <input type="radio" id="edittemployeetypeeducation" name="edittemployeetype" value="Education"><br>
+        <input type="radio" id="edittemployeetypeeducation" name="edittemployeetype" value="Educational"><br>
         <label> Managing Staff</label>
         <input type="radio" id="edittemployeetypemanagement" name="edittemployeetype" value="Management"><br><br>
 
@@ -124,7 +124,7 @@
 
         <label> Type of employee</label><br>
         <label> Educational Staff</label>
-        <input type="radio" id="editpemployeetypeeducation" name="editpemployeetype" value="Education"><br>
+        <input type="radio" id="editpemployeetypeeducation" name="editpemployeetype" value="Educational"><br>
         <label> Managing Staff</label>
         <input type="radio" id="editpemployeetypemanagement" name="editpemployeetype" value="Management"><br><br>
 
@@ -174,7 +174,7 @@
 
         <label> Type of employee</label><br>
         <label> Educational Staff</label>
-        <input type="radio" id="temployeetypeeducation" name="temployeetype" value="Education"><br>
+        <input type="radio" id="temployeetypeeducation" name="temployeetype" value="Educational"><br>
         <label> Managing Staff</label>
         <input type="radio" id="temployeetypemanagement" name="temployeetype" value="Management"><br><br>
 
@@ -224,7 +224,7 @@
 
         <label> Type of employee</label><br>
         <label> Educational Staff</label>
-        <input type="radio" id="pemployeetypeeducation" name="pemployeetype" value="Education"><br>
+        <input type="radio" id="pemployeetypeeducation" name="pemployeetype" value="Educational"><br>
         <label> Managing Staff</label>
         <input type="radio" id="pemployeetypemanagement" name="pemployeetype" value="Management"><br><br>
 

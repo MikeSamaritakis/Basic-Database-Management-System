@@ -10,7 +10,10 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.util.Objects;
 import database.tables.EditSalary;
+import jdk.jshell.execution.Util;
+import mainClasses.PermanentEmployee;
 import mainClasses.Salary;
+import mainClasses.TemporaryEmployee;
 
 
 public class Utilities {
@@ -416,6 +419,238 @@ public class Utilities {
             }
         }
         return null;
+    }
+
+    public static String getPermanentEmployeeAddress(String iban) throws SQLException, ClassNotFoundException{
+        Connection con = DB_Connection.getConnection();
+        Statement stmt = con.createStatement();
+
+        ResultSet rs;
+        rs = stmt.executeQuery("select * from permanentemployee");
+        while (rs.next()) {
+            if(Objects.equals(rs.getString(1), iban)){
+                return rs.getString("Address");
+            }
+        }
+        return null;
+    }
+
+    public static String getTemporaryEmployeeAddress(String iban) throws SQLException, ClassNotFoundException{
+        Connection con = DB_Connection.getConnection();
+        Statement stmt = con.createStatement();
+
+        ResultSet rs;
+        rs = stmt.executeQuery("select * from temporaryemployee");
+        while (rs.next()) {
+            if(Objects.equals(rs.getString(1), iban)){
+                return rs.getString("Address");
+            }
+        }
+        return null;
+    }
+
+
+
+    public static String getPermanentEmployeeBankName(String iban) throws SQLException, ClassNotFoundException{
+        Connection con = DB_Connection.getConnection();
+        Statement stmt = con.createStatement();
+
+        ResultSet rs;
+        rs = stmt.executeQuery("select * from permanentemployee");
+        while (rs.next()) {
+            if(Objects.equals(rs.getString(1), iban)){
+                return rs.getString("BankName");
+            }
+        }
+        return null;
+    }
+
+    public static String getTemporaryEmployeeBankName(String iban) throws SQLException, ClassNotFoundException{
+        Connection con = DB_Connection.getConnection();
+        Statement stmt = con.createStatement();
+
+        ResultSet rs;
+        rs = stmt.executeQuery("select * from temporaryemployee");
+        while (rs.next()) {
+            if(Objects.equals(rs.getString(1), iban)){
+                return rs.getString("BankName");
+            }
+        }
+        return null;
+    }
+
+    public static long getPermanentEmployeeTelephone(String iban) throws SQLException, ClassNotFoundException{
+        Connection con = DB_Connection.getConnection();
+        Statement stmt = con.createStatement();
+
+        ResultSet rs;
+        rs = stmt.executeQuery("select * from permanentemployee");
+        while (rs.next()) {
+            if(Objects.equals(rs.getString(1), iban)){
+                return rs.getLong("Telephone");
+            }
+        }
+        return 0;
+    }
+
+    public static long getTemporaryEmployeeTelephone(String iban) throws SQLException, ClassNotFoundException{
+        Connection con = DB_Connection.getConnection();
+        Statement stmt = con.createStatement();
+
+        ResultSet rs;
+        rs = stmt.executeQuery("select * from temporaryemployee");
+        while (rs.next()) {
+            if(Objects.equals(rs.getString(1), iban)){
+                return rs.getLong("Telephone");
+            }
+        }
+        return 0;
+    }
+
+    public static String getPermanentEmployeeDepartment(String iban) throws SQLException, ClassNotFoundException{
+        Connection con = DB_Connection.getConnection();
+        Statement stmt = con.createStatement();
+
+        ResultSet rs;
+        rs = stmt.executeQuery("select * from permanentemployee");
+        while (rs.next()) {
+            if(Objects.equals(rs.getString(1), iban)){
+                return rs.getString("Department");
+            }
+        }
+        return null;
+    }
+
+    public static String getTemporaryEmployeeDepartment(String iban) throws SQLException, ClassNotFoundException{
+        Connection con = DB_Connection.getConnection();
+        Statement stmt = con.createStatement();
+
+        ResultSet rs;
+        rs = stmt.executeQuery("select * from temporaryemployee");
+        while (rs.next()) {
+            if(Objects.equals(rs.getString(1), iban)){
+                return rs.getString("Department");
+            }
+        }
+        return null;
+    }
+
+    public static int getPermanentEmployeeMarried(String iban) throws SQLException, ClassNotFoundException{
+        Connection con = DB_Connection.getConnection();
+        Statement stmt = con.createStatement();
+
+        ResultSet rs;
+        rs = stmt.executeQuery("select * from permanentemployee");
+        while (rs.next()) {
+            if(Objects.equals(rs.getString(1), iban)){
+                return rs.getInt("Married");
+            }
+        }
+        return 0;
+    }
+
+    public static int getTemporaryEmployeeMarried(String iban) throws SQLException, ClassNotFoundException{
+        Connection con = DB_Connection.getConnection();
+        Statement stmt = con.createStatement();
+
+        ResultSet rs;
+        rs = stmt.executeQuery("select * from temporaryemployee");
+        while (rs.next()) {
+            if(Objects.equals(rs.getString(1), iban)){
+                return rs.getInt("Married");
+            }
+        }
+        return 0;
+    }
+
+    public static int getPermanentEmployeeKids(String iban) throws SQLException, ClassNotFoundException{
+        Connection con = DB_Connection.getConnection();
+        Statement stmt = con.createStatement();
+
+        ResultSet rs;
+        rs = stmt.executeQuery("select * from permanentemployee");
+        while (rs.next()) {
+            if(Objects.equals(rs.getString(1), iban)){
+                return rs.getInt("Kids");
+            }
+        }
+        return 0;
+    }
+
+    public static int getTemporaryEmployeeKids(String iban) throws SQLException, ClassNotFoundException{
+        Connection con = DB_Connection.getConnection();
+        Statement stmt = con.createStatement();
+
+        ResultSet rs;
+        rs = stmt.executeQuery("select * from temporaryemployee");
+        while (rs.next()) {
+            if(Objects.equals(rs.getString(1), iban)){
+                return rs.getInt("Kids");
+            }
+        }
+        return 0;
+    }
+
+    public static String getTemporaryEmployeeStartingContract(String iban) throws SQLException, ClassNotFoundException{
+        Connection con = DB_Connection.getConnection();
+        Statement stmt = con.createStatement();
+
+        ResultSet rs;
+        rs = stmt.executeQuery("select * from temporaryemployee");
+        while (rs.next()) {
+            if(Objects.equals(rs.getString(1), iban)){
+                return rs.getString("startingContractDate");
+            }
+        }
+        return null;
+    }
+
+    public static String getTemporaryEmployeeEndingContract(String iban) throws SQLException, ClassNotFoundException{
+        Connection con = DB_Connection.getConnection();
+        Statement stmt = con.createStatement();
+
+        ResultSet rs;
+        rs = stmt.executeQuery("select * from temporaryemployee");
+        while (rs.next()) {
+            if(Objects.equals(rs.getString(1), iban)){
+                return rs.getString("endingContractDate");
+            }
+        }
+        return null;
+    }
+
+    public static PermanentEmployee getPermanentEmployee(String iban) throws SQLException, ClassNotFoundException{
+        PermanentEmployee pe = new PermanentEmployee();
+        pe.setIBAN(iban);
+        pe.setFullname(Utilities.getPermanentEmployeeName(iban));
+        pe.setAddress(Utilities.getPermanentEmployeeAddress(iban));
+        pe.setTelephone(Utilities.getPermanentEmployeeTelephone(iban));
+        pe.setBankName(Utilities.getPermanentEmployeeBankName(iban));
+        pe.setDepartment(Utilities.getPermanentEmployeeDepartment(iban));
+        pe.setstartingDate(Utilities.getPermanentEmployeeDateOfEmployeement(iban));
+        pe.setEmployeeType(Utilities.getPermanentEmployeeType(iban));
+        pe.setMarried(Utilities.getPermanentEmployeeMarried(iban));
+        pe.setKids(Utilities.getPermanentEmployeeKids(iban));
+        pe.setPayment(Utilities.getPermanentEmployeeSalary(iban));
+        return pe;
+    }
+
+    public static TemporaryEmployee getTemporaryEmployee(String iban) throws SQLException, ClassNotFoundException{
+        TemporaryEmployee pe = new TemporaryEmployee();
+        pe.setIBAN(iban);
+        pe.setFullname(Utilities.getTemporaryEmployeeName(iban));
+        pe.setAddress(Utilities.getTemporaryEmployeeAddress(iban));
+        pe.setTelephone(Utilities.getTemporaryEmployeeTelephone(iban));
+        pe.setBankName(Utilities.getTemporaryEmployeeBankName(iban));
+        pe.setDepartment(Utilities.getTemporaryEmployeeDepartment(iban));
+        pe.setstartingDate(Utilities.getTemporaryEmployeeDateOfEmployeement(iban));
+        pe.setEmployeeType(Utilities.getTemporaryEmployeeType(iban));
+        pe.setMarried(Utilities.getTemporaryEmployeeMarried(iban));
+        pe.setKids(Utilities.getTemporaryEmployeeKids(iban));
+        pe.setPayment(Utilities.getTemporaryEmployeeSalary(iban));
+        pe.setstartingContractDate(Utilities.getTemporaryEmployeeStartingContract(iban));
+        pe.setendingContractDate(Utilities.getTemporaryEmployeeEndingContract(iban));
+        return pe;
     }
 
 
