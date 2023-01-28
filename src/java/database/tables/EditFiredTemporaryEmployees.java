@@ -10,7 +10,7 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class EditFiredTemporaryEmployee extends FiredTempEmployee {
+public class EditFiredTemporaryEmployees extends FiredTempEmployee {
     public void createFiredTemporaryEmployeetable() throws SQLException, ClassNotFoundException {
 
         Connection con = DB_Connection.getConnection();
@@ -67,7 +67,7 @@ public class EditFiredTemporaryEmployee extends FiredTempEmployee {
             stmt.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(EditFiredTemporaryEmployee.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(EditFiredTemporaryEmployees.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

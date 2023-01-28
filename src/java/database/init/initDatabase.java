@@ -2,24 +2,14 @@ package database.init;
 
 import database.tables.*;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
-import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.logging.Level;
-import java.util.logging.*;
 import java.sql.*;
-import static database.DB_Connection.getConnection;
+
 import static database.DB_Connection.getInitialConnection;
 
 import database.tables.EditTemporaryEmployee;
 import database.tables.EditPermanentEmployee;
 import database.tables.EditFiredPermanentEmployees;
-import database.tables.EditFiredTemporaryEmployee;
+import database.tables.EditFiredTemporaryEmployees;
 
 public class initDatabase {
 
@@ -42,7 +32,7 @@ public class initDatabase {
         EditTemporaryEmployee ete = new EditTemporaryEmployee();
         EditPaymentHistory eph = new EditPaymentHistory();
         EditFiredPermanentEmployees efpe = new EditFiredPermanentEmployees();
-        EditFiredTemporaryEmployee efte = new EditFiredTemporaryEmployee();
+        EditFiredTemporaryEmployees efte = new EditFiredTemporaryEmployees();
         EditSalary es = new EditSalary();
         ete.createTemporaryEmployeetable();
         epe.createPermanentEmployeetable();
