@@ -83,6 +83,84 @@ public class Insert extends HttpServlet {
         } catch (SQLException ex) {
             Logger.getLogger(EditSalary.class.getName()).log(Level.SEVERE, null, ex);
         }
+
+
+//            -------------------------------------------------------------------------------------------------
+
+        try {
+            Connection con = null;
+            try {
+                con = DB_Connection.getConnection();
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+
+            Statement stmt = con.createStatement();
+
+            String insertQuery11 = "INSERT INTO "
+                    + " temporaryfiredemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingcontractdate, endingcontractdate)"
+                    + " VALUES ('','','','','','','','','','','','','')";
+            //stmt.execute(table);
+            System.out.println(insertQuery11);
+            stmt.executeUpdate(insertQuery11);
+            System.out.println("# The temporary fired employee was successfully added in the database.");
+            stmt.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(EditSalary.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
+
+//            -------------------------------------------------------------------------------------------------
+
+        try {
+            Connection con = null;
+            try {
+                con = DB_Connection.getConnection();
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+
+            Statement stmt = con.createStatement();
+
+            String insertQuery11 = "INSERT INTO "
+                    + " permanentfiredemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingcontractdate, endingcontractdate)"
+                    + " VALUES ('','','','','','','','','','','','','')";
+            //stmt.execute(table);
+            System.out.println(insertQuery11);
+            stmt.executeUpdate(insertQuery11);
+            System.out.println("# The temporary employee was successfully added in the database.");
+            stmt.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(EditSalary.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
+//            -------------------------------------------------------------------------------------------------
+
+        try {
+            Connection con = null;
+            try {
+                con = DB_Connection.getConnection();
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+
+            Statement stmt = con.createStatement();
+
+            String insertQuery11 = "INSERT INTO "
+                    + " paymenthistory (FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingcontractdate, endingcontractdate)"
+                    + " VALUES ('','','','','','','','','','','','','')";
+            //stmt.execute(table);
+            System.out.println(insertQuery11);
+            stmt.executeUpdate(insertQuery11);
+            System.out.println("# The temporary employee was successfully added in the database.");
+            stmt.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(EditSalary.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
     }
 
     @Override

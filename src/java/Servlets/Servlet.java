@@ -138,13 +138,27 @@ public class Servlet extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Delete employees.
+        // Delete employees and add them to the Fired employees database.
         PrintWriter writer = response.getWriter();
 
         String Iban = request.getParameter("diban");
         if (request.getParameter("tstartofcontract") == null) {
             //perm
             EditPermanentEmployee epe = new EditPermanentEmployee();
+            PermanentEmployee pe = new PermanentEmployee();
+            EditFiredPermanentEmployees efpe = new EditFiredPermanentEmployees();
+            try {
+                pe = Utilities.getPermanentEmployee(Iban);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+            try {
+                efpe.addnewFiredPermanentEmployee(pe);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
             try {
                 epe.deletePermanentEmployee(Iban);
             } catch (ClassNotFoundException e) {
@@ -155,6 +169,20 @@ public class Servlet extends HttpServlet{
             //temp
             EditTemporaryEmployee ete = new EditTemporaryEmployee();
             try {
+                TemporaryEmployee te = new TemporaryEmployee();
+                EditFiredTemporaryEmployees efte = new EditFiredTemporaryEmployees();
+                try {
+                    te = Utilities.getTemporaryEmployee(Iban);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                } catch (ClassNotFoundException e) {
+                    throw new RuntimeException(e);
+                }
+                try {
+                    efte.addnewFiredTemporaryEmployee(te);
+                } catch (ClassNotFoundException e) {
+                    throw new RuntimeException(e);
+                }
                 ete.deleteTemporaryEmployee(Iban);
             } catch (ClassNotFoundException e) {
                 throw new RuntimeException(e);
