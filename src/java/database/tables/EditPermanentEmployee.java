@@ -165,33 +165,7 @@ public class EditPermanentEmployee extends PermanentEmployee {
         stmt.executeUpdate(update);
     }
 
-    public int getPermanentEmployeeAmount() throws SQLException, ClassNotFoundException {
-        int amount = 0;
 
-        Connection con = DB_Connection.getConnection();
-        Statement stmt = con.createStatement();
-
-        ResultSet rs;
-        rs = stmt.executeQuery("select IBAN from permanentemployee");
-        while (rs.next()) {
-            amount++;
-        }
-        return amount;
-    }
-
-    public int getTemporaryEmployeeAmount() throws SQLException, ClassNotFoundException {
-        int amount = 0;
-
-        Connection con = DB_Connection.getConnection();
-        Statement stmt = con.createStatement();
-
-        ResultSet rs;
-        rs = stmt.executeQuery("select IBAN from temporaryemployee");
-        while (rs.next()) {
-            amount++;
-        }
-        return amount;
-    }
 
 
 }

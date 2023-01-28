@@ -44,9 +44,7 @@ public class EditForm extends HttpServlet {
         if (Name != null) {
             try {
                 ete.updateTemporaryEmployeeFullName(iban, Name);
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            } catch (ClassNotFoundException e) {
+            } catch (SQLException | ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
         }
