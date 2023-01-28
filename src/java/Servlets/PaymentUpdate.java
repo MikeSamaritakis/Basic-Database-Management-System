@@ -40,6 +40,10 @@ public class PaymentUpdate extends HttpServlet{
                 if(iban != null) {
                     System.out.println(iban);
                     if (Utilities.getPermanentEmployeeType(iban).equals("Educational")) {
+                        System.out.println(Utilities.getBasicPaymentEducational());
+                        System.out.println(Utilities.getBenefitResearch());
+                        System.out.println( Utilities.getPermanentEmployeeExtraFamilyMembers(iban));
+                        System.out.println(Utilities.calculatePayment(true, Utilities.getBasicPaymentEducational(), Utilities.getBenefitResearch(), Utilities.getPermanentEmployeeExtraFamilyMembers(iban), Utilities.getPermanentEmployeeDateOfEmployeement(iban)));
                         epe.updatePermanentEmployeePayment(iban, (int) Utilities.calculatePayment(true, Utilities.getBasicPaymentEducational(), Utilities.getBenefitResearch(), Utilities.getPermanentEmployeeExtraFamilyMembers(iban), Utilities.getPermanentEmployeeDateOfEmployeement(iban)));
                     } else {
                         epe.updatePermanentEmployeePayment(iban, (int) Utilities.calculatePayment(true, Utilities.getBasicPaymentManaging(), 0, Utilities.getPermanentEmployeeExtraFamilyMembers(iban), Utilities.getPermanentEmployeeDateOfEmployeement(iban)));

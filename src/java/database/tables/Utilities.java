@@ -139,7 +139,6 @@ public class Utilities {
     }
 
     public static double calculatePayment(boolean isPermanent, int basicPayment, int benefit, int extraFamilyMembers, String dateofEmployment) {
-        basicPayment += benefit;
         if (isPermanent) {
             String[] currentDate = new String[10];
             for(int i=0; i<=9; i++){
@@ -159,12 +158,12 @@ public class Utilities {
             int xroniaPouPerasan = ((Integer.parseInt(currentDate[0]) * 1000 + Integer.parseInt(currentDate[1]) * 100 + Integer.parseInt(currentDate[2]) * 10 + Integer.parseInt(currentDate[3])) - (Integer.parseInt(startingDate[0]) * 1000 + Integer.parseInt(startingDate[1]) * 100 + Integer.parseInt(startingDate[2]) * 10 + Integer.parseInt(startingDate[3])) - kratoumeno) ;
 
             if(xroniaPouPerasan>0){
-                return basicPayment + (xroniaPouPerasan-1) * basicPayment * 0.15  + extraFamilyMembers * (basicPayment * 0.05);
+                return basicPayment + benefit + (xroniaPouPerasan-1) * basicPayment * 0.15  + extraFamilyMembers * (basicPayment * 0.05);
             }else{
-                return basicPayment + extraFamilyMembers * (basicPayment * 0.05);
+                return basicPayment + benefit + extraFamilyMembers * (basicPayment * 0.05);
             }
         } else {
-            return basicPayment +  extraFamilyMembers * (basicPayment * 0.05);
+            return basicPayment + benefit + extraFamilyMembers * (basicPayment * 0.05);
         }
     }
 
