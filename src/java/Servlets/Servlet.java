@@ -68,9 +68,9 @@ public class Servlet extends HttpServlet{
 
             double PaymentAmount = 0;
             if (Objects.equals(EmployeeType, "Managing")) {
-                PaymentAmount = Utilities.calculatePayment(true, 1400/*Integer.parseInt(request.getParameter("basicPaymentManaging"))*/, Married+Kids, StartingDate);
+                PaymentAmount = Utilities.calculatePayment(true, Utilities.getBasicPaymentManaging(), 0, Married+Kids, StartingDate);
             }else{
-                PaymentAmount = Utilities.calculatePayment(true, 1200 + 300/*Integer.parseInt(request.getParameter("basicPaymentEducational"))*/, Married+Kids, StartingDate);
+                PaymentAmount = Utilities.calculatePayment(true, Utilities.getBasicPaymentEducational(), Utilities.getBenefitResearch(), Married+Kids, StartingDate);
             }
             pe.setPayment((int)PaymentAmount);
 
@@ -117,9 +117,9 @@ public class Servlet extends HttpServlet{
 
             double PaymentAmount = 0;
             if (Objects.equals(EmployeeType, "Managing")) {
-                PaymentAmount = Utilities.calculatePayment(false, Integer.parseInt(request.getParameter("tpaymentamount"))/*Integer.parseInt(request.getParameter("basicPaymentManaging"))*/, Married+Kids, StartingDate);
+                PaymentAmount = Utilities.calculatePayment(false, Integer.parseInt(request.getParameter("tpaymentamount")), 0, Married+Kids, StartingDate);
             }else{
-                PaymentAmount = Utilities.calculatePayment(false, Integer.parseInt(request.getParameter("tpaymentamount")) + 150/*Integer.parseInt(request.getParameter("basicPaymentEducational"))*/, Married+Kids, StartingDate);
+                PaymentAmount = Utilities.calculatePayment(false, Integer.parseInt(request.getParameter("tpaymentamount")), Utilities.getBenefitLibrary(), Married+Kids, StartingDate);
             }
             te.setPayment((int)PaymentAmount);
 
