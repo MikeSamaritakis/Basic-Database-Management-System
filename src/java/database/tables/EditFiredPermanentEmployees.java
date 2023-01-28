@@ -34,7 +34,7 @@ public class EditFiredPermanentEmployees extends FiredPermEmployee {
         stmt.close();
     }
 
-    public void addnewPermanentEmployee(FiredPermEmployee permemployee) throws ClassNotFoundException{
+    public static void addnewFiredPermanentEmployee(PermanentEmployee permemployee) throws ClassNotFoundException{
         try {
             Connection con = DB_Connection.getConnection();
 

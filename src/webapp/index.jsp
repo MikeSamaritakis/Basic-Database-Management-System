@@ -12,6 +12,10 @@
     <center>  <h1> UOC Database</h1> </center>
     <hr>
     <div class="buttonslogreg">
+        <form method="get" action="Insert">
+        <button type="submit" name="FillDB"  value="Call Servlet" onclick="reloadpage()">Fill Database</button>
+        </form>
+
         <button type="button" name="HireTemp" onclick='showTemp()'>Hire Temporary Employee</button>
         <button type="button" name="HirePerm" onclick='showPerm()'>Hire Permanent Employee</button>
         <button type="button" name="Delete" onclick='showDel()'>Delete Employee by IBAN</button>

@@ -35,7 +35,7 @@ public class EditFiredTemporaryEmployee extends FiredTempEmployee {
         stmt.close();
     }
 
-    public void addnewFiredTemporaryEmployee(FiredTempEmployee tempemployee) throws ClassNotFoundException{
+    public void addnewFiredTemporaryEmployee(TemporaryEmployee tempemployee) throws ClassNotFoundException{
         try {
             Connection con = DB_Connection.getConnection();
 
@@ -56,8 +56,8 @@ public class EditFiredTemporaryEmployee extends FiredTempEmployee {
                     + "'" + tempemployee.getMarried() + "',"
                     + "'" + tempemployee.getKids() + "',"
                     + "'" + tempemployee.getPayment() + "',"
-                    + "'" + tempemployee.getstartingContractDatefired() + "',"
-                    + "'" + tempemployee.getendingContractDatefired() + "'"
+                    + "'" + tempemployee.getstartingContractDate() + "',"
+                    + "'" + tempemployee.getendingContractDate() + "'"
                     + ")";
             //stmt.execute(table);
             System.out.println(insertQuery);

@@ -8,6 +8,10 @@
         document.getElementById("perm").style.display = "block";
     }
 
+    function reloadpage(){
+        location.reload();
+    }
+
     function hidePerm(){
         document.getElementById("perm").style.display = "none";
     }

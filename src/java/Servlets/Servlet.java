@@ -1,9 +1,6 @@
 package Servlets;
 
-import database.tables.EditPermanentEmployee;
-import database.tables.EditTemporaryEmployee;
-import database.tables.EditPaymentHistory;
-import database.tables.Utilities;
+import database.tables.*;
 import mainClasses.PaymentHistory;
 import mainClasses.PermanentEmployee;
 import mainClasses.TemporaryEmployee;
