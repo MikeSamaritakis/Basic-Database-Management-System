@@ -12,7 +12,7 @@
     <center>  <h1> UOC Database</h1> </center>
     <hr>
     <div class="buttonslogreg">
-        <form method="get" action="Insert">
+        <form method="get" action="Servlets.Insert">
         <button type="submit" name="FillDB"  value="Call Servlet" onclick="reloadpage()">Fill Database</button>
         </form>
 
