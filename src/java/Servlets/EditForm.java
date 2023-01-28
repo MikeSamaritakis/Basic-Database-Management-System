@@ -17,6 +17,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.math.BigInteger;
+import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.*;
 import java.sql.*;
@@ -41,7 +42,7 @@ public class EditForm extends HttpServlet {
         String iban = request.getParameter("edittiban");
 
         String Name = request.getParameter("edittname");
-        if (Name != null) {
+        if (!Objects.equals(Name, "")) {
             try {
                 ete.updateTemporaryEmployeeFullName(iban, Name);
             } catch (SQLException | ClassNotFoundException e) {
@@ -50,128 +51,106 @@ public class EditForm extends HttpServlet {
         }
 
         String Address = request.getParameter("edittaddress");
-        if (Address != null) {
+        if (!Objects.equals(Address, "")) {
             try {
                 ete.updateTemporaryEmployeeAddress(iban, Address);
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            } catch (ClassNotFoundException e) {
+            } catch (SQLException | ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
         }
 
-//        String PhoneNumber = request.getParameter("edittphonenumber");
-//        if (PhoneNumber != null) {
-//            try {
-//                ete.updateTemporaryEmployeeTelephone(iban, PhoneNumber);
-//            } catch (SQLException e) {
-//                throw new RuntimeException(e);
-//            } catch (ClassNotFoundException e) {
-//                throw new RuntimeException(e);
-//            }
-//        }
+        String PhoneNumber = request.getParameter("edittphonenumber");
+        if (!Objects.equals(PhoneNumber, "")) {
+            try {
+                ete.updateTemporaryEmployeeTelephone(iban, Integer.parseInt(PhoneNumber));
+            } catch (SQLException | ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        }
 
         String BankName = request.getParameter("edittbankname");
-        if (BankName != null) {
+        if (!Objects.equals(BankName, "")) {
             try {
                 ete.updateTemporaryEmployeeBankName(iban, BankName);
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            } catch (ClassNotFoundException e) {
+            } catch (SQLException | ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
         }
 
         String Department = request.getParameter("edittdepartment");
-        if (Department != null) {
+        if (!Objects.equals(Department, "")) {
             try {
                 ete.updateTemporaryEmployeeDepartment(iban, Department);
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            } catch (ClassNotFoundException e) {
+            } catch (SQLException | ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
         }
 
         String StartingDate = request.getParameter("edittstartingdate");
-        if (StartingDate != null) {
+        if (!Objects.equals(StartingDate, "")) {
             try {
                 ete.updateTemporaryEmployeestartingDate(iban ,StartingDate);
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            } catch (ClassNotFoundException e) {
+            } catch (SQLException | ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
         }
 
         String EmployeeType = request.getParameter("edittemployeetype");
-        if (EmployeeType != null) {
+        if (!Objects.equals(EmployeeType, null)) {
             try {
                 ete.updateTemporaryEmployeeEmployeeType(iban, EmployeeType);
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            } catch (ClassNotFoundException e) {
+            } catch (SQLException | ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
         }
 
-//        String Marriedstring = request.getParameter("edittmarried");
-//        if (Marriedstring != null) {
-//            int Married = Integer.parseInt(Marriedstring);
-//            try {
-//                ete.updateTemporaryEmployeeMarried(iban, Married);
-//            } catch (SQLException e) {
-//                throw new RuntimeException(e);
-//            } catch (ClassNotFoundException e) {
-//                throw new RuntimeException(e);
-//            }
-//        }
+        String Marriedstring = request.getParameter("edittmarried");
+        if (!Objects.equals(Marriedstring, null)) {
+            int Married = Integer.parseInt(Marriedstring);
+            try {
+                ete.updateTemporaryEmployeeMarried(iban, Married);
+            } catch (SQLException | ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        }
 
-//        String PaymentAmountstring = request.getParameter("edittpaymentamount");
-//        if (PaymentAmountstring != null) {
-//            int PaymentAmount = Integer.parseInt(PaymentAmountstring);
-//            try {
-//                ete.updateTemporaryEmployeePayment(iban, PaymentAmount);
-//            } catch (SQLException e) {
-//                throw new RuntimeException(e);
-//            } catch (ClassNotFoundException e) {
-//                throw new RuntimeException(e);
-//            }
-//        }
+        String PaymentAmountstring = request.getParameter("edittpaymentamount");
+        if (PaymentAmountstring != "") {
+            int PaymentAmount = Integer.parseInt(PaymentAmountstring);
+            try {
+                ete.updateTemporaryEmployeePayment(iban, PaymentAmount);
+            } catch (SQLException | ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        }
 
         String StartOfContract = request.getParameter("edittstartofcontract");
-        if (StartOfContract != null) {
+        if (!Objects.equals(StartOfContract, "")) {
             try {
                 ete.updateTemporaryEmployeestartingContractDate(iban, StartOfContract);
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            } catch (ClassNotFoundException e) {
+            } catch (SQLException | ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
         }
 
         String EndOfContract = request.getParameter("edittendofcontract");
-        if (EndOfContract != null) {
+        if (!Objects.equals(EndOfContract, "")) {
             try {
                 ete.updateTemporaryEmployeeendingContractDate(iban, EndOfContract);
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            } catch (ClassNotFoundException e) {
+            } catch (SQLException | ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
         }
 
-//        String Kidsstring = request.getParameter("edittkids");
-//        if (Kidsstring != null) {
-//            int Kids = Integer.parseInt(Kidsstring);
-//            try {
-//                ete.updateTemporaryEmployeeKids(iban, Kids);
-//            } catch (SQLException e) {
-//                throw new RuntimeException(e);
-//            } catch (ClassNotFoundException e) {
-//                throw new RuntimeException(e);
-//            }
-//        }
+        String Kidsstring = request.getParameter("edittkids");
+        if (!Objects.equals(Kidsstring, "")) {
+            int Kids = Integer.parseInt(Kidsstring);
+            try {
+                ete.updateTemporaryEmployeeKids(iban, Kids);
+            } catch (SQLException | ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 
     @Override
@@ -183,119 +162,100 @@ public class EditForm extends HttpServlet {
         String iban = request.getParameter("editpiban");
 
         String Name = request.getParameter("editpname");
-        if (Name != "") {
+        if (!Objects.equals(Name, "")) {
             try {
                 epe.updatePermanentEmployeeFullName(iban, Name);
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            } catch (ClassNotFoundException e) {
+            } catch (SQLException | ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
         }
 
         String Address = request.getParameter("editpaddress");
-        if (Address != "") {
+        if (!Objects.equals(Address, "")) {
             try {
                 epe.updatePermanentEmployeeAddress(iban, Address);
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            } catch (ClassNotFoundException e) {
+            } catch (SQLException | ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
         }
 
-//        String PhoneNumberstring = request.getParameter("editpphonenumber");
-//        if (PhoneNumberstring != "") {
-//            int PhoneNumber = Integer.parseInt(PhoneNumberstring);
-//            try {
-//                epe.updatePermanentEmployeeTelephone(iban, PhoneNumber);
-//            } catch (SQLException e) {
-//                throw new RuntimeException(e);
-//            } catch (ClassNotFoundException e) {
-//                throw new RuntimeException(e);
-//            }
-//
-//        }
+        String PhoneNumberstring = request.getParameter("editpphonenumber");
+        if (!Objects.equals(PhoneNumberstring, "")) {
+            int PhoneNumber = Integer.parseInt(PhoneNumberstring);
+            try {
+                epe.updatePermanentEmployeeTelephone(iban, PhoneNumber);
+            } catch (SQLException | ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+
+        }
 
         String BankName = request.getParameter("editpbankname");
-        if (BankName != "") {
+        if (!Objects.equals(BankName, "")) {
             try {
                 epe.updatePermanentEmployeeBankName(iban, BankName);
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            } catch (ClassNotFoundException e) {
+            } catch (SQLException | ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
         }
 
         String Department = request.getParameter("editpdepartment");
-        if (Department != "") {
+        if (!Objects.equals(Department, "")) {
             try {
                 epe.updatePermanentEmployeeDepartment(iban, Department);
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            } catch (ClassNotFoundException e) {
+            } catch (SQLException | ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
         }
 
         String StartingDate = request.getParameter("editpstartingdate");
-        if (StartingDate != "") {
+        if (!Objects.equals(StartingDate, "")) {
             try {
                 epe.updatePermanentEmployeestartingDate(iban, StartingDate);
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            } catch (ClassNotFoundException e) {
+            } catch (SQLException | ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
         }
 
         String EmployeeType = request.getParameter("editpemployeetype");
-        if (EmployeeType != "") {
+        if (!Objects.equals(EmployeeType, null)) {
             try {
                 epe.updatePermanentEmployeeEmployeeType(iban, EmployeeType);
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            } catch (ClassNotFoundException e) {
+            } catch (SQLException | ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
         }
 
-//        String Marriedstring = request.getParameter("editpmarried");
-//        if (Marriedstring != "") {
-//            int Married = Integer.parseInt(Marriedstring);
-//            try {
-//                epe.updatePermanentEmployeeMarried(iban, Married);
-//            } catch (SQLException e) {
-//                throw new RuntimeException(e);
-//            } catch (ClassNotFoundException e) {
-//                throw new RuntimeException(e);
-//            }
-//        }
+        String Marriedstring = request.getParameter("editpmarried");
+        if (!Objects.equals(Marriedstring, null)) {
+            int Married = Integer.parseInt(Marriedstring);
+            try {
+                epe.updatePermanentEmployeeMarried(iban, Married);
+            } catch (SQLException | ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        }
 
-//        String PaymentAmountstring = request.getParameter("editppaymentamount");
-//        if (PaymentAmountstring != "") {
-//            int PaymentAmount = Integer.parseInt(PaymentAmountstring);
-//            try {
-//                epe.updatePermanentEmployeePayment(iban, PaymentAmount);
-//            } catch (SQLException e) {
-//                throw new RuntimeException(e);
-//            } catch (ClassNotFoundException e) {
-//                throw new RuntimeException(e);
-//            }
-//        }
+        String PaymentAmountstring = request.getParameter("editppaymentamount");
+        if (!Objects.equals(PaymentAmountstring, "")) {
+            int PaymentAmount = Integer.parseInt(PaymentAmountstring);
+            try {
+                epe.updatePermanentEmployeePayment(iban, PaymentAmount);
+            } catch (SQLException | ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        }
 
-//        String Kidsstring = request.getParameter("ediptkids");
-//        if (Kidsstring != "") {
-//            int Kids = Integer.parseInt(Kidsstring);
-//            try {
-//                epe.updatePermanentEmployeeKids(iban, Kids);
-//            } catch (SQLException e) {
-//                throw new RuntimeException(e);
-//            } catch (ClassNotFoundException e) {
-//                throw new RuntimeException(e);
-//            }
-//        }
+        String Kidsstring = request.getParameter("editpkids");
+        if (!Objects.equals(Kidsstring, "")) {
+            int Kids = Integer.parseInt(Kidsstring);
+            try {
+                epe.updatePermanentEmployeeKids(iban, Kids);
+            } catch (SQLException | ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
     }
 
 }
