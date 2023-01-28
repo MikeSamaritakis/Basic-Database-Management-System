@@ -172,7 +172,6 @@ public class EditForm extends HttpServlet {
 //                throw new RuntimeException(e);
 //            }
 //        }
-
     }
 
     @Override
@@ -297,7 +296,6 @@ public class EditForm extends HttpServlet {
 //                throw new RuntimeException(e);
 //            }
 //        }
-        response.sendRedirect("http://localhost:8080/HY360_Project_war_exploded/");
     }
 
 }

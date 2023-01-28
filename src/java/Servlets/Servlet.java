@@ -23,9 +23,9 @@ import java.sql.*;
 public class Servlet extends HttpServlet{
     private static final long serialVersionUID = 1L; //https://www.codejava.net/coding/java-servlet-and-jsp-hello-world-tutorial-with-eclipse-maven-and-apache-tomcat
 
-    public Servlet(){
-        super();
-    }
+//    public Servlet(){
+//        super();
+//    }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -188,7 +188,7 @@ public class Servlet extends HttpServlet{
                 throw new RuntimeException(e);
             }
         }
-
+        response.sendRedirect("http://localhost:8080/HY360_Project_war_exploded/");
     }
 
 }
