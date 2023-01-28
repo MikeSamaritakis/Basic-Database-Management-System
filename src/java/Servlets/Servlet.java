@@ -53,6 +53,7 @@ public class Servlet extends HttpServlet{
             pe.setDepartment(Department);
 
             String StartingDate = request.getParameter("pstartingdate");
+            StartingDate = StartingDate.substring(0,8) + '0' + '1';
             pe.setstartingDate(StartingDate);
 
             String EmployeeType = request.getParameter("pemployeetype");
@@ -102,6 +103,7 @@ public class Servlet extends HttpServlet{
             te.setDepartment(Department);
 
             String StartingDate = request.getParameter("tstartingdate");
+            StartingDate = StartingDate.substring(0,8) + '0' + '1';
             te.setstartingDate(StartingDate);
 
             String EmployeeType = request.getParameter("temployeetype");
@@ -122,6 +124,7 @@ public class Servlet extends HttpServlet{
             te.setPayment((int)PaymentAmount);
 
             String StartOfContract = request.getParameter("tstartofcontract");
+            StartOfContract = StartOfContract.substring(0,8) + '0' + '1';
             te.setstartingContractDate(StartOfContract);
 
             String EndOfContract = request.getParameter("tendofcontract");
