@@ -30,8 +30,6 @@ public class Servlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Insert employees into the database.
-        PrintWriter writer = response.getWriter();
-
         if (request.getParameter("tstartofcontract") == null) {
             EditPermanentEmployee epe = new EditPermanentEmployee();
             PermanentEmployee pe = new PermanentEmployee();
@@ -67,7 +65,7 @@ public class Servlet extends HttpServlet{
             pe.setKids(Kids);
 
             double PaymentAmount = 0;
-            if (Objects.equals(EmployeeType, "Managing")) {
+            if (Objects.equals(EmployeeType, "Management")) {
                 PaymentAmount = Utilities.calculatePayment(true, Utilities.getBasicPaymentManaging(), 0, Married+Kids, StartingDate);
             }else{
                 PaymentAmount = Utilities.calculatePayment(true, Utilities.getBasicPaymentEducational(), Utilities.getBenefitResearch(), Married+Kids, StartingDate);
@@ -116,7 +114,7 @@ public class Servlet extends HttpServlet{
             te.setKids(Kids);
 
             double PaymentAmount = 0;
-            if (Objects.equals(EmployeeType, "Managing")) {
+            if (EmployeeType.equals("Management")) {
                 PaymentAmount = Utilities.calculatePayment(false, Integer.parseInt(request.getParameter("tpaymentamount")), 0, Married+Kids, StartingDate);
             }else{
                 PaymentAmount = Utilities.calculatePayment(false, Integer.parseInt(request.getParameter("tpaymentamount")), Utilities.getBenefitLibrary(), Married+Kids, StartingDate);

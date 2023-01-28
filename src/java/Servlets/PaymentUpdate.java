@@ -1,9 +1,6 @@
 package Servlets;
 
-import database.tables.EditPermanentEmployee;
-import database.tables.EditTemporaryEmployee;
-import database.tables.EditPaymentHistory;
-import database.tables.Utilities;
+import database.tables.*;
 import mainClasses.PaymentHistory;
 import mainClasses.PermanentEmployee;
 import mainClasses.TemporaryEmployee;
@@ -22,6 +19,7 @@ import java.util.logging.Level;
 import java.util.logging.*;
 import java.sql.*;
 
+
 @WebServlet(name = "Servlets.PaymentUpdate", value = "/Servlets.PaymentUpdate")
 public class PaymentUpdate extends HttpServlet{
     private static final long serialVersionUID = 1L; //https://www.codejava.net/coding/java-servlet-and-jsp-hello-world-tutorial-with-eclipse-maven-and-apache-tomcat
@@ -35,11 +33,55 @@ public class PaymentUpdate extends HttpServlet{
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        /* kwdikas pou enhmerwnei tous misthous stous pinakes permanentemployee kai temporary employee"*/
         /* Update all salaries in permanent employee table*/
-        
+        EditPermanentEmployee epe = new EditPermanentEmployee();
+        try {
+            for (String iban : Utilities.getAllPermanentEmployeeIbans()) {
+                if(iban != null) {
+                    System.out.println(iban);
+                    if (Utilities.getPermanentEmployeeType(iban).equals("Educational")) {
+                        epe.updatePermanentEmployeePayment(iban, (int) Utilities.calculatePayment(true, Utilities.getBasicPaymentEducational(), Utilities.getBenefitResearch(), Utilities.getPermanentEmployeeExtraFamilyMembers(iban), Utilities.getPermanentEmployeeDateOfEmployeement(iban)));
+                    } else {
+                        epe.updatePermanentEmployeePayment(iban, (int) Utilities.calculatePayment(true, Utilities.getBasicPaymentManaging(), 0, Utilities.getPermanentEmployeeExtraFamilyMembers(iban), Utilities.getPermanentEmployeeDateOfEmployeement(iban)));
+                    }
+                }
+            }
+        }catch(Exception e){
+            System.out.println(e);
+        }
 
-//        EditPaymentHistory eph = new EditPaymentHistory();
+        /*Update all salaries in temporary employee table*/
+        EditTemporaryEmployee ete = new EditTemporaryEmployee();
+        try{
+            for (String iban : Utilities.getAllTemporaryEmployeeIbans()) {
+                if(iban != null) {
+                    int contract = Utilities.getTemporaryEmployeeOnlyContractPayment(iban);
+                    if (Utilities.getTemporaryEmployeeType(iban).equals("Educational")) {
+                        ete.updateTemporaryEmployeePayment(iban, (int) Utilities.calculatePayment(false, contract, Utilities.getBenefitLibrary(), Utilities.getPermanentEmployeeExtraFamilyMembers(iban), Utilities.getPermanentEmployeeDateOfEmployeement(iban)));
+                    } else {
+                        ete.updateTemporaryEmployeePayment(iban, (int) Utilities.calculatePayment(false, contract, 0, Utilities.getPermanentEmployeeExtraFamilyMembers(iban), Utilities.getPermanentEmployeeDateOfEmployeement(iban)));
+                    }
+                }
+            }
+        }catch(Exception e){
+            System.out.println(e);
+        }
+
+
+        //Katavolh misthodosiwn twn permanent ston pinaka PaymentHistory
+
+        EditPaymentHistory eph = new EditPaymentHistory();
+
+        try {
+            for (String iban : Utilities.getAllPermanentEmployeeIbans()) {
+                if(iban != null) {
+                    eph.
+                }
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
 //        for(GIA KATHE EMPLOYEE STON PINAKA TEMP){
 //            PaymentHistory ph = new EditPaymentHistory();
 //
@@ -55,7 +97,7 @@ public class PaymentUpdate extends HttpServlet{
 //                throw new RuntimeException(e);
 //            }
 //        }
-//
+
 //        for(GIA KATHE EMPLOYEE STON PINAKA PERM){
 //            PaymentHistory ph = new EditPaymentHistory();
 //
@@ -71,7 +113,7 @@ public class PaymentUpdate extends HttpServlet{
 //                throw new RuntimeException(e);
 //            }
 //        }
-
+//
 
     }
 
