@@ -361,4 +361,62 @@ public class Utilities {
             System.out.println(e);
         }
     }
+
+    public static int getPermanentEmployeeSalary(String iban) throws SQLException, ClassNotFoundException{
+        Connection con = DB_Connection.getConnection();
+        Statement stmt = con.createStatement();
+
+        ResultSet rs;
+        rs = stmt.executeQuery("select * from permanentemployee");
+        while (rs.next()) {
+            if(Objects.equals(rs.getString(1), iban)){
+                return rs.getInt("Payment");
+            }
+        }
+        return 0;
+    }
+
+    public static int getTemporaryEmployeeSalary(String iban) throws SQLException, ClassNotFoundException{
+        Connection con = DB_Connection.getConnection();
+        Statement stmt = con.createStatement();
+
+        ResultSet rs;
+        rs = stmt.executeQuery("select * from temporaryemployee");
+        while (rs.next()) {
+            if(Objects.equals(rs.getString(1), iban)){
+                return rs.getInt("Payment");
+            }
+        }
+        return 0;
+    }
+
+    public static String getPermanentEmployeeName(String iban) throws SQLException, ClassNotFoundException{
+        Connection con = DB_Connection.getConnection();
+        Statement stmt = con.createStatement();
+
+        ResultSet rs;
+        rs = stmt.executeQuery("select * from permanentemployee");
+        while (rs.next()) {
+            if(Objects.equals(rs.getString(1), iban)){
+                return rs.getString("FullName");
+            }
+        }
+        return null;
+    }
+
+    public static String getTemporaryEmployeeName(String iban) throws SQLException, ClassNotFoundException{
+        Connection con = DB_Connection.getConnection();
+        Statement stmt = con.createStatement();
+
+        ResultSet rs;
+        rs = stmt.executeQuery("select * from temporaryemployee");
+        while (rs.next()) {
+            if(Objects.equals(rs.getString(1), iban)){
+                return rs.getString("FullName");
+            }
+        }
+        return null;
+    }
+
+
 }

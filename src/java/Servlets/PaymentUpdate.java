@@ -68,53 +68,40 @@ public class PaymentUpdate extends HttpServlet{
         }
 
 
-        //Katavolh misthodosiwn twn permanent ston pinaka PaymentHistory
+
 
         EditPaymentHistory eph = new EditPaymentHistory();
 
+        //Katavolh misthodosiwn twn permanent ston pinaka PaymentHistory
         try {
             for (String iban : Utilities.getAllPermanentEmployeeIbans()) {
                 if(iban != null) {
-                    eph.
+                    PaymentHistory ph = new PaymentHistory();
+                    ph.setSalary(Utilities.getPermanentEmployeeSalary(iban));
+                    ph.setPaymentName(Utilities.getPermanentEmployeeName(iban));
+                    ph.setPaymentDate((java.time.LocalDate.now().toString()));
+                    eph.addnewPaymentHistory(ph);
                 }
             }
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
 
-//        for(GIA KATHE EMPLOYEE STON PINAKA TEMP){
-//            PaymentHistory ph = new EditPaymentHistory();
-//
-//            ph.setPaymentDate(String.valueOf(java.time.LocalDate.now()));
-//
-//            ph.setPaymentName();
-//
-//            ph.setSalary();
-//
-//            try {
-//                eph.addnewPaymentHistory(ph);
-//            } catch (ClassNotFoundException e) {
-//                throw new RuntimeException(e);
-//            }
-//        }
 
-//        for(GIA KATHE EMPLOYEE STON PINAKA PERM){
-//            PaymentHistory ph = new EditPaymentHistory();
-//
-//            ph.setPaymentDate(String.valueOf(java.time.LocalDate.now()));
-//
-//            ph.setPaymentName();
-//
-//            ph.setSalary();
-//
-//            try {
-//                eph.addnewPaymentHistory(ph);
-//            } catch (ClassNotFoundException e) {
-//                throw new RuntimeException(e);
-//            }
-//        }
-//
-
+        //Katavolh misthodosiwn twn temporary ston pinaka PaymentHistory
+        try {
+            for (String iban : Utilities.getAllTemporaryEmployeeIbans()) {
+                if(iban != null) {
+                    PaymentHistory ph = new PaymentHistory();
+                    ph.setSalary(Utilities.getTemporaryEmployeeSalary(iban));
+                    ph.setPaymentName(Utilities.getTemporaryEmployeeName(iban));
+                    ph.setPaymentDate((java.time.LocalDate.now().toString()));
+                    eph.addnewPaymentHistory(ph);
+                }
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     /**
