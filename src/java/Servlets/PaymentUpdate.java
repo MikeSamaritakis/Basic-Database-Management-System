@@ -63,7 +63,8 @@ public class PaymentUpdate extends HttpServlet{
                     if (Utilities.getTemporaryEmployeeType(iban).equals("Educational")) {
                         ete.updateTemporaryEmployeePayment(iban, (int) Utilities.calculatePayment(false, contract, Utilities.getBenefitLibrary(), Utilities.getPermanentEmployeeExtraFamilyMembers(iban), Utilities.getPermanentEmployeeDateOfEmployeement(iban)));
                     } else {
-                        ete.updateTemporaryEmployeePayment(iban, (int) Utilities.calculatePayment(false, contract, 0, Utilities.getPermanentEmployeeExtraFamilyMembers(iban), Utilities.getPermanentEmployeeDateOfEmployeement(iban)));
+                        //nothing needs to change
+                        //ete.updateTemporaryEmployeePayment(iban, (int) Utilities.calculatePayment(false, contract, 0, Utilities.getPermanentEmployeeExtraFamilyMembers(iban), Utilities.getPermanentEmployeeDateOfEmployeement(iban)));
                     }
                 }
             }

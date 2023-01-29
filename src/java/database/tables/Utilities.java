@@ -311,6 +311,8 @@ public class Utilities {
         return null;
     }
 
+
+    //exei themata
     public static int getTemporaryEmployeeOnlyContractPayment(String iban) throws SQLException, ClassNotFoundException{
         Connection con = DB_Connection.getConnection();
         Statement stmt = con.createStatement();
