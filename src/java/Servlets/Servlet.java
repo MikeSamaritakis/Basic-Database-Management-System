@@ -144,31 +144,28 @@ public class Servlet extends HttpServlet{
         // Delete employees and add them to the Fired employees database.
         PrintWriter writer = response.getWriter();
 
-        String Iban = request.getParameter("dibanp");
-
-        if (request.getParameter("dibanp") == null) {
+        String Iban = request.getParameter("diban");
             //perm
-            EditPermanentEmployee epe = new EditPermanentEmployee();
-            PermanentEmployee pe = new PermanentEmployee();
-            EditFiredPermanentEmployees efpe = new EditFiredPermanentEmployees();
+            EditTemporaryEmployee epe = new EditTemporaryEmployee();
+            TemporaryEmployee pe = new TemporaryEmployee();
+            EditFiredTemporaryEmployees efpe = new EditFiredTemporaryEmployees();
             try {
-                pe = Utilities.getPermanentEmployee(Iban);
+                pe = Utilities.getTemporaryEmployee(Iban);
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             } catch (ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
             try {
-                efpe.addnewFiredPermanentEmployee(pe);
+                efpe.addnewFiredTemporaryEmployee(pe);
             } catch (ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
             try {
-                epe.deletePermanentEmployee(Iban);
+                epe.deleteTemporaryEmployee(Iban);
             } catch (ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
-        }
         response.sendRedirect("http://localhost:8080/HY360_Project_war_exploded/");
     }
 

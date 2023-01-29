@@ -146,15 +146,9 @@
 
         <form id="deleteemp" style="display: none" method="post" action="Servlets.Servlet">
             <label class="txtedit"> Delete Temporary Employee by IBAN </label><br>
-            <input class="edit" type="text" id="dibant" name="diban"><br>
+            <input class="edit" type="text" id="diban" name="diban"><br>
             <br><button class="btn" type="submit" name="dSubmit" value="Call Servlet">Delete</button>
         </form>
-
-<%--        <form id="deleteperm" style="display: none" method="post" action="Servlets.Insert">--%>
-<%--            <label class="txtedit"> Delete Permanent Employee by IBAN </label><br>--%>
-<%--            <input class="edit" type="text" id="dibanp" name="diban"><br>--%>
-<%--            <br><button class="btn" type="submit" name="dSubmit" value="Call Servlet">Delete</button>--%>
-<%--        </form>--%>
 
         <form id="temp" style="display: none" method="get" action="Servlets.Servlet" >
             <label class="txtedit"> IBAN</label><br>

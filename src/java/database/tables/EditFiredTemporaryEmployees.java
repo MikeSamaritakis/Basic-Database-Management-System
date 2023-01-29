@@ -35,7 +35,7 @@ public class EditFiredTemporaryEmployees extends FiredTempEmployee {
         stmt.close();
     }
 
-    public void addnewFiredTemporaryEmployee(TemporaryEmployee tempemployee) throws ClassNotFoundException{
+    public static void addnewFiredTemporaryEmployee(TemporaryEmployee tempemployee) throws ClassNotFoundException{
         try {
             Connection con = DB_Connection.getConnection();
 
