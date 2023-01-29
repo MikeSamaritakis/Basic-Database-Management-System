@@ -291,7 +291,7 @@ public class Insert extends HttpServlet {
 
             String insertQuery21 = "INSERT INTO "
                     + " firedtemporaryemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingContractDate, endingContractDate)"
-                    + " VALUES ('GR0909231','Iwanna Tzagaraki','Apokoronou 1','69856','alfabank','CSD','2001-12-01','Management','0','1340','2','2021-09-01','2024-03-31')";
+                    + " VALUES ('GR09092331','Iwanna Tzagaraki','Apokoronou 1','69856','alfabank','CSD','2001-12-01','Management','0','1340','2','2021-09-01','2024-03-31')";
             //stmt.execute(table);
             System.out.println(insertQuery21);
             stmt.executeUpdate(insertQuery21);
@@ -314,7 +314,7 @@ public class Insert extends HttpServlet {
 
             String insertQuery21 = "INSERT INTO "
                     + " firedtemporaryemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingContractDate, endingContractDate)"
-                    + " VALUES ('GR09090231','Nikos Sfyrakis','Sxoinokapsalwn 3','69826','alfabank','CSD','2008-09-01','Management','0','1650','1','2021-09-01','2024-03-31')";            //stmt.execute(table);
+                    + " VALUES ('GR090920231','Nikos Sfyrakis','Sxoinokapsalwn 3','69826','alfabank','CSD','2008-09-01','Management','0','1650','1','2021-09-01','2024-03-31')";            //stmt.execute(table);
             System.out.println(insertQuery21);
             stmt.executeUpdate(insertQuery21);
             System.out.println("# The temporary fired employee was successfully added in the database.");
@@ -336,7 +336,7 @@ public class Insert extends HttpServlet {
 
             String insertQuery21 = "INSERT INTO "
                     + " firedtemporaryemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingContractDate, endingContractDate)"
-                    + " VALUES ('GR8909231','Makis Kramakaros','Delta 3','698506','eurobank','CSD','2018-01-01','Educational','1','1650','2','2021-10-01','2024-12-31')";
+                    + " VALUES ('GR89092431','Makis Kramakaros','Delta 3','698506','eurobank','CSD','2018-01-01','Educational','1','1650','2','2021-10-01','2024-12-31')";
             System.out.println(insertQuery21);
             stmt.executeUpdate(insertQuery21);
             System.out.println("# The temporary fired employee was successfully added in the database.");
@@ -359,7 +359,7 @@ public class Insert extends HttpServlet {
 
             String insertQuery21 = "INSERT INTO "
                     + " firedtemporaryemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingContractDate, endingContractDate)"
-                    + " VALUES ('GR023431','Manos Tzormpatzakis','Attalou 6','69820','alfabank','PHY','2020-12-01','Educational','0','1900','1','2019-01-01','2024-03-31')";
+                    + " VALUES ('GR0234312','Manos Tzormpatzakis','Attalou 6','69820','alfabank','PHY','2020-12-01','Educational','0','1900','1','2019-01-01','2024-03-31')";
             System.out.println(insertQuery21);
             stmt.executeUpdate(insertQuery21);
             System.out.println("# The temporary fired employee was successfully added in the database.");
@@ -381,7 +381,7 @@ public class Insert extends HttpServlet {
 
             String insertQuery21 = "INSERT INTO "
                     + " firedtemporaryemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingContractDate, endingContractDate)"
-                    + " VALUES ('GR89123231','Mpampis Tentas','Iwanninwn 63','698523','pagritia','CSD','2018-01-01','Educational','1','1650','2','2021-10-01','2024-12-31')";
+                    + " VALUES ('GR891232301','Mpampis Tentas','Iwanninwn 63','698523','pagritia','CSD','2018-01-01','Educational','1','1650','2','2021-10-01','2024-12-31')";
             //stmt.execute(table);
             System.out.println(insertQuery21);
             stmt.executeUpdate(insertQuery21);
