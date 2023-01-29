@@ -43,7 +43,7 @@ public class Insert extends HttpServlet {
 
                 String insertQuery1 = "INSERT INTO "
                         + " permanentemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids)"
-                        + " VALUES ('','','','','','','','','','','')";
+                        + " VALUES ('GR1234567890','Michalis','Zarou 15','6906','Piraiws','CSD','','','','','')";
                 //stmt.execute(table);
                 System.out.println(insertQuery1);
                 stmt.executeUpdate(insertQuery1);
@@ -52,6 +52,99 @@ public class Insert extends HttpServlet {
             } catch (SQLException ex) {
                 Logger.getLogger(EditSalary.class.getName()).log(Level.SEVERE, null, ex);
             }
+
+
+        //2
+        try {
+            Connection con = null;
+            try {
+                con = DB_Connection.getConnection();
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+
+            Statement stmt = con.createStatement();
+
+            String insertQuery1 = "INSERT INTO "
+                    + " permanentemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids)"
+                    + " VALUES ('GR1234567891','Manolis','Attalou 6','6989','Alfabank','MEM','','','','','')";
+            //stmt.execute(table);
+            System.out.println(insertQuery1);
+            stmt.executeUpdate(insertQuery1);
+            System.out.println("# The permanent employee was successfully added in the database.");
+            stmt.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(EditSalary.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        //3
+        try {
+            Connection con = null;
+            try {
+                con = DB_Connection.getConnection();
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+
+            Statement stmt = con.createStatement();
+
+            String insertQuery1 = "INSERT INTO "
+                    + " permanentemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids)"
+                    + " VALUES ('GR1234567892','Antonis','Makedonias 12','6984','Pagkrhtia','XHM','','','','','')";
+            //stmt.execute(table);
+            System.out.println(insertQuery1);
+            stmt.executeUpdate(insertQuery1);
+            System.out.println("# The permanent employee was successfully added in the database.");
+            stmt.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(EditSalary.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        //4
+        try {
+            Connection con = null;
+            try {
+                con = DB_Connection.getConnection();
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+
+            Statement stmt = con.createStatement();
+
+            String insertQuery1 = "INSERT INTO "
+                    + " permanentemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids)"
+                    + " VALUES ('GR1234567893','Lefteris','Apokoronou 1','6945','Eurobank','PHY','','','','','')";
+            //stmt.execute(table);
+            System.out.println(insertQuery1);
+            stmt.executeUpdate(insertQuery1);
+            System.out.println("# The permanent employee was successfully added in the database.");
+            stmt.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(EditSalary.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        //5
+        try {
+            Connection con = null;
+            try {
+                con = DB_Connection.getConnection();
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+
+            Statement stmt = con.createStatement();
+
+            String insertQuery1 = "INSERT INTO "
+                    + " permanentemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids)"
+                    + " VALUES ('GR1234567894','Marilena','Almpert 14','6989','Agrotikh','CSD','','','','','')";
+            //stmt.execute(table);
+            System.out.println(insertQuery1);
+            stmt.executeUpdate(insertQuery1);
+            System.out.println("# The permanent employee was successfully added in the database.");
+            stmt.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(EditSalary.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
 
 

@@ -136,7 +136,7 @@ public class Servlet extends HttpServlet{
                 throw new RuntimeException(e);
             }
         }
-
+        response.sendRedirect("index.jsp");
     }
 
     @Override
