@@ -4,7 +4,8 @@
         hideEdittemp();
         hideEditperm();
         hidepayment();
-        hideEditPayment()
+        hideEditPayment();
+        hideDelperm();
         document.getElementById("perm").style.display = "block";
     }
 
@@ -22,7 +23,8 @@
         hideEdittemp();
         hideEditperm();
         hidepayment();
-        hideEditPayment()
+        hideEditPayment();
+        hideDelperm();
         document.getElementById("temp").style.display = "block";
     }
 
@@ -32,7 +34,8 @@
         hideDel();
         hideEditperm();
         hidepayment();
-        hideEditPayment()
+        hideEditPayment();
+        hideDelperm();
         document.getElementById("edittinfo").style.display = "block";
     }
 
@@ -46,7 +49,8 @@
         hideDel();
         hideEdittemp();
         hidepayment();
-        hideEditPayment()
+        hideEditPayment();
+        hideDelperm();
         document.getElementById("editpinfo").style.display = "block";
     }
 
@@ -60,7 +64,8 @@
         hideDel();
         hideEdittemp();
         hideEditperm();
-        hideEditPayment()
+        hideEditPayment();
+        hideDelperm();
         document.getElementById("payment").style.display = "block";
     }
 
@@ -78,12 +83,28 @@
         hideEdittemp();
         hideEditperm();
         hidepayment();
-        hideEditPayment()
+        hideEditPayment();
+        hideDelperm();
         document.getElementById("deleteemp").style.display = "block";
     }
 
     function hideDel(){
         document.getElementById("deleteemp").style.display = "none";
+    }
+
+    function hideDelperm(){
+        document.getElementById("deleteperm").style.display = "none";
+    }
+
+    function showDelperm(){
+        hideTemp();
+        hidePerm();
+        hideEdittemp();
+        hideEditperm();
+        hidepayment();
+        hideEditPayment();
+        hideDelperm();
+        document.getElementById("deleteemp").style.display = "block";
     }
 
     function showEditPayment(){
@@ -93,6 +114,7 @@
         hideEdittemp();
         hideEditperm();
         hidepayment();
+        hideDelperm();
         document.getElementById(("EditPayment")).style.display = "block";
     }
 
@@ -107,5 +129,6 @@
         hideEdittemp();
         hideEditperm();
         hidepayment();
-        hideEditPayment()
+        hideEditPayment();
+        hideDelperm();
     }
