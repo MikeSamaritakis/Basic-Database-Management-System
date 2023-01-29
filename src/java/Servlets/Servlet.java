@@ -144,9 +144,9 @@ public class Servlet extends HttpServlet{
         // Delete employees and add them to the Fired employees database.
         PrintWriter writer = response.getWriter();
 
-        String Iban = request.getParameter("diban");
+        String Iban = request.getParameter("dibanp");
 
-        if (request.getParameter("diban") == null) {
+        if (request.getParameter("dibanp") == null) {
             //perm
             EditPermanentEmployee epe = new EditPermanentEmployee();
             PermanentEmployee pe = new PermanentEmployee();

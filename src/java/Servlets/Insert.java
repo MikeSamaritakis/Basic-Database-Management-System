@@ -750,10 +750,10 @@ public class Insert extends HttpServlet {
 
         PrintWriter writer = response.getWriter();
 
-        String Iban = request.getParameter("diban");
+        String Iban = request.getParameter("dibant");
 
         //temp
-        if (request.getParameter("diban") == null) {
+        if (request.getParameter("dibant") == null) {
         EditTemporaryEmployee ete = new EditTemporaryEmployee();
         try {
             TemporaryEmployee te = new TemporaryEmployee();
