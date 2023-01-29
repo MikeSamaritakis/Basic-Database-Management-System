@@ -1,4 +1,41 @@
     body{  
     font-family: Calibri, Helvetica, sans-serif;  
     background-color: beige;
-  }  
+  }
+
+    #grad1 {
+        height: 2000px;
+        background-color: white; /* For browsers that do not support gradients */
+        background-image: linear-gradient(greenyellow, green, darkgreen);
+    }
+
+    .edit {
+        background-color: white;
+        opacity: 0.8;
+        border-radius: 8px;
+        border: none;
+        color: black;
+        font-size: medium;
+        box-shadow:0px 15px 30px rgba(0,0,0,0.4);
+        outline:none;
+        block-size: 2%;
+    }
+
+    .btn {
+        background-color: white;
+        opacity: 0.8;
+        border-radius: 8px;
+        border: none;
+        color: black;
+        font-size: medium;
+        box-shadow:0px 15px 30px rgba(0,0,0,0.4);
+        outline:none;
+        block-size: 2%;
+
+
+    }
+
+    .txtedit {
+        color: black;
+        font-size: large;
+    }
