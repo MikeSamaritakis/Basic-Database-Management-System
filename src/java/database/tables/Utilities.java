@@ -654,5 +654,48 @@ public class Utilities {
         return pe;
     }
 
+    public static String E4() throws SQLException, ClassNotFoundException{
+        Connection con = DB_Connection.getConnection();
+        Statement stmt = con.createStatement();
+        int TempEd = 0;
+        int TempMan = 0;
+        int PermEd = 0;
+        int PermMan = 0;
 
+        ResultSet rs;
+
+        rs = stmt.executeQuery("select * from temporaryemployee");
+        while (rs.next()) {
+            if(Objects.equals(rs.getString("EmployeeType"), "Educational")){
+                TempEd += rs.getInt("Payment");
+            }
+        }
+
+        rs = stmt.executeQuery("select * from temporaryemployee");
+        while (rs.next()) {
+            if(Objects.equals(rs.getString("EmployeeType"), "Managing")){
+                TempMan += rs.getInt("Payment");
+            }
+        }
+
+        rs = stmt.executeQuery("select * from permanentemployee");
+        while (rs.next()) {
+            if(Objects.equals(rs.getString("EmployeeType"), "Educational")){
+                PermEd += rs.getInt("Payment");
+            }
+        }
+
+        rs = stmt.executeQuery("select * from permanentemployee");
+        while (rs.next()) {
+            if(Objects.equals(rs.getString("EmployeeType"), "Managing")){
+                PermMan += rs.getInt("Payment");
+            }
+        }
+
+        return ("Temporary Educational employees cost: " + String.valueOf(TempEd) +
+                "\n Temporary Managing employees cost: " + String.valueOf(TempMan) +
+                "\n Permanent Educational employees cost: " + String.valueOf(PermEd) +
+                "\n Permanent Managing employees cost: " + String.valueOf(PermMan)
+        );
+    }
 }
