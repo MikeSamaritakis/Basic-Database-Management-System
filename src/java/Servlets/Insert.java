@@ -522,7 +522,7 @@ public class Insert extends HttpServlet {
 
             String insertQuery41 = "INSERT INTO "
                     + " paymenthistory (PaymentName,PaymentDate,Salary)"
-                    + " VALUES ('Aglaia Paulou','2012-11-1','3000')";
+                    + " VALUES ('Toula Pantazh','2018-4-1','1800')";
             //stmt.execute(table);
             System.out.println(insertQuery41);
             stmt.executeUpdate(insertQuery41);
@@ -545,7 +545,7 @@ public class Insert extends HttpServlet {
 
             String insertQuery41 = "INSERT INTO "
                     + " paymenthistory (PaymentName,PaymentDate,Salary)"
-                    + " VALUES ('Toula Pantazh','2018-4-1','1800')";
+                    + " VALUES ('Afroula Terzh','2013-8-1','2750')";
             //stmt.execute(table);
             System.out.println(insertQuery41);
             stmt.executeUpdate(insertQuery41);
@@ -568,7 +568,7 @@ public class Insert extends HttpServlet {
 
             String insertQuery41 = "INSERT INTO "
                     + " paymenthistory (PaymentName,PaymentDate,Salary)"
-                    + " VALUES ('Afroula Terzh','2013-8-1','2750')";
+                    + " VALUES ('ALekshs Dieythynths','2004-1-1','4500')";
             //stmt.execute(table);
             System.out.println(insertQuery41);
             stmt.executeUpdate(insertQuery41);
@@ -591,7 +591,7 @@ public class Insert extends HttpServlet {
 
             String insertQuery41 = "INSERT INTO "
                     + " paymenthistory (PaymentName,PaymentDate,Salary)"
-                    + " VALUES ('ALekshs Dieythynths','2004-1-1','4500')";
+                    + " VALUES ('Aglaia Paulou','2012-11-1','3000')";
             //stmt.execute(table);
             System.out.println(insertQuery41);
             stmt.executeUpdate(insertQuery41);
