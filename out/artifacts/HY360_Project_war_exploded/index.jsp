@@ -12,13 +12,15 @@
     <center>  <h1> UOC Database</h1>
         <hr>
         <div class="buttons">
-            <button class="btn" type="submit" name="FillDB" onclick="reloadpage()">Fill Database</button>
+            <form id="filldb" method="get" action="Servlets.Insert">
+            <button class="btn" type="submit" name="FillDB" value="Call Servlet" onclick="reloadpage()">Fill Database</button>
+            </form>
             <button class="btn" type="button" name="HireTemp" onclick='showTemp()'>Hire Temporary Employee</button>
             <button class="btn" type="button" name="HirePerm" onclick='showPerm()'>Hire Permanent Employee</button>
             <button class="btn" type="button" name="Delete" onclick='showDel()'>Delete Temporary Employee by IBAN</button>
-            <button class="btn" type="button" name="Delete" onclick='showDelperm()'>Delete Permanent Employee by IBAN</button>
+<%--            <button class="btn" type="button" name="Delete" onclick='showDelperm()'>Delete Permanent Employee by IBAN</button>--%>
             <button class="btn" type="button" name="EditTInfo" onclick='showEdittemp()'>Edit Temporary Employee Info by IBAN</button>
-            <button class="btn"type="button" name="EditPInfo" onclick='showEditperm()'>Edit Permanent Employee Info by IBAN</button>
+            <button class="btn" type="button" name="EditPInfo" onclick='showEditperm()'>Edit Permanent Employee Info by IBAN</button>
             <button class="btn" type="button" name="calcpayment" onclick='showpayment()'>Submit Payments</button>
             <button class="btn" type="button" name="changepayment" onclick='showEditPayment()'>Edit Payment</button>
             <button class="btn" type="button" name="Hide" onclick='hideAll()'>Hide Current Form</button>
@@ -148,11 +150,11 @@
             <br><button class="btn" type="submit" name="dSubmit" value="Call Servlet">Delete</button>
         </form>
 
-        <form id="deleteperm" style="display: none" method="post" action="Servlets.Insert">
-            <label class="txtedit"> Delete Permanent Employee by IBAN </label><br>
-            <input class="edit" type="text" id="dibanp" name="diban"><br>
-            <br><button class="btn" type="submit" name="dSubmit" value="Call Servlet">Delete</button>
-        </form>
+<%--        <form id="deleteperm" style="display: none" method="post" action="Servlets.Insert">--%>
+<%--            <label class="txtedit"> Delete Permanent Employee by IBAN </label><br>--%>
+<%--            <input class="edit" type="text" id="dibanp" name="diban"><br>--%>
+<%--            <br><button class="btn" type="submit" name="dSubmit" value="Call Servlet">Delete</button>--%>
+<%--        </form>--%>
 
         <form id="temp" style="display: none" method="get" action="Servlets.Servlet" >
             <label class="txtedit"> IBAN</label><br>

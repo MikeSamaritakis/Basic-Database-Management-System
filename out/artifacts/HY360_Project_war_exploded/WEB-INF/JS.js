@@ -5,7 +5,7 @@
         hideEditperm();
         hidepayment();
         hideEditPayment();
-        hideDelperm();
+        // hideDelperm();
         document.getElementById("perm").style.display = "block";
     }
 
@@ -24,7 +24,7 @@
         hideEditperm();
         hidepayment();
         hideEditPayment();
-        hideDelperm();
+        // hideDelperm();
         document.getElementById("temp").style.display = "block";
     }
 
@@ -35,7 +35,7 @@
         hideEditperm();
         hidepayment();
         hideEditPayment();
-        hideDelperm();
+        // hideDelperm();
         document.getElementById("edittinfo").style.display = "block";
     }
 
@@ -50,7 +50,7 @@
         hideEdittemp();
         hidepayment();
         hideEditPayment();
-        hideDelperm();
+        // hideDelperm();
         document.getElementById("editpinfo").style.display = "block";
     }
 
@@ -65,7 +65,7 @@
         hideEdittemp();
         hideEditperm();
         hideEditPayment();
-        hideDelperm();
+        // hideDelperm();
         document.getElementById("payment").style.display = "block";
     }
 
@@ -84,7 +84,7 @@
         hideEditperm();
         hidepayment();
         hideEditPayment();
-        hideDelperm();
+        // hideDelperm();
         document.getElementById("deleteemp").style.display = "block";
     }
 
@@ -103,7 +103,7 @@
         hideEditperm();
         hidepayment();
         hideEditPayment();
-        hideDelperm();
+        // hideDelperm();
         document.getElementById("deleteemp").style.display = "block";
     }
 
@@ -114,7 +114,7 @@
         hideEdittemp();
         hideEditperm();
         hidepayment();
-        hideDelperm();
+        // hideDelperm();
         document.getElementById(("EditPayment")).style.display = "block";
     }
 
@@ -130,5 +130,5 @@
         hideEditperm();
         hidepayment();
         hideEditPayment();
-        hideDelperm();
+        // hideDelperm();
     }
