@@ -741,7 +741,7 @@ public class Insert extends HttpServlet {
             Logger.getLogger(EditPaymentHistory.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        //response.sendRedirect("http://localhost:8080/HY360_Project_war_exploded/");
+        response.sendRedirect("http://localhost:8080/HY360_Project_war_exploded/");
     }
 
     @Override
