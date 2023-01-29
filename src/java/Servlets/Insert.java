@@ -93,8 +93,8 @@ public class Insert extends HttpServlet {
             Statement stmt = con.createStatement();
 
             String insertQuery1 = "INSERT INTO "
-                    + " permanentemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids)"
-                    + " VALUES ('GR1234567892','Antonis','Makedonias 12','6984','Pagkrhtia','XHM','2022-12-11','Educational','1','900','0')";
+                    + " permanentemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Kids,Payment)"
+                    + " VALUES ('GR1234567892','Antonis','Makedonias 12','6984','Pagkrhtia','XHM','2022-12-11','Educational','1','1','1000')";
             //stmt.execute(table);
             System.out.println(insertQuery1);
             stmt.executeUpdate(insertQuery1);
@@ -116,8 +116,8 @@ public class Insert extends HttpServlet {
             Statement stmt = con.createStatement();
 
             String insertQuery1 = "INSERT INTO "
-                    + " permanentemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids)"
-                    + " VALUES ('GR1234567893','Lefteris','Apokoronou 1','6945','Eurobank','PHY','2022-12-10','Management','1','700','3')";
+                    + " permanentemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Kids,Payment)"
+                    + " VALUES ('GR1234567893','Lefteris','Apokoronou 1','6945','Eurobank','PHY','2022-12-10','Management','1','0','1610')";
             //stmt.execute(table);
             System.out.println(insertQuery1);
             stmt.executeUpdate(insertQuery1);
@@ -139,8 +139,8 @@ public class Insert extends HttpServlet {
             Statement stmt = con.createStatement();
 
             String insertQuery1 = "INSERT INTO "
-                    + " permanentemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids)"
-                    + " VALUES ('GR1234567894','Marilena','Almpert 14','6989','Agrotikh','CSD','2022-12-01','Educational','1','1000','7')";
+                    + " permanentemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Kids,Payment)"
+                    + " VALUES ('GR1234567894','Marilena','Almpert 14','6989','Agrotikh','CSD','2022-12-01','Educational','1','3','1830')";
             //stmt.execute(table);
             System.out.println(insertQuery1);
             stmt.executeUpdate(insertQuery1);
@@ -171,7 +171,7 @@ public class Insert extends HttpServlet {
             Statement stmt = con.createStatement();
 
             String insertQuery11 = "INSERT INTO "
-                    + " temporaryemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingcontractdate, endingcontractdate)"
+                    + " temporaryemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingContractDate, endingContractDate)"
                     + " VALUES ('','','','','','','','','','','','','')";
             //stmt.execute(table);
             System.out.println(insertQuery11);
@@ -194,7 +194,7 @@ public class Insert extends HttpServlet {
             Statement stmt = con.createStatement();
 
             String insertQuery11 = "INSERT INTO "
-                    + " temporaryemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingcontractdate, endingcontractdate)"
+                    + " temporaryemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingContractDate, endingContractDate)"
                     + " VALUES ('','','','','','','','','','','','','')";
             //stmt.execute(table);
             System.out.println(insertQuery11);
@@ -218,7 +218,7 @@ public class Insert extends HttpServlet {
             Statement stmt = con.createStatement();
 
             String insertQuery11 = "INSERT INTO "
-                    + " temporaryemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingcontractdate, endingcontractdate)"
+                    + " temporaryemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingContractDate, endingContractDate)"
                     + " VALUES ('','','','','','','','','','','','','')";
             //stmt.execute(table);
             System.out.println(insertQuery11);
@@ -241,7 +241,7 @@ public class Insert extends HttpServlet {
             Statement stmt = con.createStatement();
 
             String insertQuery11 = "INSERT INTO "
-                    + " temporaryemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingcontractdate, endingcontractdate)"
+                    + " temporaryemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingContractDate, endingContractDate)"
                     + " VALUES ('','','','','','','','','','','','','')";
             //stmt.execute(table);
             System.out.println(insertQuery11);
@@ -264,7 +264,7 @@ public class Insert extends HttpServlet {
             Statement stmt = con.createStatement();
 
             String insertQuery11 = "INSERT INTO "
-                    + " temporaryemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingcontractdate, endingcontractdate)"
+                    + " temporaryemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingContractDate, endingContractDate)"
                     + " VALUES ('','','','','','','','','','','','','')";
             //stmt.execute(table);
             System.out.println(insertQuery11);
@@ -290,7 +290,7 @@ public class Insert extends HttpServlet {
             Statement stmt = con.createStatement();
 
             String insertQuery21 = "INSERT INTO "
-                    + " temporaryfiredemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingcontractdate, endingcontractdate)"
+                    + " temporaryfiredemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingContractDate, endingContractDate)"
                     + " VALUES ('','','','','','','','','','','','','')";
             //stmt.execute(table);
             System.out.println(insertQuery21);
@@ -313,7 +313,7 @@ public class Insert extends HttpServlet {
             Statement stmt = con.createStatement();
 
             String insertQuery21 = "INSERT INTO "
-                    + " temporaryfiredemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingcontractdate, endingcontractdate)"
+                    + " temporaryfiredemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingContractDate, endingContractDate)"
                     + " VALUES ('','','','','','','','','','','','','')";
             //stmt.execute(table);
             System.out.println(insertQuery21);
@@ -336,7 +336,7 @@ public class Insert extends HttpServlet {
             Statement stmt = con.createStatement();
 
             String insertQuery21 = "INSERT INTO "
-                    + " temporaryfiredemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingcontractdate, endingcontractdate)"
+                    + " temporaryfiredemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingContractDate, endingContractDate)"
                     + " VALUES ('','','','','','','','','','','','','')";
             //stmt.execute(table);
             System.out.println(insertQuery21);
@@ -360,7 +360,7 @@ public class Insert extends HttpServlet {
             Statement stmt = con.createStatement();
 
             String insertQuery21 = "INSERT INTO "
-                    + " temporaryfiredemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingcontractdate, endingcontractdate)"
+                    + " temporaryfiredemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingContractDate, endingContractDate)"
                     + " VALUES ('','','','','','','','','','','','','')";
             //stmt.execute(table);
             System.out.println(insertQuery21);
@@ -383,7 +383,7 @@ public class Insert extends HttpServlet {
             Statement stmt = con.createStatement();
 
             String insertQuery21 = "INSERT INTO "
-                    + " temporaryfiredemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingcontractdate, endingcontractdate)"
+                    + " temporaryfiredemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingContractDate, endingContractDate)"
                     + " VALUES ('','','','','','','','','','','','','')";
             //stmt.execute(table);
             System.out.println(insertQuery21);
@@ -408,7 +408,7 @@ public class Insert extends HttpServlet {
             Statement stmt = con.createStatement();
 
             String insertQuery31 = "INSERT INTO "
-                    + " permanentfiredemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingcontractdate, endingcontractdate)"
+                    + " permanentfiredemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingContractDate, endingContractDate)"
                     + " VALUES ('','','','','','','','','','','','','')";
             //stmt.execute(table);
             System.out.println(insertQuery31);
@@ -431,7 +431,7 @@ public class Insert extends HttpServlet {
             Statement stmt = con.createStatement();
 
             String insertQuery31 = "INSERT INTO "
-                    + " permanentfiredemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingcontractdate, endingcontractdate)"
+                    + " permanentfiredemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingContractDate, endingContractDate)"
                     + " VALUES ('','','','','','','','','','','','','')";
             //stmt.execute(table);
             System.out.println(insertQuery31);
@@ -454,7 +454,7 @@ public class Insert extends HttpServlet {
             Statement stmt = con.createStatement();
 
             String insertQuery31 = "INSERT INTO "
-                    + " permanentfiredemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingcontractdate, endingcontractdate)"
+                    + " permanentfiredemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingContractDate, endingcontractdate)"
                     + " VALUES ('','','','','','','','','','','','','')";
             //stmt.execute(table);
             System.out.println(insertQuery31);
@@ -477,7 +477,7 @@ public class Insert extends HttpServlet {
             Statement stmt = con.createStatement();
 
             String insertQuery31 = "INSERT INTO "
-                    + " permanentfiredemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingcontractdate, endingcontractdate)"
+                    + " permanentfiredemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingContractDate, endingcontractdate)"
                     + " VALUES ('','','','','','','','','','','','','')";
             //stmt.execute(table);
             System.out.println(insertQuery31);
@@ -500,7 +500,7 @@ public class Insert extends HttpServlet {
             Statement stmt = con.createStatement();
 
             String insertQuery31 = "INSERT INTO "
-                    + " permanentfiredemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingcontractdate, endingcontractdate)"
+                    + " permanentfiredemployee (IBAN, FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingContractDate, endingcontractdate)"
                     + " VALUES ('','','','','','','','','','','','','')";
             //stmt.execute(table);
             System.out.println(insertQuery31);
@@ -525,7 +525,7 @@ public class Insert extends HttpServlet {
             Statement stmt = con.createStatement();
 
             String insertQuery41 = "INSERT INTO "
-                    + " paymenthistory (FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingcontractdate, endingcontractdate)"
+                    + " paymenthistory (FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingContractDate, endingcontractdate)"
                     + " VALUES ('','','','','','','','','','','','','')";
             //stmt.execute(table);
             System.out.println(insertQuery41);
@@ -548,7 +548,7 @@ public class Insert extends HttpServlet {
             Statement stmt = con.createStatement();
 
             String insertQuery41 = "INSERT INTO "
-                    + " paymenthistory (FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingcontractdate, endingcontractdate)"
+                    + " paymenthistory (FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingContractDate, endingcontractdate)"
                     + " VALUES ('','','','','','','','','','','','','')";
             //stmt.execute(table);
             System.out.println(insertQuery41);
@@ -571,7 +571,7 @@ public class Insert extends HttpServlet {
             Statement stmt = con.createStatement();
 
             String insertQuery41 = "INSERT INTO "
-                    + " paymenthistory (FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingcontractdate, endingcontractdate)"
+                    + " paymenthistory (FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingContractDate, endingcontractdate)"
                     + " VALUES ('','','','','','','','','','','','','')";
             //stmt.execute(table);
             System.out.println(insertQuery41);
@@ -594,7 +594,7 @@ public class Insert extends HttpServlet {
             Statement stmt = con.createStatement();
 
             String insertQuery41 = "INSERT INTO "
-                    + " paymenthistory (FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingcontractdate, endingcontractdate)"
+                    + " paymenthistory (FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingContractDate, endingcontractdate)"
                     + " VALUES ('','','','','','','','','','','','','')";
             //stmt.execute(table);
             System.out.println(insertQuery41);
@@ -617,7 +617,7 @@ public class Insert extends HttpServlet {
             Statement stmt = con.createStatement();
 
             String insertQuery41 = "INSERT INTO "
-                    + " paymenthistory (FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingcontractdate, endingcontractdate)"
+                    + " paymenthistory (FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingContractDate, endingcontractdate)"
                     + " VALUES ('','','','','','','','','','','','','')";
             //stmt.execute(table);
             System.out.println(insertQuery41);
@@ -642,7 +642,7 @@ public class Insert extends HttpServlet {
             Statement stmt = con.createStatement();
 
             String insertQuery51 = "INSERT INTO "
-                    + " paymenthistory (FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingcontractdate, endingcontractdate)"
+                    + " paymenthistory (FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingContractDate, endingcontractdate)"
                     + " VALUES ('','','','','','','','','','','','','')";
             //stmt.execute(table);
             System.out.println(insertQuery51);
@@ -665,7 +665,7 @@ public class Insert extends HttpServlet {
             Statement stmt = con.createStatement();
 
             String insertQuery51 = "INSERT INTO "
-                    + " paymenthistory (FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingcontractdate, endingcontractdate)"
+                    + " paymenthistory (FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingContractDate, endingcontractdate)"
                     + " VALUES ('','','','','','','','','','','','','')";
             //stmt.execute(table);
             System.out.println(insertQuery51);
@@ -688,7 +688,7 @@ public class Insert extends HttpServlet {
             Statement stmt = con.createStatement();
 
             String insertQuery51 = "INSERT INTO "
-                    + " paymenthistory (FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingcontractdate, endingcontractdate)"
+                    + " paymenthistory (FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingContractDate, endingcontractdate)"
                     + " VALUES ('','','','','','','','','','','','','')";
             //stmt.execute(table);
             System.out.println(insertQuery51);
@@ -711,7 +711,7 @@ public class Insert extends HttpServlet {
             Statement stmt = con.createStatement();
 
             String insertQuery51 = "INSERT INTO "
-                    + " paymenthistory (FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingcontractdate, endingcontractdate)"
+                    + " paymenthistory (FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingContractDate, endingcontractdate)"
                     + " VALUES ('','','','','','','','','','','','','')";
             //stmt.execute(table);
             System.out.println(insertQuery51);
@@ -734,7 +734,7 @@ public class Insert extends HttpServlet {
             Statement stmt = con.createStatement();
 
             String insertQuery51 = "INSERT INTO "
-                    + " paymenthistory (FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingcontractdate, endingcontractdate)"
+                    + " paymenthistory (FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingContractDate, endingcontractdate)"
                     + " VALUES ('','','','','','','','','','','','','')";
             //stmt.execute(table);
             System.out.println(insertQuery51);
