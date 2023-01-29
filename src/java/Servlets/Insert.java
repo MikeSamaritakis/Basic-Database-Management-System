@@ -618,7 +618,7 @@ public class Insert extends HttpServlet {
 
             String insertQuery41 = "INSERT INTO "
                     + " paymenthistory (FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingContractDate, endingcontractdate)"
-                    + " VALUES ('','','','','','','','','','','','','')";
+                    + " VALUES ('Rallou Konsta','Attalou 2','69543','ALfa','Mem','2010-1-1','Educational','1','1450','2','2020-9-1','2022-9-1')";
             //stmt.execute(table);
             System.out.println(insertQuery41);
             stmt.executeUpdate(insertQuery41);
@@ -643,7 +643,7 @@ public class Insert extends HttpServlet {
 
             String insertQuery51 = "INSERT INTO "
                     + " paymenthistory (FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingContractDate, endingcontractdate)"
-                    + " VALUES ('','','','','','','','','','','','','')";
+                    + " VALUES ('FIfh Palaiologou','Dios 10','69897','Synaiteristikh','Xhmiko','2022-12-1','Educational','0','1300','0','2022-12-1','2023-12-1')";
             //stmt.execute(table);
             System.out.println(insertQuery51);
             stmt.executeUpdate(insertQuery51);
@@ -666,7 +666,7 @@ public class Insert extends HttpServlet {
 
             String insertQuery51 = "INSERT INTO "
                     + " paymenthistory (FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingContractDate, endingcontractdate)"
-                    + " VALUES ('','','','','','','','','','','','','')";
+                    + " VALUES ('Dionyshs Mavrotsoukalos','Thenwn 4','69783','Pagkrhtia','CSD','2010-1-1','Educational','0','3000','0','2019-2-1','2025-10-1')";
             //stmt.execute(table);
             System.out.println(insertQuery51);
             stmt.executeUpdate(insertQuery51);
@@ -689,7 +689,7 @@ public class Insert extends HttpServlet {
 
             String insertQuery51 = "INSERT INTO "
                     + " paymenthistory (FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingContractDate, endingcontractdate)"
-                    + " VALUES ('','','','','','','','','','','','','')";
+                    + " VALUES ('Thanasis Mavrotsoukalos','Attalou 51','281045','Eurobank','Fusiko','2010-12-1','Managing','1','2300','1','2022-11-1','2024-11-1')";
             //stmt.execute(table);
             System.out.println(insertQuery51);
             stmt.executeUpdate(insertQuery51);
@@ -712,7 +712,7 @@ public class Insert extends HttpServlet {
 
             String insertQuery51 = "INSERT INTO "
                     + " paymenthistory (FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingContractDate, endingcontractdate)"
-                    + " VALUES ('','','','','','','','','','','','','')";
+                    + " VALUES ('Tina Papadopoulou','Drakontopoulou 15','69637','Eurobank','CSD','2015-5-1','Managing','1','2150','2','','','')";
             //stmt.execute(table);
             System.out.println(insertQuery51);
             stmt.executeUpdate(insertQuery51);
@@ -735,7 +735,7 @@ public class Insert extends HttpServlet {
 
             String insertQuery51 = "INSERT INTO "
                     + " paymenthistory (FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Payment,Kids,startingContractDate, endingcontractdate)"
-                    + " VALUES ('','','','','','','','','','','','','')";
+                    + " VALUES ('Giwrgos Petrakhs','Apokwronou 3','69754','Alfa','Mem','2019-1-1','Educational','0','1450','2','2020-3-1','2023-3-1')";
             //stmt.execute(table);
             System.out.println(insertQuery51);
             stmt.executeUpdate(insertQuery51);
