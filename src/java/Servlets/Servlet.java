@@ -145,7 +145,8 @@ public class Servlet extends HttpServlet{
         PrintWriter writer = response.getWriter();
 
         String Iban = request.getParameter("diban");
-        if (request.getParameter("tstartofcontract") == null) {
+
+        if (request.getParameter("diban") == null) {
             //perm
             EditPermanentEmployee epe = new EditPermanentEmployee();
             PermanentEmployee pe = new PermanentEmployee();
@@ -164,29 +165,6 @@ public class Servlet extends HttpServlet{
             }
             try {
                 epe.deletePermanentEmployee(Iban);
-            } catch (ClassNotFoundException e) {
-                throw new RuntimeException(e);
-            }
-        }
-        else{
-            //temp
-            EditTemporaryEmployee ete = new EditTemporaryEmployee();
-            try {
-                TemporaryEmployee te = new TemporaryEmployee();
-                EditFiredTemporaryEmployees efte = new EditFiredTemporaryEmployees();
-                try {
-                    te = Utilities.getTemporaryEmployee(Iban);
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                } catch (ClassNotFoundException e) {
-                    throw new RuntimeException(e);
-                }
-                try {
-                    efte.addnewFiredTemporaryEmployee(te);
-                } catch (ClassNotFoundException e) {
-                    throw new RuntimeException(e);
-                }
-                ete.deleteTemporaryEmployee(Iban);
             } catch (ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }

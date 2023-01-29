@@ -42,7 +42,7 @@ public class EditFiredTemporaryEmployees extends FiredTempEmployee {
             Statement stmt = con.createStatement();
 
             String insertQuery = "INSERT INTO "
-                    + " temporaryemployee (IBAN,FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Kids,"
+                    + " firedtemporaryemployee (IBAN,FullName,Address,Telephone,BankName,Department,startingDate,EmployeeType,Married,Kids,"
                     + "Payment,startingContractDate,endingContractDate)"
                     + " VALUES ("
                     + "'" + tempemployee.getIBAN() + "',"
