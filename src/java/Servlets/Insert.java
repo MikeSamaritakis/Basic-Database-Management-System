@@ -746,7 +746,36 @@ public class Insert extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    // Delete and add to fired temporary employee.
 
+        PrintWriter writer = response.getWriter();
+
+        String Iban = request.getParameter("diban");
+
+        //temp
+        if (request.getParameter("diban") == null) {
+        EditTemporaryEmployee ete = new EditTemporaryEmployee();
+        try {
+            TemporaryEmployee te = new TemporaryEmployee();
+            EditFiredTemporaryEmployees efte = new EditFiredTemporaryEmployees();
+            try {
+                te = Utilities.getTemporaryEmployee(Iban);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+            try {
+                efte.addnewFiredTemporaryEmployee(te);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+            ete.deleteTemporaryEmployee(Iban);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+        response.sendRedirect("http://localhost:8080/HY360_Project_war_exploded/");
     }
 
 }
