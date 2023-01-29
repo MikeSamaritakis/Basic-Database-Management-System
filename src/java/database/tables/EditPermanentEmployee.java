@@ -105,7 +105,7 @@ public class EditPermanentEmployee extends PermanentEmployee {
     public void updatePermanentEmployeeAddress(String iban, String address) throws SQLException, ClassNotFoundException {
         Connection con = DB_Connection.getConnection();
         Statement stmt = con.createStatement();
-        String update = "UPDATE permanentemployee SET Address='" + address + "' WHERE IBAN = '" + iban + "'";
+        String update = "UPDATE permanentemployee SET address='" + address + "' WHERE IBAN = '" + iban + "'";
         stmt.executeUpdate(update);
     }
 
