@@ -23,12 +23,13 @@
         <button type="button" name="EditPInfo" onclick='showEditperm()'>Edit Permanent Employee Info by IBAN</button>
         <button type="button" name="calcpayment" onclick='showpayment()'>Submit Payments</button>
         <button type="button" name="changepayment" onclick='showEditPayment()'>Edit Payment</button>
+<%--        <button type="button" name="SalarySumPerEmployeeType" value="Call Servlet">Salary Sum Per Employee Type</button>--%>
         <button type="button" name="Hide" onclick='hideAll()'>Hide Current Form</button>
-        <button type="button" name="MaxMinMedianSalaryPerEmployeeType" onclick='showTemp()'>MaxMinMedianSalaryPerEmployeeType</button>
-        <button type="button" name="AverageIncreaseInSalaryAndBenefitPerTimePeriod" onclick='showTemp()'>Average Increase In Salary And Benefit Per Time Period</button>
-        <button type="button" name="AttributesAndSalaryOfAnEmployee" onclick='showTemp()'>Attributes And Salary Of An Employee</button>
-        <button type="button" name="AttributesAndSalaryOfAnEmployee" onclick='showTemp()'>Attributes And Salary Of An Employee</button>
-        <button type="button" name="SalarySumPerEmployeeType" onclick='sumButton()'>Salary Sum Per Employee Type</button>
+<%--        <button type="button" name="MaxMinMedianSalaryPerEmployeeType" onclick='showTemp()'>MaxMinMedianSalaryPerEmployeeType</button>--%>
+<%--        <button type="button" name="AverageIncreaseInSalaryAndBenefitPerTimePeriod" onclick='showTemp()'>Average Increase In Salary And Benefit Per Time Period</button>--%>
+<%--        <button type="button" name="AttributesAndSalaryOfAnEmployee" onclick='showTemp()'>Attributes And Salary Of An Employee</button>--%>
+<%--        <button type="button" name="AttributesAndSalaryOfAnEmployee" onclick='showTemp()'>Attributes And Salary Of An Employee</button>--%>
+
 
 
     </div>

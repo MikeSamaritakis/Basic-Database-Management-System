@@ -33,7 +33,7 @@ public class RequestButtons extends HttpServlet{
     }
 
     /**
-     * Prwta enhmerwnei ton mistho kathe ypalilou kai meta kanei katavolh misthodosiwn ston pinaka
+     *
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -42,7 +42,7 @@ public class RequestButtons extends HttpServlet{
     }
 
     /**
-     * Update sto basic payment kai sta epidomata
+     *
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
